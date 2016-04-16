@@ -1,15 +1,16 @@
 set nocompatible
 filetype off
-set rtp+=~/.vim/bundle/vundle
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
-Plugin 'gmarik/vundle'
+Plugin 'VundleVim/Vundle.vim'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'scrooloose/nerdtree'
 Plugin 'kien/ctrlp.vim'
 Plugin 'reedes/vim-pencil'
 
-filetype plugin on
+call vundle#end()
+filetype plugin indent on
 
 syntax enable
 set background=light
@@ -29,7 +30,6 @@ set expandtab "tabs are spaces
 set number "show line numbers
 set showcmd " show command in bottom bar
 set cursorline "highlight current line
-filetype indent on "load language specific indentation files
 set wildmenu "visual autocomplete for command menu
 set lazyredraw "redraw only when necessary
 set showmatch "show matching braces/parens/brackets
@@ -38,5 +38,4 @@ set incsearch "search as characters are entered
 
 inoremap jk <esc>
 
-set spell spelllang=en_us
 set wrap lbr
