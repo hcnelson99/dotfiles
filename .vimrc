@@ -17,6 +17,12 @@ set background=light
 let g:solarized_termcolors=256
 colorscheme solarized
 
+" use 256 colors in terminal
+if !has("gui_running")
+    set t_Co=256
+    set term=screen-256color
+endif
+
 augroup pencil
     autocmd!
     autocmd FileType markdown,mkd call pencil#init()
@@ -29,7 +35,6 @@ set expandtab "tabs are spaces
 
 set number "show line numbers
 set showcmd " show command in bottom bar
-set cursorline "highlight current line
 set wildmenu "visual autocomplete for command menu
 set lazyredraw "redraw only when necessary
 set showmatch "show matching braces/parens/brackets
