@@ -1,10 +1,10 @@
 #!/bin/bash
 set -eux
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim &&
-ln -s .vimrc ~/.vimrc &&
+ln -s ~/dotfiles/.vimrc ~/.vimrc &&
 vim +PluginInstall +qall
 
-ln -s .tmux.conf ~
+ln -s ~/dotfiles/.tmux.conf ~/.tmux.conf
 
-ls -s .antigen.zsh ~ &&
-ln -s .zshrc ~
+ln -s ~/dotfiles/.antigen.zsh ~/.antigen.zsh &&
+ln -s ~/dotfiles/.zshrc ~/.zshrc
