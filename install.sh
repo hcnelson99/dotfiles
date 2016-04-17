@@ -7,4 +7,5 @@ vim +PluginInstall +qall
 ln -s ~/dotfiles/.tmux.conf ~/.tmux.conf
 
 ln -s ~/dotfiles/.antigen.zsh ~/.antigen.zsh &&
+ln -s ~/dotfiles/.zshenv ~/.zshenv &&
 ln -s ~/dotfiles/.zshrc ~/.zshrc
