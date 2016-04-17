@@ -8,6 +8,7 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'scrooloose/nerdtree'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'reedes/vim-pencil'
+Plugin 'christoomey/vim-tmux-navigator'
 
 call vundle#end()
 filetype plugin indent on
@@ -58,5 +59,6 @@ noremap <Leader>W :w !sudo tee % > /dev/null<CR>
 noremap <Leader>w :w<CR>
 noremap <Leader>r :source %<CR>
 noremap <Leader>q :q<CR>
+noremap <Leader>p :PluginInstall<CR>
 
 set wrap lbr
