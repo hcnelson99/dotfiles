@@ -40,6 +40,7 @@ set tabstop=4 " number of visual spaces per TAB
 set softtabstop=4 "number of spaces inserted when tab is pressed
 set expandtab "tabs are spaces
 
+set ruler "show cursor location
 set number "show line numbers
 set showcmd " show command in bottom bar
 set cursorline
@@ -61,4 +62,6 @@ noremap <Leader>r :source %<CR>
 noremap <Leader>q :q<CR>
 noremap <Leader>p :PluginInstall<CR>
 
+set spell spelllang=en_us
+map <Leader>s :setlocal spell! spelllang=en_us<CR>
 set wrap lbr
