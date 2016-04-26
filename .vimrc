@@ -59,7 +59,7 @@ nnoremap k gk
 let mapleader="\<Space>"
 noremap <Leader>W :w !sudo tee % > /dev/null<CR>
 noremap <Leader>w :w<CR>
-noremap <Leader>r :source %<CR>
+noremap <Leader>r :source ~/.vimrc<CR>
 noremap <Leader>q :q<CR>
 noremap <Leader>p :PluginInstall<CR>
 
