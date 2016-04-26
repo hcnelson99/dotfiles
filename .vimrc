@@ -37,6 +37,7 @@ augroup END
 set backspace=2 "allow backspacing over linebreaks,indent, start of insert
 
 set tabstop=4 " number of visual spaces per TAB
+set shiftwidth=4 "indent width used for autoindent
 set softtabstop=4 "number of spaces inserted when tab is pressed
 set expandtab "tabs are spaces
 
