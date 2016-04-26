@@ -5,21 +5,19 @@ SAVEHIST=1000
 setopt appendhistory autocd correct extendedglob notify
 unsetopt beep
 bindkey -v
-# End of lines configured by zsh-newuser-install
-# The following lines were added by compinstall
-zstyle :compinstall filename '~/.zshrc'
 
-autoload -Uz compinit
-compinit
-# End of lines added by compinstall
+source ~/.zgen/zgen.zsh
 
-source ~/.antigen.zsh
+if ! zgen saved; then
+    zgen oh-my-zsh
+    zgen oh-my-zsh plugins/git
+    zgen oh-my-zsh plugins/compleat
+    zgen oh-my-zsh plugins/command-not-found
+    zgen load zsh-users/zsh-syntax-highlighting
+    zgen load zsh-users/zsh-autosuggestions
+    zgen load zsh-users/zsh-history-substring-search ./zsh-history-substring-search.zsh
 
-antigen use oh-my-zsh
+    zgen oh-my-zsh themes/agnoster
 
-antigen bundle git
-antigen bundle command-not-found
-
-antigen theme agnoster
-
-antigen apply
+    zgen save
+fi

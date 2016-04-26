@@ -6,6 +6,6 @@ vim +PluginInstall +qall
 
 ln -s ~/dotfiles/.tmux.conf ~/.tmux.conf
 
-ln -s ~/dotfiles/.antigen.zsh ~/.antigen.zsh 
+git clone https://github.com/tarjoilija/zgen.git ~/.zgen
 ln -s ~/dotfiles/.zshenv ~/.zshenv 
 ln -s ~/dotfiles/.zshrc ~/.zshrc
