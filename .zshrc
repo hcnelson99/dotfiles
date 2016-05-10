@@ -19,3 +19,5 @@ if ! zgen saved; then
 
     zgen save
 fi
+
+alias tmux="tmux -u"
