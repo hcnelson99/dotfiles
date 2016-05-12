@@ -1,0 +1,10 @@
+# This is Git's per-user configuration file.
+[user]
+# Please adapt and uncomment the following lines:
+	name = Henry Nelson
+	email = hcnelson99@gmail.com
+[core]
+	editor = /usr/bin/vim
+	excludesfile = /Volumes/Homes/henry/.gitignore
+[push]
+	default = simple
