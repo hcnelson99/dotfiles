@@ -12,3 +12,9 @@ ln -s ~/dotfiles/.zshrc ~/.zshrc
 
 ln -s ~/dotfiles/.gitconfig ~/.gitconfig
 ln -s ~/dotfiles/.gitignore ~/.gitignore
+
+mkdir -p ~/.i3
+ln -s ~/dotfiles/.i3/config ~/.i3/config
+ln -s ~/dotfiles/.Xresources ~/.Xresources
+ln -s ~/dotfiles/.xinitrc ~/.xinitrc
+
