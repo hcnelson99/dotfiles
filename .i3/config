@@ -34,11 +34,17 @@ set $right l
 # use Mouse+Mod1 to drag floating windows to their wanted position
 floating_modifier Mod1
 
+# open chromium
+bindsym Mod1+c exec chromium
+
+#lock screen
+bindsym Mod1+p exec i3lock-fancy
+
 # start a terminal
 bindsym Mod1+Return exec i3-sensible-terminal
 
 # kill focused window
-bindsym Mod1+Shift+q kill
+bindsym Mod1+q kill
 
 # start dmenu (a program launcher)
 bindsym Mod1+d exec dmenu_run
@@ -166,14 +172,3 @@ bindsym Mod1+r mode "resize"
 bar {
         status_command i3status
 }
-
-#######################################################################
-# automatically start i3-config-wizard to offer the user to create a
-# keysym-based config which used their favorite modifier (alt or windows)
-#
-# i3-config-wizard will not launch if there already is a config file
-# in ~/.i3/config.
-#
-# Please remove the following exec line:
-#######################################################################
-exec i3-config-wizard
