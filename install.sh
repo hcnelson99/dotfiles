@@ -17,4 +17,4 @@ mkdir -p ~/.i3
 ln -s ~/dotfiles/.i3/config ~/.i3/config
 ln -s ~/dotfiles/.Xresources ~/.Xresources
 ln -s ~/dotfiles/.xinitrc ~/.xinitrc
-
+ln -s ~/dotfiles/.xbindkeysrc ~/.xbindkeysrc
