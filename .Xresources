@@ -1,5 +1,5 @@
 URxvt.font: xft:Source Code Pro for Powerline:size=10
-URxvt.boldFont: xft:Source Code Pro for Powerline Bold:size=10
+URxvt.boldFont: xft:Source Code Pro for Powerline:bold:size=10
 
 #define S_base03        #002b36
 #define S_base02        #073642
