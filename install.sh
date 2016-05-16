@@ -1,6 +1,7 @@
 #!/bin/bash
 set -ux
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim 
+mkdir -p ~/.vim/backup ~/.vim/swap ~/.vim/undo
 ln -s ~/dotfiles/.vimrc ~/.vimrc 
 vim +PluginInstall +qall
 
