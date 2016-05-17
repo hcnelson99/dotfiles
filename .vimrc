@@ -46,6 +46,7 @@ set softtabstop=4 "number of spaces inserted when tab is pressed
 set expandtab "tabs are spaces
 
 set ruler "show cursor location
+set relativenumber "show relative line numbers too
 set number "show line numbers
 set showcmd " show command in bottom bar
 set cursorline
