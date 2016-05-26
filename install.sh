@@ -1,5 +1,11 @@
 #!/bin/bash
 set -ux
+
+mkdir -p ~/.config/fish/functions
+ln -s ~/dotfiles/.config/fish/config.fish ~/.config/fish/config.fish
+ln -s ~/dotfiles/.config/fish/functions/fish_user_key_bindings.fish ~/.config/fish/functions/fish_user_key_bindings.fish
+ln -s ~/dotfiles/.config/fish/functions/fish_prompt.fish ~/.config/fish/functions/fish_prompt.fish
+
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim 
 mkdir -p ~/.vim/backup ~/.vim/swap ~/.vim/undo
 ln -s ~/dotfiles/.vimrc ~/.vimrc 
