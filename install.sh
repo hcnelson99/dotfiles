@@ -14,10 +14,6 @@ vim +PlugInstall +qall
 
 ln -s ~/dotfiles/.tmux.conf ~/.tmux.conf
 
-git clone https://github.com/tarjoilija/zgen.git ~/.zgen
-ln -s ~/dotfiles/.zshenv ~/.zshenv 
-ln -s ~/dotfiles/.zshrc ~/.zshrc
-
 ln -s ~/dotfiles/.gitconfig ~/.gitconfig
 ln -s ~/dotfiles/.gitignore ~/.gitignore
 
