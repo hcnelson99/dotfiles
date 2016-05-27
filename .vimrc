@@ -1,18 +1,16 @@
 set nocompatible
 set shell=/usr/bin/bash
-filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+call plug#begin('~/.vim/plugged')
 
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'scrooloose/nerdtree'
-Plugin 'tpope/vim-fugitive'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'reedes/vim-pencil'
-Plugin 'christoomey/vim-tmux-navigator'
+Plug  'VundleVim/Vundle.vim'
+Plug  'altercation/vim-colors-solarized'
+Plug  'scrooloose/nerdtree'
+Plug  'tpope/vim-fugitive'
+Plug  'ctrlpvim/ctrlp.vim'
+Plug  'reedes/vim-pencil'
+Plug  'christoomey/vim-tmux-navigator'
 
-call vundle#end()
+call plug#end()
 filetype plugin indent on
 
 syntax enable

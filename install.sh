@@ -6,10 +6,11 @@ ln -s ~/dotfiles/.config/fish/config.fish ~/.config/fish/config.fish
 ln -s ~/dotfiles/.config/fish/functions/fish_user_key_bindings.fish ~/.config/fish/functions/fish_user_key_bindings.fish
 ln -s ~/dotfiles/.config/fish/functions/fish_prompt.fish ~/.config/fish/functions/fish_prompt.fish
 
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim 
 mkdir -p ~/.vim/backup ~/.vim/swap ~/.vim/undo
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 ln -s ~/dotfiles/.vimrc ~/.vimrc 
-vim +PluginInstall +qall
+vim +PlugInstall +qall
 
 ln -s ~/dotfiles/.tmux.conf ~/.tmux.conf
 
