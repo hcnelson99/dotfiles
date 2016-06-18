@@ -2,13 +2,15 @@ set nocompatible
 set shell=/usr/bin/bash
 call plug#begin('~/.vim/plugged')
 
-Plug  'VundleVim/Vundle.vim'
-Plug  'altercation/vim-colors-solarized'
-Plug  'scrooloose/nerdtree'
-Plug  'tpope/vim-fugitive'
-Plug  'ctrlpvim/ctrlp.vim'
-Plug  'reedes/vim-pencil'
-Plug  'christoomey/vim-tmux-navigator'
+Plug 'VundleVim/Vundle.vim'
+Plug 'altercation/vim-colors-solarized'
+Plug 'scrooloose/nerdtree'
+Plug 'tpope/vim-fugitive'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'reedes/vim-pencil'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'tpope/vim-sleuth'
+Plug 'kovisoft/slimv'
 
 call plug#end()
 filetype plugin indent on
@@ -31,12 +33,16 @@ set backupdir=~/.vim/backup//
 set directory=~/.vim/swap//
 set undodir=~/.vim/undo//
 
+let g:lisp_rainbow=1
+let g:paredit_leader=","
+
 augroup pencil
     autocmd!
     autocmd FileType markdown,mkd call pencil#init()
     autocmd FileType text call pencil#init()
 augroup END
 
+set clipboard=unnamedplus
 set backspace=2 "allow backspacing over linebreaks,indent, start of insert
 
 set tabstop=4 " number of visual spaces per TAB
@@ -50,7 +56,6 @@ set number "show line numbers
 set showcmd " show command in bottom bar
 set cursorline
 set wildmenu "visual autocomplete for command menu
-set lazyredraw "redraw only when necessary
 set showmatch "show matching braces/parens/brackets
 
 set incsearch "search as characters are entered
@@ -65,7 +70,7 @@ noremap <Leader>W :w !sudo tee % > /dev/null<CR>
 noremap <Leader>w :w<CR>
 noremap <Leader>r :source ~/.vimrc<CR>
 noremap <Leader>q :q<CR>
-noremap <Leader>p :PluginInstall<CR>
+noremap <Leader>p :PlugInstall<CR>
 
 set spell spelllang=en_us
 map <Leader>s :setlocal spell! spelllang=en_us<CR>
