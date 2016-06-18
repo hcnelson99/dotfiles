@@ -2,10 +2,8 @@ set nocompatible
 set shell=/usr/bin/bash
 call plug#begin('~/.vim/plugged')
 
-Plug 'VundleVim/Vundle.vim'
 Plug 'altercation/vim-colors-solarized'
 Plug 'scrooloose/nerdtree'
-Plug 'tpope/vim-fugitive'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'reedes/vim-pencil'
 Plug 'christoomey/vim-tmux-navigator'
