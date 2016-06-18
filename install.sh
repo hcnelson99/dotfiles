@@ -15,7 +15,6 @@ vim +PlugInstall +qall
 ln -s ~/dotfiles/.tmux.conf ~/.tmux.conf
 
 ln -s ~/dotfiles/.gitconfig ~/.gitconfig
-ln -s ~/dotfiles/.gitignore ~/.gitignore
 
 mkdir -p ~/.i3
 ln -s ~/dotfiles/.i3/config ~/.i3/config

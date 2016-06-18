@@ -5,6 +5,5 @@
 	email = hcnelson99@gmail.com
 [core]
 	editor = /usr/bin/vim
-	excludesfile = /Volumes/Homes/henry/.gitignore
 [push]
 	default = simple
