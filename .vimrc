@@ -8,6 +8,7 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'reedes/vim-pencil'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'tpope/vim-sleuth'
+Plug 'tpope/vim-commentary'
 Plug 'kovisoft/slimv'
 
 call plug#end()
