@@ -1,16 +1,14 @@
 #!/bin/bash
 set -ux
 
-mkdir -p ~/.config/fish/functions
-ln -s ~/dotfiles/.config/fish/config.fish ~/.config/fish/config.fish
-ln -s ~/dotfiles/.config/fish/functions/fish_user_key_bindings.fish ~/.config/fish/functions/fish_user_key_bindings.fish
-ln -s ~/dotfiles/.config/fish/functions/fish_prompt.fish ~/.config/fish/functions/fish_prompt.fish
-
 mkdir -p ~/.vim/backup ~/.vim/swap ~/.vim/undo
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
         https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 ln -s ~/dotfiles/.vimrc ~/.vimrc 
 vim +PlugInstall +qall
+
+ln -s ~/dotfiles/.bashrc ~/.bashrc 
+ln -s ~/dotfiles/.bash_profile ~/.bash_profile
 
 ln -s ~/dotfiles/.tmux.conf ~/.tmux.conf
 
