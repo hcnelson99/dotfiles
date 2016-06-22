@@ -9,7 +9,8 @@ Plug 'reedes/vim-pencil'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-commentary'
-Plug 'kovisoft/slimv'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
 
 call plug#end()
 filetype plugin indent on
