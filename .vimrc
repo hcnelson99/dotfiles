@@ -11,6 +11,7 @@ Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-fugitive'
 
 call plug#end()
 filetype plugin indent on
@@ -33,8 +34,7 @@ set backupdir=~/.vim/backup//
 set directory=~/.vim/swap//
 set undodir=~/.vim/undo//
 
-let g:lisp_rainbow=1
-let g:paredit_leader=","
+autocmd FileType c,cpp,cs,java setlocal commentstring=//\ %s
 
 augroup pencil
     autocmd!
