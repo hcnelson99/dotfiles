@@ -5,6 +5,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'altercation/vim-colors-solarized'
 Plug 'scrooloose/nerdtree'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'mhinz/vim-grepper'
 Plug 'reedes/vim-pencil'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'tpope/vim-sleuth'
@@ -30,6 +31,14 @@ if !has("gui_running")
     set term=screen-256color
 endif
 
+let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+
+let g:grepper = {
+    \ 'tools': ['ag', 'git', 'grep'],
+    \ 'open':  1,
+    \ 'jump':  0,
+    \ }
+
 let g:hardtime_maxcount = 2
 let g:hardtime_default_on = 1
 let g:hardtime_allow_different_key = 1
@@ -42,8 +51,6 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 set backupdir=~/.vim/backup//
 set directory=~/.vim/swap//
 set undodir=~/.vim/undo//
-
-autocmd FileType c,cpp,cs,java setlocal commentstring=//\ %s
 
 augroup pencil
     autocmd!
