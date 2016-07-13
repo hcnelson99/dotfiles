@@ -4,7 +4,7 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'altercation/vim-colors-solarized'
 Plug 'scrooloose/nerdtree'
-Plug 'ctrlpvim/ctrlp.vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'mhinz/vim-grepper'
 Plug 'reedes/vim-pencil'
 Plug 'christoomey/vim-tmux-navigator'
@@ -13,9 +13,9 @@ Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-fugitive'
-Plug 'takac/vim-hardtime'
 Plug 'justinmk/vim-sneak'
 Plug 'raimondi/delimitmate'
+Plug 'nathanaelkane/vim-indent-guides'
 
 call plug#end()
 filetype plugin indent on
@@ -31,17 +31,11 @@ if !has("gui_running")
     set term=screen-256color
 endif
 
-let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-
 let g:grepper = {
     \ 'tools': ['ag', 'git', 'grep'],
     \ 'open':  1,
     \ 'jump':  0,
     \ }
-
-let g:hardtime_maxcount = 2
-let g:hardtime_default_on = 1
-let g:hardtime_allow_different_key = 1
 
 let g:sneak#streak = 1
 
@@ -67,6 +61,8 @@ set softtabstop=4 "number of spaces inserted when tab is pressed
 set expandtab "tabs are spaces
 set autoindent
 set smartindent
+set autoread
+set scrolloff=2
 
 set ruler "show cursor location
 set relativenumber "show relative line numbers too
@@ -86,6 +82,10 @@ noremap <Leader>w :w<CR>
 noremap <Leader>r :source ~/.vimrc<CR>
 noremap <Leader>q :q<CR>
 noremap <Leader>p :PlugInstall<CR>
+noremap <Leader>g :Grepper<CR>
+noremap <Leader>i :IndentGuidesToggle<CR>
+
+noremap <C-p> :FZF<CR>
 
 set spell spelllang=en_us
 map <Leader>s :setlocal spell! spelllang=en_us<CR>
