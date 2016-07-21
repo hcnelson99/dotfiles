@@ -20,4 +20,5 @@ ln -s ~/dotfiles/.i3status.conf ~/.i3status.conf
 ln -s ~/dotfiles/.Xresources ~/.Xresources
 ln -s ~/dotfiles/.Xmodmap ~/.Xmodmap
 ln -s ~/dotfiles/.xinitrc ~/.xinitrc
+ln -s ~/dotfiles/.inputrc ~/.inputrc
 ln -s ~/dotfiles/.xbindkeysrc ~/.xbindkeysrc
