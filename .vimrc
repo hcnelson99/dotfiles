@@ -37,6 +37,9 @@ let g:grepper = {
     \ 'jump':  0,
     \ }
 
+nmap gs  <plug>(GrepperOperator)
+xmap gs  <plug>(GrepperOperator)
+
 let g:sneak#streak = 1
 
 " disable comment continuation when inserting new lines
