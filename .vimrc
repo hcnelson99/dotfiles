@@ -16,6 +16,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'justinmk/vim-sneak'
 Plug 'raimondi/delimitmate'
 Plug 'nathanaelkane/vim-indent-guides'
+Plug 'ntpeters/vim-better-whitespace'
 
 call plug#end()
 filetype plugin indent on
