@@ -14,7 +14,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-fugitive'
 Plug 'justinmk/vim-sneak'
-Plug 'raimondi/delimitmate'
+Plug 'maxbrunsfeld/vim-yankstack'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'ntpeters/vim-better-whitespace'
 
@@ -38,8 +38,12 @@ let g:grepper = {
     \ 'jump':  0,
     \ }
 
-nmap gs  <plug>(GrepperOperator)
-xmap gs  <plug>(GrepperOperator)
+nmap gs <plug>(GrepperOperator)
+xmap gs <plug>(GrepperOperator)
+
+let g:yankstack_yank_keys = ['c', 'C', 'd', 'D', 'x', 'X', 'y', 'Y']
+nmap <Leader>p <Plug>yankstack_substitute_older_paste
+nmap <Leader>P <Plug>yankstack_substitute_newer_paste
 
 let g:sneak#streak = 1
 
@@ -85,9 +89,9 @@ noremap <Leader>W :w !sudo tee % > /dev/null<CR>
 noremap <Leader>w :w<CR>
 noremap <Leader>r :source ~/.vimrc<CR>
 noremap <Leader>q :q<CR>
-noremap <Leader>p :PlugInstall<CR>
+noremap <Leader>i :PlugInstall<CR>
 noremap <Leader>g :Grepper<CR>
-noremap <Leader>i :IndentGuidesToggle<CR>
+noremap <Leader><Tab> :IndentGuidesToggle<CR>
 
 noremap <C-p> :FZF<CR>
 
