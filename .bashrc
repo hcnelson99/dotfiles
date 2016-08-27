@@ -10,4 +10,7 @@ export CVS_RSH="/usr/bin/ssh"
 alias ls='ls --color=always'
 PS1='[\u@\h \W]\$ '
 
+export HISTFILESIZE=
+export HISTSIZE=
+
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
