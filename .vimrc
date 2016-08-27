@@ -41,6 +41,8 @@ let g:grepper = {
 nmap gs <plug>(GrepperOperator)
 xmap gs <plug>(GrepperOperator)
 
+let mapleader="\<Space>"
+
 let g:yankstack_yank_keys = ['c', 'C', 'd', 'D', 'x', 'X', 'y', 'Y']
 call yankstack#setup()
 nmap <Leader>p <Plug>yankstack_substitute_older_paste
@@ -85,7 +87,6 @@ set incsearch "search as characters are entered
 
 inoremap jk <esc>
 
-let mapleader="\<Space>"
 noremap <Leader>W :w !sudo tee % > /dev/null<CR>
 noremap <Leader>w :w<CR>
 noremap <Leader>r :source ~/.vimrc<CR>
