@@ -1,2 +1,9 @@
 URxvt.font: xft:Source Code Pro for Powerline:size=10
 URxvt.boldFont: xft:Source Code Pro for Powerline:bold:size=10
+! do not scroll with output
+URxvt*scrollTtyOutput: false
+! scroll in relation to buffer (with mouse scroll or Shift+Page Up)
+URxvt*scrollWithBuffer: true
+! scroll back to the bottom on keypress
+URxvt*scrollTtyKeypress: true
+URxvt*scrollBar: false
