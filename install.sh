@@ -1,13 +1,16 @@
 #!/bin/bash
 set -ux
 
-mkdir -p ~/.vim/backup ~/.vim/swap ~/.vim/undo
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-ln -s ~/dotfiles/.vimrc ~/.vimrc 
-vim +PlugInstall +qall
+# mkdir -p ~/.vim/backup ~/.vim/swap ~/.vim/undo
+# curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+#         https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+# ln -s ~/dotfiles/.vimrc ~/.vimrc
+# vim +PlugInstall +qall
 
-ln -s ~/dotfiles/.bashrc ~/.bashrc 
+git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
+ln -s ~/dotfiles/.spacemacs ~/.spacemacs
+
+ln -s ~/dotfiles/.bashrc ~/.bashrc
 ln -s ~/dotfiles/.bash_profile ~/.bash_profile
 
 ln -s ~/dotfiles/.tmux.conf ~/.tmux.conf
