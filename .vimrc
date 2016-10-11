@@ -80,10 +80,10 @@ set incsearch "search as characters are entered
 
 inoremap jk <esc>
 
-noremap <Leader>W :w !sudo tee % > /dev/null<CR>
-noremap <Leader>w :w<CR>
+noremap <Leader>fS :w !sudo tee % > /dev/null<CR>
+noremap <Leader>fs :w<CR>
 noremap <Leader>r :source ~/.vimrc<CR>
-noremap <Leader>q :q<CR>
+noremap <Leader>wd :q<CR>
 noremap <Leader>i :PlugInstall<CR>
 noremap <Leader>g :Grepper<CR>
 noremap <Leader><Tab> :IndentGuidesToggle<CR>
