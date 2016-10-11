@@ -83,7 +83,7 @@ inoremap jk <esc>
 noremap <Leader>fS :w !sudo tee % > /dev/null<CR>
 noremap <Leader>fs :w<CR>
 noremap <Leader>r :source ~/.vimrc<CR>
-noremap <Leader>wd :q<CR>
+noremap <Leader>bd :q<CR>
 noremap <Leader>i :PlugInstall<CR>
 noremap <Leader>g :Grepper<CR>
 noremap <Leader><Tab> :IndentGuidesToggle<CR>
