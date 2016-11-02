@@ -17,6 +17,11 @@ ln -s ~/dotfiles/.tmux.conf ~/.tmux.conf
 
 ln -s ~/dotfiles/.gitconfig ~/.gitconfig
 
+mkdir -p ~/.config/mpd
+ln -s ~/dotfiles/.config/mpd/mpd.conf ~/.config/mpd/mpd.conf
+mkdir -p ~/.ncmpcpp
+ln -s ~/dotfiles/.ncmpcpp/config ~/.ncmpcpp/config
+
 mkdir -p ~/.i3
 ln -s ~/dotfiles/.i3/config ~/.i3/config
 ln -s ~/dotfiles/.i3status.conf ~/.i3status.conf
