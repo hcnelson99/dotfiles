@@ -1,5 +1,5 @@
 xrdb ~/.Xresources
 xmodmap ~/.Xmodmap
 xbindkeys
-nm-applet &
-exec i3
+sxhkd &
+exec bspwm
