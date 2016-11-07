@@ -2,7 +2,6 @@ set nocompatible
 set shell=/usr/bin/bash
 call plug#begin('~/.vim/plugged')
 
-Plug 'altercation/vim-colors-solarized'
 Plug 'scrooloose/nerdtree'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'mhinz/vim-grepper'
@@ -22,14 +21,9 @@ filetype plugin indent on
 
 syntax enable
 set background=light
-let g:solarized_termcolors=256
-colorscheme solarized
+colorscheme default
 
-" use 256 colors in terminal
-if !has("gui_running")
-    set t_Co=256
-    set term=screen-256color
-endif
+set t_Co=16
 
 let g:grepper = {
     \ 'tools': ['ag', 'git', 'grep'],
@@ -44,8 +38,8 @@ let mapleader="\<Space>"
 
 let g:yankstack_yank_keys = ['c', 'C', 'd', 'D', 'x', 'X', 'y', 'Y']
 call yankstack#setup()
-nmap <Leader>p <Plug>yankstack_substitute_older_paste
-nmap <Leader>P <Plug>yankstack_substitute_newer_paste
+nnoremap <C-k> <Plug>yankstack_substitute_older_paste
+nnoremap <C-j> <Plug>yankstack_substitute_newer_paste
 
 let g:sneak#streak = 1
 
@@ -72,7 +66,6 @@ set ruler "show cursor location
 set relativenumber "show relative line numbers too
 set number "show line numbers
 set showcmd " show command in bottom bar
-set cursorline
 set wildmenu "visual autocomplete for command menu
 set showmatch "show matching braces/parens/brackets
 
@@ -87,8 +80,6 @@ noremap <Leader>bd :q<CR>
 noremap <Leader>i :PlugInstall<CR>
 noremap <Leader>g :Grepper<CR>
 noremap <Leader><Tab> :IndentGuidesToggle<CR>
-
-noremap <C-p> :FZF<CR>
 
 set spell spelllang=en_us
 map <Leader>s :setlocal spell! spelllang=en_us<CR>
