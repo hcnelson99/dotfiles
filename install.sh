@@ -15,8 +15,8 @@ stow zsh
 stow X
 stow git
 stow bash
-# stow i3
+stow i3
 stow tmux
-stow bspwm
-stow yabar
+# stow bspwm
+# stow yabar
 stow ncmpcpp

@@ -1,5 +1,5 @@
 set nocompatible
-set shell=/usr/bin/bash
+set shell=/usr/bin/zsh
 call plug#begin('~/.vim/plugged')
 
 Plug 'scrooloose/nerdtree'
@@ -81,6 +81,6 @@ noremap <Leader>i :PlugInstall<CR>
 noremap <Leader>g :Grepper<CR>
 noremap <Leader><Tab> :IndentGuidesToggle<CR>
 
-set spell spelllang=en_us
+set nospell
 map <Leader>s :setlocal spell! spelllang=en_us<CR>
 set wrap lbr
