@@ -10,7 +10,8 @@
 #
 new_window none
 
-gaps inner 20
+gaps inner 15
+smart_gaps on
 
 set $mod Mod1
 
