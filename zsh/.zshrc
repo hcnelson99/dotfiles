@@ -5,6 +5,9 @@ setopt appendhistory autocd correct extendedglob notify
 unsetopt beep
 bindkey -v
 
+# Case-sensitive completion (oh-my-zsh)
+CASE_SENSITIVE="true"
+
 source ~/.zgen/zgen.zsh
 
 if ! zgen saved; then
