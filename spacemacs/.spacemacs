@@ -249,6 +249,7 @@ you should place your code here."
   (setq-default evil-escape-key-sequence "jk")
   (define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)
   (define-key evil-normal-state-map (kbd "k") 'evil-previous-visual-line)
+  (global-hl-line-mode 0)
   (setq org-directory "~/org")
   (setq org-agenda-files '("~/org"))
   (setq org-default-notes-file "~/org/TODO.org")
