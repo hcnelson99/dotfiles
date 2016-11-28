@@ -27,4 +27,4 @@ if ! zgen saved; then
     zgen save
 fi
 
-alias vim="emacsclient -nw -a ''"
+alias vim="nvim"
