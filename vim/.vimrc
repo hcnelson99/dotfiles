@@ -3,7 +3,6 @@ set shell=/usr/bin/zsh
 call plug#begin('~/.vim/plugged')
 
 Plug 'scrooloose/nerdtree'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'mhinz/vim-grepper'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'tpope/vim-sleuth'

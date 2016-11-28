@@ -11,5 +11,3 @@ PS1='[\u@\h \W]\$ '
 
 export HISTFILESIZE=
 export HISTSIZE=
-
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
