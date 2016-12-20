@@ -7,3 +7,5 @@
 	editor = /usr/bin/vim
 [push]
 	default = simple
+[alias]
+	ds = diff --staged
