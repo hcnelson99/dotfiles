@@ -12,11 +12,12 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'justinmk/vim-sneak'
-Plug 'maxbrunsfeld/vim-yankstack'
+Plug 'bfredl/nvim-miniyank'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'noahfrederick/vim-noctu'
 Plug 'rust-lang/rust.vim'
+Plug 'tommcdo/vim-exchange'
 
 call plug#end()
 filetype plugin indent on
@@ -37,10 +38,10 @@ xmap gs <plug>(GrepperOperator)
 
 let mapleader="\<Space>"
 
-let g:yankstack_yank_keys = ['c', 'C', 'd', 'D', 'x', 'X', 'y', 'Y']
-call yankstack#setup()
-nnoremap <C-k> <Plug>yankstack_substitute_older_paste
-nnoremap <C-j> <Plug>yankstack_substitute_newer_paste
+map p <Plug>(miniyank-autoput)
+map P <Plug>(miniyank-autoPut)
+map <c-k> <Plug>(miniyank-cycle)
+map <c-j> g-
 
 let g:sneak#streak = 1
 
@@ -54,8 +55,8 @@ set undodir=~/.vim/undo//
 set clipboard=unnamedplus
 set backspace=2 "allow backspacing over linebreaks,indent, start of insert
 
-" set tabstop=4 " number of visual spaces per TAB
-" set shiftwidth=4 "indent width used for autoindent
+set tabstop=4 " number of visual spaces per TAB
+set shiftwidth=4 "indent width used for autoindent
 " set softtabstop=4 "number of spaces inserted when tab is pressed
 " set expandtab "tabs are spaces
 set autoindent
@@ -71,6 +72,7 @@ set wildmenu "visual autocomplete for command menu
 set showmatch "show matching braces/parens/brackets
 
 set incsearch "search as characters are entered
+set inccommand=nosplit
 
 inoremap jk <esc>
 

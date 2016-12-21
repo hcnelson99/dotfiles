@@ -1,5 +1,7 @@
-URxvt.font: xft:Source Code Pro for Powerline:size=8
-URxvt.boldFont: xft:Source Code Pro for Powerline:bold:size=8
+URxvt.font: xft:gohufont:size=8:antialias=true
+! URxvt.font: xft:Source Code Pro for Powerline:size=8:antialias=true
+! URxvt.boldFont: xft:Source Code Pro for Powerline:bold:size=8
+
 ! do not scroll with output
 URxvt.scrollTtyOutput: false
 ! scroll in relation to buffer (with mouse scroll or Shift+Page Up)

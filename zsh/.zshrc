@@ -22,7 +22,7 @@ if ! zgen saved; then
     zgen oh-my-zsh plugins/vi-mode
     zgen load zsh-users/zsh-syntax-highlighting
 
-    zgen oh-my-zsh themes/agnoster
+    zgen oh-my-zsh themes/bira
 
     zgen save
 fi
