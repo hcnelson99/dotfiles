@@ -51,6 +51,7 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 set backupdir=~/.vim/backup//
 set directory=~/.vim/swap//
 set undodir=~/.vim/undo//
+set noswapfile
 
 set clipboard=unnamedplus
 set backspace=2 "allow backspacing over linebreaks,indent, start of insert
