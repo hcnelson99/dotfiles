@@ -1,6 +1,6 @@
-"xbacklight -inc 15 -steps 1"
+"light -A 5%"
   XF86MonBrightnessUp
-"xbacklight -dec 15 -steps 1"
+"light -U 5%"
   XF86MonBrightnessDown
 "sh -c "pactl set-sink-mute 0 false ; pactl set-sink-volume 0 +5%""
   XF86AudioRaiseVolume
