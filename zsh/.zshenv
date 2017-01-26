@@ -1,6 +1,7 @@
 export XDG_CONFIG_HOME="$HOME/.config"
 
 export TERM=rxvt-unicode
+export EDITOR=nvim
 
 export CVSROOT=:ext:henry@cvs.fsl.cs.sunysb.edu:/scm/cvsroot
 export CVS_RSH=/usr/bin/ssh

@@ -28,3 +28,4 @@ if ! zgen saved; then
 fi
 
 alias vim="nvim"
+alias c="urxvt &"
