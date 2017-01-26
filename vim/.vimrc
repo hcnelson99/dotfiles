@@ -40,8 +40,7 @@ let mapleader="\<Space>"
 
 map p <Plug>(miniyank-autoput)
 map P <Plug>(miniyank-autoPut)
-map <c-k> <Plug>(miniyank-cycle)
-map <c-j> g-
+map <C-k> <Plug>(miniyank-cycle)
 
 let g:sneak#streak = 1
 
