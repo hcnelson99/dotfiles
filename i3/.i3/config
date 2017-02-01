@@ -56,6 +56,7 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+q kill
 
 bindsym $mod+Shift+q exec i3lock-fancy
+bindsym $mod+n exec sh -c "ps aux | grep redshift && pkill -USR1 '^redshift$' || redshift"
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec dmenu_run -fn "Gohu GohuFont-10"
