@@ -187,7 +187,7 @@ bar {
         modifier $mod
         status_command i3status
         colors {
-                statusline #eceff1
-                background #263238
+                statusline #C5C8C6
+                background #232C31
         }
 }

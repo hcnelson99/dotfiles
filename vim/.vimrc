@@ -15,7 +15,7 @@ Plug 'justinmk/vim-sneak'
 Plug 'bfredl/nvim-miniyank'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'ntpeters/vim-better-whitespace'
-Plug 'noahfrederick/vim-noctu'
+Plug 'w0ng/vim-hybrid'
 Plug 'rust-lang/rust.vim'
 Plug 'tommcdo/vim-exchange'
 
@@ -23,9 +23,11 @@ call plug#end()
 filetype plugin indent on
 
 syntax enable
-set t_Co=16
 
-colorscheme noctu
+set background=dark
+let g:hybrid_custom_term_colors = 1
+let g:hybrid_reduced_contrast = 1
+colorscheme hybrid
 
 let g:grepper = {
     \ 'tools': ['ag', 'git', 'grep'],
