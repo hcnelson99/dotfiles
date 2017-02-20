@@ -3,15 +3,12 @@ set shell=/usr/bin/zsh
 call plug#begin('~/.vim/plugged')
 
 Plug 'scrooloose/nerdtree'
-Plug 'mhinz/vim-grepper'
-Plug 'christoomey/vim-tmux-navigator'
 Plug 'tpope/vim-sleuth'
 Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
-Plug 'justinmk/vim-sneak'
 Plug 'bfredl/nvim-miniyank'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'ntpeters/vim-better-whitespace'
@@ -24,29 +21,29 @@ filetype plugin indent on
 
 syntax enable
 
+let mapleader="\<Space>"
+
 let g:gitgutter_map_keys = 0
+
+noremap <Leader>gd :Gdiff<CR>
+noremap <Leader>gw :Gwrite<CR>
+noremap <Leader>gr :Gread<CR>
+noremap <Leader>gs :Gstatus<CR>
+noremap <Leader>gc :Gcommit<CR>
+noremap <Leader>gp :Gpush<CR>
+
+set diffopt+=vertical
+noremap <Leader>dp :diffput<CR>
+noremap <Leader>dg :diffget<CR>
+noremap <Leader>du :diffupdate<CR>
+xnoremap <Leader>dp :diffput<CR>
+xnoremap <Leader>dg :diffget<CR>
+xnoremap <Leader>du :diffupdate<CR>
 
 set background=dark
 let g:hybrid_custom_term_colors = 1
 let g:hybrid_reduced_contrast = 1
 colorscheme hybrid
-
-let g:grepper = {
-    \ 'tools': ['ag', 'git', 'grep'],
-    \ 'open':  1,
-    \ 'jump':  0,
-    \ }
-
-nmap gs <plug>(GrepperOperator)
-xmap gs <plug>(GrepperOperator)
-
-let mapleader="\<Space>"
-
-map p <Plug>(miniyank-autoput)
-map P <Plug>(miniyank-autoPut)
-map <C-k> <Plug>(miniyank-cycle)
-
-let g:sneak#streak = 1
 
 " disable comment continuation when inserting new lines
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
@@ -86,8 +83,12 @@ noremap <Leader>fs :w<CR>
 noremap <Leader>r :source ~/.vimrc<CR>
 noremap <Leader>bd :q<CR>
 noremap <Leader>i :PlugInstall<CR>
-noremap <Leader>g :Grepper<CR>
 noremap <Leader><Tab> :IndentGuidesToggle<CR>
+
+noremap <C-h> <C-w>h
+noremap <C-j> <C-w>j
+noremap <C-k> <C-w>k
+noremap <C-l> <C-w>l
 
 set nospell
 map <Leader>s :setlocal spell! spelllang=en_us<CR>
