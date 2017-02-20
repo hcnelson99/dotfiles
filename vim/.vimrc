@@ -81,8 +81,7 @@ set inccommand=nosplit
 inoremap jk <esc>
 
 noremap <Leader>h :nohls<CR>
-noremap <Leader>fS :w !sudo tee % > /dev/null<CR>
-noremap <Leader>fs :w<CR>
+noremap <Leader>W :w !sudo tee % > /dev/null<CR>
 noremap <Leader>r :source ~/.vimrc<CR>
 noremap <Leader>bd :q<CR>
 noremap <Leader>i :PlugInstall<CR>
