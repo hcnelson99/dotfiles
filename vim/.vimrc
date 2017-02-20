@@ -23,6 +23,9 @@ syntax enable
 
 let mapleader="\<Space>"
 
+noremap ; :
+noremap : ;
+
 let g:gitgutter_map_keys = 0
 
 noremap <Leader>gd :Gdiff<CR>
