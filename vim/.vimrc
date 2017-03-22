@@ -9,12 +9,11 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-unimpaired'
+Plug 'easymotion/vim-easymotion'
 Plug 'airblade/vim-gitgutter'
-Plug 'bfredl/nvim-miniyank'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'w0ng/vim-hybrid'
-Plug 'rust-lang/rust.vim'
 Plug 'tommcdo/vim-exchange'
 
 call plug#end()
@@ -87,6 +86,8 @@ noremap <Leader>r :source ~/.vimrc<CR>
 noremap <Leader>bd :q<CR>
 noremap <Leader>i :PlugInstall<CR>
 noremap <Leader><Tab> :IndentGuidesToggle<CR>
+nnoremap <Leader>l :<C-u>execute 'file '.fnameescape(resolve(expand('%:p')))<bar>
+    \ call fugitive#detect(fnameescape(expand('%:p:h')))<CR>
 
 noremap <C-h> <C-w>h
 noremap <C-j> <C-w>j
