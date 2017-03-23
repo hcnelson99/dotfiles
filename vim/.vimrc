@@ -3,6 +3,7 @@ set shell=/usr/bin/zsh
 call plug#begin('~/.vim/plugged')
 
 Plug 'scrooloose/nerdtree'
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tpope/vim-sleuth'
 Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-surround'
@@ -69,7 +70,6 @@ set autoread
 set scrolloff=2
 
 set ruler "show cursor location
-set relativenumber "show relative line numbers too
 set number "show line numbers
 set showcmd " show command in bottom bar
 set wildmenu "visual autocomplete for command menu
