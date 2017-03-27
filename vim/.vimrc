@@ -71,6 +71,7 @@ set scrolloff=2
 
 set ruler "show cursor location
 set number "show line numbers
+set relativenumber
 set showcmd " show command in bottom bar
 set wildmenu "visual autocomplete for command menu
 set showmatch "show matching braces/parens/brackets
