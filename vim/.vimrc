@@ -4,18 +4,19 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'scrooloose/nerdtree'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'ntpeters/vim-better-whitespace'
 Plug 'tpope/vim-sleuth'
 Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-unimpaired'
-Plug 'easymotion/vim-easymotion'
-Plug 'airblade/vim-gitgutter'
-Plug 'nathanaelkane/vim-indent-guides'
-Plug 'ntpeters/vim-better-whitespace'
-Plug 'w0ng/vim-hybrid'
 Plug 'tommcdo/vim-exchange'
+Plug 'easymotion/vim-easymotion'
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+Plug 'w0ng/vim-hybrid'
+Plug 'jpalardy/vim-slime'
 
 call plug#end()
 filetype plugin indent on
@@ -26,6 +27,8 @@ let mapleader="\<Space>"
 
 noremap ; :
 noremap : ;
+
+let g:slime_target = "tmux"
 
 let g:gitgutter_map_keys = 0
 
