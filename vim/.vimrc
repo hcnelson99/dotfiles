@@ -16,7 +16,6 @@ Plug 'easymotion/vim-easymotion'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'w0ng/vim-hybrid'
-Plug 'jpalardy/vim-slime'
 
 call plug#end()
 filetype plugin indent on
@@ -27,8 +26,6 @@ let mapleader="\<Space>"
 
 noremap ; :
 noremap : ;
-
-let g:slime_target = "tmux"
 
 let g:gitgutter_map_keys = 0
 
@@ -85,6 +82,7 @@ set inccommand=nosplit
 inoremap jk <esc>
 
 noremap <Leader>h :nohls<CR>
+noremap <Leader>w :w<CR>
 noremap <Leader>W :w !sudo tee % > /dev/null<CR>
 noremap <Leader>r :source ~/.vimrc<CR>
 noremap <Leader>bd :q<CR>
