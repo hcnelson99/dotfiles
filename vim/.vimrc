@@ -77,12 +77,13 @@ set wildmenu "visual autocomplete for command menu
 set showmatch "show matching braces/parens/brackets
 
 set incsearch "search as characters are entered
-set inccommand=nosplit
+set inccommand=nosplit "neovim live preview
 
 inoremap jk <esc>
 
 noremap <Leader>h :nohls<CR>
 noremap <Leader>w :w<CR>
+noremap <Leader>q :q<CR>
 noremap <Leader>W :w !sudo tee % > /dev/null<CR>
 noremap <Leader>r :source ~/.vimrc<CR>
 noremap <Leader>bd :q<CR>
