@@ -61,7 +61,7 @@ bindsym $mod+v exec nmcli con up id oli
 bindsym $mod+Shift+v exec nmcli con down id oli
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run -fn "Gohu GohuFont-10"
+bindsym $mod+d exec rofi -show run
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
