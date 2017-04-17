@@ -24,9 +24,6 @@ syntax enable
 
 let mapleader="\<Space>"
 
-noremap ; :
-noremap : ;
-
 let g:gitgutter_map_keys = 0
 
 noremap <Leader>gd :Gdiff<CR>
@@ -71,7 +68,6 @@ set scrolloff=2
 
 set ruler "show cursor location
 set number "show line numbers
-set relativenumber
 set showcmd " show command in bottom bar
 set wildmenu "visual autocomplete for command menu
 set showmatch "show matching braces/parens/brackets
@@ -80,6 +76,8 @@ set incsearch "search as characters are entered
 set inccommand=nosplit "neovim live preview
 
 inoremap jk <esc>
+
+noremap Y y$
 
 noremap <Leader>h :nohls<CR>
 noremap <Leader>w :w<CR>
