@@ -49,9 +49,9 @@ colorscheme hybrid
 " disable comment continuation when inserting new lines
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
-set backupdir=~/.vim/backup//
-set directory=~/.vim/swap//
 set undodir=~/.vim/undo//
+set nobackup
+set nowritebackup
 set noswapfile
 
 set clipboard=unnamedplus
