@@ -43,8 +43,8 @@ bindsym $mod+Shift+a border none
 # use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-# open chromium
-bindsym $mod+c exec chromium
+# open web browser
+bindsym $mod+c exec google-chrome-stable
 
 #lock screen
 bindsym $mod+p exec i3lock-fancy
