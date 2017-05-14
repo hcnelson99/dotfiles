@@ -6,6 +6,8 @@ if [ "$(id -u)" == "0" ]; then
   exit 1
 fi
 
+sudo echo "Beginning installation..."
+
 mkdir -p ~/builds
 cd ~/builds
 git clone https://aur.archlinux.org/cower.git
