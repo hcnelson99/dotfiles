@@ -8,21 +8,21 @@ fi
 
 sudo echo "Beginning installation..."
 
-# mkdir -p ~/builds
-# cd ~/builds
-# git clone https://aur.archlinux.org/cower.git
-# cd cower
-# gpg --recv-keys --keyserver hkp://pgp.mit.edu 1EB2638FF56C0C53
-# yes | makepkg -sri
-# cd ..
-# git clone https://aur.archlinux.org/pacaur.git
-# cd pacaur
-# yes | makepkg -sri
-#
-# yes | pacaur -S reflector
-#
-# echo "Updating mirrorlist..."
-# sudo reflector --latest 15 --protocol http --protocol https --sort rate --save /etc/pacman.d/mirrorlist
+mkdir -p ~/builds
+cd ~/builds
+git clone https://aur.archlinux.org/cower.git
+cd cower
+gpg --recv-keys --keyserver hkp://pgp.mit.edu 1EB2638FF56C0C53
+yes | makepkg -sri
+cd ..
+git clone https://aur.archlinux.org/pacaur.git
+cd pacaur
+yes | makepkg -sri
+
+yes | pacaur -S reflector
+
+echo "Updating mirrorlist..."
+sudo reflector --latest 15 --protocol http --protocol https --sort rate --save /etc/pacman.d/mirrorlist
 
 cd ~/dotfiles
 
