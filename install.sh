@@ -31,7 +31,7 @@ I3="i3-gaps rofi i3lock-fancy-git i3status"
 XORG="xorg-server xorg-xinit xorg-xmodmap feh"
 NET="networkmanager networkmanager-openvpn network-manager-applet" # google-chrome"
 AUDIO="pulseaudio"
-FONT="gohufont"
+FONT="gohufont fonts-meta-base"
 
 echo "Select a xorg provider"
 pacaur -S $XORG
