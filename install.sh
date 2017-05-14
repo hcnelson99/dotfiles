@@ -11,11 +11,25 @@ cd builds
 git clone https://aur.archlinux.org/cower.git
 cd cower
 gpg --recv-keys --keyserver hkp://pgp.mit.edu 1EB2638FF56C0C53
-makepkg -sri
+yes | makepkg -sri
 cd ..
 git clone https://aur.archlinux.org/pacaur.git
 cd pacaur
-makepkg -sri
+yes | makepkg -sri
+
+pacaur -S reflector
+
+echo "Updating mirrorlist..."
+sudo reflector --latest 15 --protocol http --protocol https --sort rate --save /etc/pacman.d/mirrorlist
+
+UTIL="vim neovim stow redshift"
+XORG="xorg-server xorg-xinit xorg-xmodmap feh"
+NET="networkmanager networkmanager-openvpn network-manager-applet google-chrome"
+AUDIO="pulseaudio"
+PANDOC="texlive-most"
+
+
+yes | pacaur -Syu $UTIL $XORG $NET $AUDIO $PANDOC
 
 stow vim
 mkdir -p ~/.config
