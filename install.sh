@@ -26,16 +26,18 @@ sudo echo "Beginning installation..."
 
 cd ~/dotfiles
 
-UTIL="vim neovim stow redshift"
+UTIL="vim neovim stow redshift tmux"
 I3="i3-gaps rofi i3lock-fancy-git i3status"
 XORG="xorg-server xorg-xinit xorg-xmodmap feh"
-NET="networkmanager networkmanager-openvpn network-manager-applet google-chrome"
+NET="networkmanager networkmanager-openvpn network-manager-applet" # google-chrome"
 AUDIO="pulseaudio"
 
 echo "Select a xorg provider"
 pacaur -S $XORG
 
 yes | pacaur -Syu --noedit $UTIL $NET $AUDIO $I3
+
+sudo systemctl enable NetworkManager
 
 stow vim
 mkdir -p ~/.config
@@ -47,10 +49,13 @@ ln -s ~/.vimrc ~/.config/nvim/init.vim
 git clone https://github.com/tarjoilija/zgen.git ~/.zgen
 stow zsh
 
+sudo chsh $USER -s `which zsh`
+
 stow X
 stow fontconfig
 stow git
-stow bash
 stow i3
 stow tmux
-stow ncmpcpp
+# stow ncmpcpp
+# stow bash
+echo "Logout and in to start X"
