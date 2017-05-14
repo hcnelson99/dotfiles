@@ -1,6 +1,22 @@
 #!/bin/bash
 set -ux
 
+if [ "$(id -u)" == "0" ]; then
+  echo "Run without sudo"
+  exit 1
+fi
+
+mkdir -p ~/builds
+cd builds
+git clone https://aur.archlinux.org/cower.git
+cd cower
+gpg --recv-keys --keyserver hkp://pgp.mit.edu 1EB2638FF56C0C53
+makepkg -sri
+cd ..
+git clone https://aur.archlinux.org/pacaur.git
+cd pacaur
+makepkg -sri
+
 stow vim
 mkdir -p ~/.config
 ln -s ~/.vim ~/.config/nvim
