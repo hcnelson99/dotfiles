@@ -27,7 +27,7 @@ sudo echo "Beginning installation..."
 cd ~/dotfiles
 
 UTIL="vim neovim stow redshift"
-XORG="xorg-server libglvnd xorg-xinit xorg-xmodmap feh"
+XORG="xorg-server xorg-xinit xorg-xmodmap feh"
 NET="networkmanager networkmanager-openvpn network-manager-applet google-chrome"
 AUDIO="pulseaudio"
 
