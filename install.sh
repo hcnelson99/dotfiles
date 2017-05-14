@@ -27,7 +27,7 @@ sudo echo "Beginning installation..."
 cd ~/dotfiles
 
 UTIL="vim neovim stow redshift"
-I3="i3-gaps rofi i3lock-fancy i3bar"
+I3="i3-gaps rofi i3lock-fancy i3status"
 XORG="xorg-server xorg-xinit xorg-xmodmap feh"
 NET="networkmanager networkmanager-openvpn network-manager-applet google-chrome"
 AUDIO="pulseaudio"
