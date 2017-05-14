@@ -25,7 +25,7 @@ echo "Updating mirrorlist..."
 sudo reflector --latest 15 --protocol http --protocol https --sort rate --save /etc/pacman.d/mirrorlist
 
 UTIL="vim neovim stow redshift"
-XORG="xorg-server xorg-xinit xorg-xmodmap feh"
+XORG="xorg-server libglvnd xorg-xinit xorg-xmodmap feh"
 NET="networkmanager networkmanager-openvpn network-manager-applet google-chrome"
 AUDIO="pulseaudio"
 
