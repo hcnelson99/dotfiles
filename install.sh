@@ -29,9 +29,9 @@ cd ~/dotfiles
 sudo mkdir -p /etc/pacman.d/hooks
 sudo cp mirrorupgrade.hook /etc/pacman.d/hooks
 
-UTIL="vim neovim stow redshift tmux zsh"
-I3="i3-gaps rofi i3lock-fancy-git i3status"
-XORG="xorg-server xorg-xinit xorg-xmodmap feh"
+UTIL="vim neovim stow redshift tmux zsh rxvt-unicode light"
+I3="i3-gaps rofi i3lock-fancy-git unclutter-xfixes-git"
+XORG="xorg-server xorg-xinit xorg-xmodmap feh xbindkeys"
 NET="networkmanager networkmanager-openvpn network-manager-applet" # google-chrome"
 AUDIO="pulseaudio"
 FONT="gohufont fonts-meta-base"
