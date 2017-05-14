@@ -26,10 +26,8 @@ UTIL="vim neovim stow redshift"
 XORG="xorg-server xorg-xinit xorg-xmodmap feh"
 NET="networkmanager networkmanager-openvpn network-manager-applet google-chrome"
 AUDIO="pulseaudio"
-PANDOC="texlive-most"
 
-
-yes | pacaur -Syu $UTIL $XORG $NET $AUDIO $PANDOC
+yes | pacaur -Syu $UTIL $XORG $NET $AUDIO
 
 stow vim
 mkdir -p ~/.config
