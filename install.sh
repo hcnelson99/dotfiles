@@ -31,7 +31,10 @@ XORG="xorg-server libglvnd xorg-xinit xorg-xmodmap feh"
 NET="networkmanager networkmanager-openvpn network-manager-applet google-chrome"
 AUDIO="pulseaudio"
 
-yes | pacaur -Syu $UTIL $XORG $NET $AUDIO
+echo "Select a xorg provider"
+pacaur -S $XORG
+
+yes | pacaur -Syu $UTIL $NET $AUDIO
 
 stow vim
 mkdir -p ~/.config
