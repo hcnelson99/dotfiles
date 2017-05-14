@@ -1,5 +1,5 @@
 #!/bin/bash
-set -ux
+set -eux
 
 if [ "$(id -u)" == "0" ]; then
   echo "Run without sudo"
@@ -7,7 +7,7 @@ if [ "$(id -u)" == "0" ]; then
 fi
 
 mkdir -p ~/builds
-cd builds
+cd ~/builds
 git clone https://aur.archlinux.org/cower.git
 cd cower
 gpg --recv-keys --keyserver hkp://pgp.mit.edu 1EB2638FF56C0C53
@@ -17,7 +17,7 @@ git clone https://aur.archlinux.org/pacaur.git
 cd pacaur
 yes | makepkg -sri
 
-pacaur -S reflector
+yes | pacaur -S reflector
 
 echo "Updating mirrorlist..."
 sudo reflector --latest 15 --protocol http --protocol https --sort rate --save /etc/pacman.d/mirrorlist
