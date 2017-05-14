@@ -26,6 +26,7 @@ sudo echo "Beginning installation..."
 
 cd ~/dotfiles
 
+sudo mkdir -p /etc/pacman.d/hooks
 sudo cp mirrorupgrade.hook /etc/pacman.d/hooks
 
 UTIL="vim neovim stow redshift tmux zsh"
