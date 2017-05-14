@@ -28,7 +28,7 @@ cd ~/dotfiles
 
 UTIL="vim neovim stow redshift tmux zsh"
 I3="i3-gaps rofi i3lock-fancy-git i3status"
-XORG="xorg-server xorg-xinit xorg-xmodmap feh"
+XORG="xorg-server xorg-xinit xorg-xmodmap feh gohufont"
 NET="networkmanager networkmanager-openvpn network-manager-applet" # google-chrome"
 AUDIO="pulseaudio"
 
