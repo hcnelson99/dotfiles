@@ -27,7 +27,7 @@ sudo echo "Beginning installation..."
 cd ~/dotfiles
 
 UTIL="vim neovim stow redshift"
-I3="i3-gaps rofi i3lock-fancy i3status"
+I3="i3-gaps rofi i3lock-fancy-git i3status"
 XORG="xorg-server xorg-xinit xorg-xmodmap feh"
 NET="networkmanager networkmanager-openvpn network-manager-applet google-chrome"
 AUDIO="pulseaudio"
@@ -39,6 +39,8 @@ yes | pacaur -Syu --noedit $UTIL $NET $AUDIO $I3
 
 stow vim
 mkdir -p ~/.config
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 ln -s ~/.vim ~/.config/nvim
 ln -s ~/.vimrc ~/.config/nvim/init.vim
 
