@@ -1,5 +1,5 @@
 #!/bin/bash
-set -eux
+set -eu
 
 if [ "$(id -u)" == "0" ]; then
   echo "Run without sudo"
