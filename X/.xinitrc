@@ -1,7 +1,7 @@
 xrdb ~/.Xresources
 xmodmap ~/.Xmodmap
 xbindkeys
-sh ~/.fehbg &
+feh  --bg-scale '/home/henry/.background.png' &
 unclutter &
 nm-applet &
 exec i3
