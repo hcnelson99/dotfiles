@@ -26,6 +26,8 @@ sudo echo "Beginning installation..."
 
 cd ~/dotfiles
 
+sudo cp mirrorupgrade.hook /etc/pacman.d/hooks
+
 UTIL="vim neovim stow redshift tmux zsh"
 I3="i3-gaps rofi i3lock-fancy-git i3status"
 XORG="xorg-server xorg-xinit xorg-xmodmap feh"
