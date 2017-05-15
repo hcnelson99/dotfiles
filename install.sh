@@ -27,7 +27,7 @@ sudo reflector --latest 15 --protocol http --protocol https --sort rate --save /
 cd ~/dotfiles
 
 sudo mkdir -p /etc/pacman.d/hooks
-sudo cp mirrorupgrade.hook /etc/pacman.d/hooks
+sudo ln -s ~/dotfiles/mirrorupgrade.hook /etc/pacman.d/hooks
 
 UTIL="vim neovim stow redshift tmux zsh rxvt-unicode light"
 I3="i3-gaps i3status rofi i3lock-fancy-git unclutter-xfixes-git"
