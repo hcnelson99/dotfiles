@@ -91,11 +91,6 @@ noremap <Leader><Tab> :IndentGuidesToggle<CR>
 nnoremap <Leader>l :<C-u>execute 'file '.fnameescape(resolve(expand('%:p')))<bar>
     \ call fugitive#detect(fnameescape(expand('%:p:h')))<CR>
 
-noremap <C-h> <C-w>h
-noremap <C-j> <C-w>j
-noremap <C-k> <C-w>k
-noremap <C-l> <C-w>l
-
 set nospell
 map <Leader>s :setlocal spell! spelllang=en_us<CR>
 set wrap lbr
