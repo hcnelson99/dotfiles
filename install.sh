@@ -55,7 +55,6 @@ xfconf-query -c xfce4-session -p /sessions/Failsafe/Client0_Command -t string -s
 stow X
 stow fontconfig
 stow git
-stow i3
 stow tmux
 stow bspwm
 echo "Logout and in to start X"
