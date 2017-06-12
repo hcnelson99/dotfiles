@@ -29,14 +29,14 @@ cd ~/dotfiles
 sudo mkdir -p /etc/pacman.d/hooks
 sudo ln -s ~/dotfiles/mirrorupgrade.hook /etc/pacman.d/hooks
 
-UTIL="vim neovim stow redshift tmux zsh rxvt-unicode"
+UTIL="vim neovim xsel stow redshift tmux zsh python-virtualenvwrapper rxvt-unicode"
 DE="bspwm sxhkd rofi i3lock-fancy-git unclutter-xfixes-git xfce4 xfce4-goodies"
 THEMES="numix-circle-icon-theme-git adapta-gtk-theme"
 XORG="xorg-server xorg-xinit xorg-xmodmap"
 NET="google-chrome"
 FONT="gohufont fonts-meta-base"
 
-pacaur -S --noconfirm --noedit $XORG $UTIL $NET $DE $FONT
+pacaur -S --noconfirm --noedit $XORG $UTIL $NET $DE $THEMES $FONT
 
 stow vim
 mkdir -p ~/.config
