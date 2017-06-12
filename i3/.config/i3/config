@@ -55,7 +55,6 @@ bindsym $mod+Return exec i3-sensible-terminal
 # kill focused window
 bindsym $mod+q kill
 
-bindsym $mod+Shift+q exec i3lock-fancy
 bindsym $mod+n exec sh -c "ps aux | grep redshift && pkill -USR1 '^redshift$' || redshift"
 bindsym $mod+v exec nmcli con up id oli
 bindsym $mod+Shift+v exec nmcli con down id oli
