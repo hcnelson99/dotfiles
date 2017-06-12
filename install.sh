@@ -33,10 +33,11 @@ UTIL="vim neovim xsel stow redshift tmux zsh python-virtualenvwrapper rxvt-unico
 DE="bspwm sxhkd rofi i3lock-fancy-git unclutter-xfixes-git xfce4 xfce4-goodies"
 THEMES="numix-circle-icon-theme-git adapta-gtk-theme"
 XORG="xorg-server xorg-xinit xorg-xmodmap"
-NET="google-chrome"
+NET="networkmanager networkmanager-openvpn network-manager-applet google-chrome"
 FONT="gohufont fonts-meta-base"
 
 pacaur -S --noconfirm --noedit $XORG $UTIL $NET $DE $THEMES $FONT
+sudo systemctl enable --now NetworkManager
 
 stow vim
 mkdir -p ~/.config
