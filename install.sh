@@ -36,9 +36,7 @@ XORG="xorg-server xorg-xinit xorg-xmodmap"
 NET="google-chrome"
 FONT="gohufont fonts-meta-base"
 
-echo "Select a xorg provider"
-pacaur -S --noconfirm $XORG $UTIL $NET $DE $FONT
-
+pacaur -S --noconfirm --noedit $XORG $UTIL $NET $DE $FONT
 
 stow vim
 mkdir -p ~/.config
