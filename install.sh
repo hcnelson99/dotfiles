@@ -29,19 +29,16 @@ cd ~/dotfiles
 sudo mkdir -p /etc/pacman.d/hooks
 sudo ln -s ~/dotfiles/mirrorupgrade.hook /etc/pacman.d/hooks
 
-UTIL="vim neovim stow redshift tmux zsh rxvt-unicode light"
-I3="i3-gaps i3status rofi i3lock-fancy-git unclutter-xfixes-git"
-XORG="xorg-server xorg-xinit xorg-xmodmap feh xbindkeys"
-NET="networkmanager networkmanager-openvpn network-manager-applet google-chrome"
-AUDIO="pulseaudio"
+UTIL="vim neovim stow redshift tmux zsh rxvt-unicode"
+DE="bspwm sxhkd rofi i3lock-fancy-git unclutter-xfixes-git xfce4"
+XORG="xorg-server xorg-xinit xorg-xmodmap"
+NET="google-chrome"
 FONT="gohufont fonts-meta-base"
 
 echo "Select a xorg provider"
 pacaur -S $XORG
 
-yes | pacaur -Syu --noedit $UTIL $NET $AUDIO $I3 $FONT
-
-sudo systemctl enable NetworkManager
+yes | pacaur -Syu --noedit $UTIL $NET $DE $FONT
 
 stow vim
 mkdir -p ~/.config
@@ -53,12 +50,12 @@ ln -s ~/.vimrc ~/.config/nvim/init.vim
 git clone https://github.com/tarjoilija/zgen.git ~/.zgen
 stow zsh
 sudo chsh $USER -s `which zsh`
+xfconf-query -c xfce4-session -p /sessions/Failsafe/Client0_Command -t string -sa bspwm
 
 stow X
 stow fontconfig
 stow git
 stow i3
 stow tmux
-# stow ncmpcpp
-# stow bash
+stow bspwm
 echo "Logout and in to start X"
