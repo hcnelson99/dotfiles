@@ -19,7 +19,7 @@ git clone https://aur.archlinux.org/pacaur.git
 cd pacaur
 yes | makepkg -sri
 
-yes | pacaur -S reflector
+pacaur -S --noconfirm reflector
 
 echo "Updating mirrorlist..."
 sudo reflector --latest 15 --protocol http --protocol https --sort rate --save /etc/pacman.d/mirrorlist
@@ -37,9 +37,8 @@ NET="google-chrome"
 FONT="gohufont fonts-meta-base"
 
 echo "Select a xorg provider"
-pacaur -S $XORG
+pacaur -S --noconfirm $XORG $UTIL $NET $DE $FONT
 
-yes | pacaur -Syu --noedit $UTIL $NET $DE $FONT
 
 stow vim
 mkdir -p ~/.config
