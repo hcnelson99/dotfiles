@@ -35,8 +35,9 @@ THEMES="numix-circle-icon-theme-git adapta-gtk-theme"
 XORG="xorg-server xorg-xinit xorg-xmodmap"
 NET="networkmanager networkmanager-openvpn network-manager-applet google-chrome"
 FONT="gohufont fonts-meta-base"
+AUDIO="pulseaudio"
 
-pacaur -S --noconfirm --noedit $XORG $UTIL $NET $DE $THEMES $FONT
+pacaur -S --noconfirm --noedit $XORG $UTIL $NET $DE $THEMES $FONT $AUDIO
 sudo systemctl enable --now NetworkManager
 
 stow vim
