@@ -14,6 +14,14 @@ alt + c
 alt + p
 	i3lock-fancy
 
+# night mode
+alt + n
+	sh -c "ps aux | grep redshift && pkill -USR1 '^redshift$' || redshift"
+
+# vpn
+alt + {_, shift +} v
+	nmcli con {up,down} id oli
+
 # program launcher
 alt + d
 	rofi -show run
