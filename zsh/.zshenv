@@ -11,3 +11,4 @@ export RUST_SRC_PATH="$HOME/.multirust/toolchains/nightly-x86_64-unknown-linux-g
 export PATH="$HOME/.bin:$HOME/.cargo/bin:$HOME/.local/bin:$PATH"
 
 export JAVA_HOME="/usr/lib/jvm/default"
+export _JAVA_AWT_WM_NONREPARENTING=1
