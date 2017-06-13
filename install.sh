@@ -32,7 +32,7 @@ sudo ln -s ~/dotfiles/mirrorupgrade.hook /etc/pacman.d/hooks
 UTIL="vim neovim xsel stow redshift tmux zsh python-virtualenvwrapper rxvt-unicode"
 DE="bspwm sxhkd rofi i3lock-fancy-git unclutter-xfixes-git xfce4 xfce4-goodies"
 THEMES="numix-circle-icon-theme-git adapta-gtk-theme"
-XORG="xorg-server xorg-xinit xorg-xmodmap"
+XORG="xorg-server xorg-xinit xorg-xmodmap xorg-xsetroot"
 NET="networkmanager networkmanager-openvpn network-manager-applet google-chrome"
 FONT="gohufont fonts-meta-base"
 AUDIO="pulseaudio"
