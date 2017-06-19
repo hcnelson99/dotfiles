@@ -10,8 +10,12 @@ alt + Return
 alt + c
 	google-chrome-stable
 
+# pass
+alt + {_, shift +} p
+	rofi-pass {_, --last-used}
+
 # lock
-alt + p
+alt + Escape
 	i3lock-fancy
 
 # night mode
