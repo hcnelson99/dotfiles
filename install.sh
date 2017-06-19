@@ -19,7 +19,7 @@ git clone https://aur.archlinux.org/pacaur.git
 cd pacaur
 yes | makepkg -sri
 
-pacaur -S --noconfirm reflector
+pacaur -Syu --noconfirm reflector
 
 echo "Updating mirrorlist..."
 sudo reflector --latest 15 --protocol http --protocol https --sort rate --save /etc/pacman.d/mirrorlist
@@ -37,7 +37,7 @@ NET="networkmanager networkmanager-openvpn network-manager-applet google-chrome"
 FONT="gohufont fonts-meta-base"
 AUDIO="pulseaudio"
 
-pacaur -S --noconfirm --noedit $XORG $UTIL $NET $DE $THEMES $FONT $AUDIO
+pacaur -Syu --noconfirm --noedit $XORG $UTIL $NET $DE $THEMES $FONT $AUDIO
 sudo systemctl enable --now NetworkManager
 
 stow vim
