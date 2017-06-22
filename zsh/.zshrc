@@ -23,10 +23,11 @@ if ! zgen saved; then
     zgen oh-my-zsh plugins/pass
     zgen load zsh-users/zsh-syntax-highlighting
 
-    zgen oh-my-zsh themes/bira
+    zgen oh-my-zsh themes/arrow
 
     zgen save
 fi
 
 alias vim="nvim"
+alias tmux="tmux -2"
 alias c="urxvt &"

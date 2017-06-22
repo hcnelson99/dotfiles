@@ -16,7 +16,7 @@ Plug 'tommcdo/vim-exchange'
 Plug 'easymotion/vim-easymotion'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
-Plug 'w0ng/vim-hybrid'
+Plug 'chriskempson/base16-vim'
 
 call plug#end()
 filetype plugin indent on
@@ -45,7 +45,7 @@ xnoremap <Leader>du :diffupdate<CR>
 set background=dark
 let g:hybrid_custom_term_colors = 1
 let g:hybrid_reduced_contrast = 1
-colorscheme hybrid
+colorscheme base16-materia
 
 " disable comment continuation when inserting new lines
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
