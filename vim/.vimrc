@@ -17,6 +17,8 @@ Plug 'easymotion/vim-easymotion'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'chriskempson/base16-vim'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 call plug#end()
 filetype plugin indent on
@@ -25,6 +27,7 @@ syntax enable
 
 let mapleader="\<Space>"
 
+let g:airline_powerline_fonts = 1
 let g:gitgutter_map_keys = 0
 
 noremap <Leader>gd :Gdiff<CR>
