@@ -4,16 +4,15 @@ background-alt = ${xrdb:color10}
 foreground = ${xrdb:foreground}
 foreground-alt = foreground
 
-red=      ${xrdb:color1}
-green=     ${xrdb:color2}
-yellow=      ${xrdb:color3}
-blue=     ${xrdb:color5}
+red = ${xrdb:color1}
+green = ${xrdb:color2}
+yellow = ${xrdb:color3}
+blue = ${xrdb:color5}
+; not really magenta with base16-materia
+magenta = ${xrdb:color6}
 
-;wrong
-magenta=     ${xrdb:color6} 
-
-cyan=     ${xrdb:color4}
-white=      #ffffff
+cyan = ${xrdb:color4}
+white = #ffffff
 
 
 [global/wm]
@@ -39,9 +38,9 @@ underline-color = ${colors.blue}
 
 spacing = 1
 padding-left = 0
-padding-right = 2
+padding-right = 1
 module-margin-left = 0
-module-margin-right = 1
+module-margin-right = 2
 
 font-0 = Gohu GohuFont:pixelsize=13;1
 font-1 = Wuncon Siji:pixelsize=24;1
@@ -49,16 +48,12 @@ font-2 = FontAwesome:pixelsize=13;1
 font-3 = Noto Sans:pixelsize=13;1
 
 modules-left = bspwm xwindow
-modules-center = 
+modules-center =
 modules-right =  volume filesystem  memory cpu temperature battery wlan eth date
 ;systemRoot systemHome s
 
-;tray_output none
-;tray-position = right
-tray-detached = true
+tray-position = right
 tray-padding = 2
-;tray-transparent = true
-tray-background = ${colors.background}
 
 ;wm-restack = bspwm
 ;wm-restack = i3

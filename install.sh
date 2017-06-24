@@ -34,7 +34,7 @@ DE="bspwm sxhkd compton feh rofi rofi-pass i3lock-fancy-git-fixed unclutter-xfix
 THEMES="numix-circle-icon-theme-git adapta-gtk-theme"
 XORG="xorg-server xorg-xinit xorg-xmodmap xorg-xsetroot"
 NET="networkmanager networkmanager-openvpn network-manager-applet google-chrome"
-FONT="gohufont fonts-meta-base"
+FONT="gohufont fonts-meta-base ttf-font-awesome siji-git"
 AUDIO="pulseaudio"
 
 pacaur -Syu --noconfirm --noedit $XORG $UTIL $NET $DE $THEMES $FONT $AUDIO
