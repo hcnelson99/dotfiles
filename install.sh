@@ -30,7 +30,7 @@ sudo mkdir -p /etc/pacman.d/hooks
 sudo ln -s ~/dotfiles/mirrorupgrade.hook /etc/pacman.d/hooks
 
 UTIL="vim neovim xsel stow redshift tmux zsh python-virtualenvwrapper pass rxvt-unicode"
-DE="bspwm sxhkd compton feh rofi rofi-pass i3lock-fancy-git-fixed unclutter-xfixes-git thunar arandr"
+DE="bspwm sxhkd compton feh rofi rofi-pass light i3lock-fancy-git-fixed unclutter-xfixes-git thunar arandr"
 THEMES="numix-circle-icon-theme-git adapta-gtk-theme"
 XORG="xorg-server xorg-xinit xorg-xmodmap xorg-xsetroot"
 NET="networkmanager networkmanager-openvpn network-manager-applet google-chrome"
