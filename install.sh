@@ -50,7 +50,6 @@ ln -s ~/.vimrc ~/.config/nvim/init.vim
 git clone https://github.com/tarjoilija/zgen.git ~/.zgen
 stow zsh
 sudo chsh $USER -s `which zsh`
-xfconf-query -c xfce4-session -p /sessions/Failsafe/Client0_Command -t string -sa bspwm
 
 stow X
 stow fontconfig
