@@ -16,3 +16,28 @@ Xft.hinting: 1
 Xft.antialias: 1
 Xft.hintstyle: hintslight
 Xft.lcdfilter: lcddefault
+
+! Base16 Materia
+! Scheme: Defman21
+*.foreground: #CDD3DE
+*.background: #263238
+
+*.cursorColor: #CDD3DE
+
+*.color0: #263238
+*.color1: #EC5F67
+*.color2: #8BD649
+*.color3: #FFCC00
+*.color4: #89DDFF
+*.color5: #82AAFF
+*.color6: #80CBC4
+*.color7: #CDD3DE
+
+*.color8: #707880
+*.color9: #EA9560
+*.color10: #2C393F
+*.color11: #37474F
+*.color12: #C9CCD3
+*.color13: #D5DBE5
+*.color14: #EC5F67
+*.color15: #FFFFFF
