@@ -44,7 +44,7 @@ module-margin-right = 2
 
 font-0 = Gohu GohuFont:pixelsize=13;1
 font-1 = Wuncon Siji:pixelsize=24;1
-font-2 = FontAwesome:pixelsize=13;1
+font-2 = FontAwesome:pixelsize=12;1
 font-3 = Noto Sans:pixelsize=13;1
 
 modules-left = bspwm xwindow
@@ -142,7 +142,7 @@ card = intel_backlight
 [module/cpu]
 type = internal/cpu
 interval = 2
-format-prefix = " "
+format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = ${colors.magenta}
 label = %percentage%%
@@ -150,7 +150,7 @@ label = %percentage%%
 [module/memory]
 type = internal/memory
 interval = 2
-format-prefix = " "
+format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = ${colors.blue}
 label = %gb_used%
@@ -160,21 +160,15 @@ type = internal/network
 interface = wlp4s0
 interval = 3.0
 
-format-connected = <ramp-signal><label-connected>
+format-connected = <label-connected>
 format-connected-underline = ${colors.green}
-label-connected = %essid%
+label-connected = " %essid%"
 
 ;format-disconnected =
 ;format-disconnected = <label-disconnected>
 format-disconnected-underline = ${self.format-connected-underline}
 label-disconnected = %ifname% disconnected
 ;label-disconnected-foreground = ${colors.foreground-alt}
-ramp-signal-0 = 
-ramp-signal-1 = 
-ramp-signal-2 = 
-ramp-signal-3 = 
-ramp-signal-4 = 
-ramp-signal-foreground = ${colors.foreground-alt}
 
 [module/eth]
 type = internal/network
@@ -200,11 +194,11 @@ date= "%Y-%m-%d"
 
 time = %H:%M
 
-format-prefix = 
+format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = ${colors.blue}
 
-label = %date% %time%
+label = " %date% %time%"
 
 [module/volume]
 type = internal/volume
@@ -253,14 +247,17 @@ format-full-prefix = " "
 format-full-prefix-foreground = ${colors.foreground-alt}
 format-full-underline = ${self.format-charging-underline}
 
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
 ramp-capacity-foreground = ${colors.foreground-alt}
 
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
 animation-charging-foreground = ${colors.foreground-alt}
 animation-charging-framerate = 750
 
@@ -278,9 +275,9 @@ label = %temperature%
 label-warn = %temperature%
 label-warn-foreground = ${colors.yellow}
 
-ramp-0 = 
-ramp-1 = 
-ramp-2 = 
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
 ramp-foreground = ${colors.foreground-alt}
 
 [settings]
