@@ -19,7 +19,6 @@ if ! zgen saved; then
     zgen oh-my-zsh plugins/compleat
     zgen oh-my-zsh plugins/command-not-found
     zgen oh-my-zsh plugins/vi-mode
-    zgen oh-my-zsh plugins/virtualenvwrapper
     zgen oh-my-zsh plugins/pass
     zgen load zsh-users/zsh-syntax-highlighting
 
