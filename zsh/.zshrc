@@ -30,3 +30,4 @@ fi
 alias vim="nvim"
 alias tmux="tmux -2"
 alias c="urxvt &"
+alias updmirrors="sudo reflector --country 'United States' --latest 15 --age 24 --sort rate --save /etc/pacman.d/mirrorlist"
