@@ -38,7 +38,7 @@ NET="networkmanager networkmanager-openvpn network-manager-applet google-chrome"
 FONT="gohufont fonts-meta-base ttf-font-awesome siji-git powerline-fonts-git"
 AUDIO="pulseaudio"
 
-pacaur -Syu --noconfirm --noedit $XORG $UTIL $NET $DE $DE_PROGS $THEMES $FONT $AUDIO
+pacaur -Syu --noconfirm --noedit "$XORG $UTIL $NET $DE $DE_PROGS $THEMES $FONT $AUDIO"
 sudo systemctl enable --now NetworkManager
 
 stow vim
@@ -50,7 +50,7 @@ ln -s ~/.vimrc ~/.config/nvim/init.vim
 
 git clone https://github.com/tarjoilija/zgen.git ~/.zgen
 stow zsh
-sudo chsh $USER -s `which zsh`
+sudo chsh "$USER" -s "$(which zsh)"
 
 stow X
 stow fontconfig
