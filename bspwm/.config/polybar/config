@@ -10,6 +10,7 @@ yellow = ${xrdb:color3}
 blue = ${xrdb:color5}
 ; not really magenta with base16-materia
 magenta = ${xrdb:color6}
+gray = ${xrdb:color11}
 
 cyan = ${xrdb:color4}
 white = #ffffff
@@ -203,33 +204,15 @@ label = " %date% %time%"
 [module/volume]
 type = internal/volume
 
-format-volume = " <label-volume><bar-volume> "
-label-volume = " "
+format-volume = " <label-volume>"
+label-volume = "  %percentage%%"
 label-volume-foreground = ${root.foreground}
 format-volume-underline= ${colors.red}
 
-format-muted-prefix =
-format-muted-foreground = ${colors.foreground-alt}
-label-muted = " "
-format-muted = " <label-muted><bar-volume> "
-format-muted-underline = ${colors.red}
-
-bar-volume-width = 8
-bar-volume-foreground-0 = #ffffff
-bar-volume-foreground-1 = #ffffff
-bar-volume-foreground-2 = #ffffff
-bar-volume-foreground-3 = #ffffff
-bar-volume-foreground-4 = #ffffff
-bar-volume-foreground-5 = #ffffff
-bar-volume-foreground-6 = #ffffff
-bar-volume-gradient = false
-bar-volume-indicator = |
-bar-volume-indicator-font = 2
-bar-volume-fill = ─
-bar-volume-fill-font = 2
-bar-volume-empty = ─
-bar-volume-empty-font = 2
-bar-volume-empty-foreground = ${colors.foreground-alt}
+format-muted-foreground = ${root.foreground}
+label-muted = "  %percentage%%"
+format-muted = " <label-muted>"
+format-muted-underline = ${colors.gray}
 
 [module/battery]
 type = internal/battery
