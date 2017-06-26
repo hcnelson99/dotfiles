@@ -15,6 +15,14 @@ gray = ${xrdb:color11}
 cyan = ${xrdb:color4}
 white = #ffffff
 
+bar1 = ${xrdb:color1}
+bar2 = ${xrdb:color9}
+bar3 = ${xrdb:color3}
+bar4 = ${xrdb:color2}
+bar5 = ${xrdb:color6}
+bar6 = ${xrdb:color4}
+bar7 = ${xrdb:color5}
+bar8 = ${xrdb:color14}
 
 [global/wm]
 margin-top = 5
@@ -83,7 +91,7 @@ mount-0 = /
 label-mounted = " %free%"
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.foreground-alt}
-format-mounted-underline = ${colors.yellow}
+format-mounted-underline = ${colors.bar2}
 
 [module/bspwm]
 type = internal/bspwm
@@ -145,7 +153,7 @@ type = internal/cpu
 interval = 2
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = ${colors.magenta}
+format-underline = ${colors.bar4}
 label = %percentage%%
 
 [module/memory]
@@ -153,7 +161,7 @@ type = internal/memory
 interval = 2
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = ${colors.blue}
+format-underline = ${colors.bar3}
 label = %gb_used%
 
 [module/wlan]
@@ -162,7 +170,7 @@ interface = wlp4s0
 interval = 3.0
 
 format-connected = <label-connected>
-format-connected-underline = ${colors.green}
+format-connected-underline = ${colors.bar7}
 label-connected = " %essid%"
 
 ;format-disconnected =
@@ -176,7 +184,7 @@ type = internal/network
 interface = enp0s31f6
 interval = 3.0
 
-format-connected-underline = ${colors.yellow}
+format-connected-underline = ${colors.bar7}
 format-connected-prefix = " "
 format-connected-prefix-foreground = ${colors.foreground-alt}
 label-connected = %local_ip%
@@ -197,7 +205,7 @@ time = %H:%M
 
 format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = ${colors.blue}
+format-underline = ${colors.bar8}
 
 label = " %date% %time%"
 
@@ -207,7 +215,7 @@ type = internal/volume
 format-volume = " <label-volume>"
 label-volume = "  %percentage%%"
 label-volume-foreground = ${root.foreground}
-format-volume-underline= ${colors.red}
+format-volume-underline= ${colors.bar1}
 
 format-muted-foreground = ${root.foreground}
 label-muted = "  %percentage%%"
@@ -221,7 +229,7 @@ adapter = ADP1
 full-at = 98
 
 format-charging = <animation-charging><label-charging>
-format-charging-underline = ${colors.red}
+format-charging-underline = ${colors.bar6}
 
 format-discharging = <ramp-capacity><label-discharging>
 format-discharging-underline = ${self.format-charging-underline}
@@ -250,7 +258,7 @@ thermal-zone = 0
 warn-temperature = 60
 
 format = <ramp><label>
-format-underline = ${colors.cyan}
+format-underline = ${colors.bar5}
 format-warn = <ramp><label-warn>
 format-warn-underline = ${self.format-underline}
 
