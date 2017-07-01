@@ -2,6 +2,15 @@
 # wm independent hotkeys
 #
 
+XF86MonBrightness{Up,Down}
+	light {-A,-U} 5%
+
+XF86Audio{Raise,Lower}Volume
+	pactl set-sink-mute 0 false ; pactl set-sink-volume 0 {+5%, -5%}
+
+XF86AudioMute
+	pactl set-sink-mute 0 toggle
+
 # terminal emulator
 alt + Return
 	urxvt
@@ -20,7 +29,7 @@ alt + Escape
 
 # night mode
 alt + n
-	sh -c "ps aux | grep redshift && pkill -USR1 '^redshift$' || redshift"
+	ps aux | grep redshift && pkill -USR1 '^redshift$' || redshift
 
 # vpn
 alt + {_, shift +} v
@@ -50,10 +59,6 @@ alt + {_, shift +} q
 alt + m
 	bspc desktop -l next
 
-# if the current node is automatic, send it to the last manual, otherwise pull the last leaf
-alt + y
-	bspc query -N -n focused.automatic && bspc node -n last.!automatic || bspc node last.leaf -n focused
-
 # swap the current node and the biggest node
 alt + g
 	bspc node -s biggest.tiled.local
@@ -77,10 +82,6 @@ alt + ctrl + {x,y,z}
 # focus the node in the given direction
 alt + {_,shift + }{h,j,k,l}
 	bspc node -{f,s} {west,south,north,east}
-
-# focus the node for the given path jump
-alt + {p,b,comma,period}
-	bspc node -f @{parent,brother,first,second}
 
 # focus the next/previous node
 alt + {_,shift + }n
