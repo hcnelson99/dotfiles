@@ -1,6 +1,6 @@
 export XDG_CONFIG_HOME="$HOME/.config"
 
-export TERM=rxvt-unicode
+export TERM=xterm-256color
 export EDITOR=nvim
 
 export CVSROOT=:ext:henry@cvs.fsl.cs.sunysb.edu:/scm/cvsroot
