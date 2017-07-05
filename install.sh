@@ -39,7 +39,7 @@ FONT="gohufont fonts-meta-base ttf-font-awesome siji-git powerline-fonts-git"
 AUDIO="pulseaudio"
 
 pacaur -Syu --noconfirm --noedit "$XORG $UTIL $NET $DE $DE_PROGS $THEMES $FONT $AUDIO"
-sudo systemctl enable --now NetworkManager
+sudo systemctl enable NetworkManager
 
 stow vim
 mkdir -p ~/.config
@@ -57,4 +57,4 @@ stow fontconfig
 stow git
 stow tmux
 stow bspwm
-echo "Logout and in to start X"
+echo "Reboot to start NetworkManager and X"
