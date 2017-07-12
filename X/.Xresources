@@ -1,8 +1,10 @@
 Xft.rgba: rgb
+Xft.autohint: 0
 Xft.hinting: 1
 Xft.antialias: 1
 Xft.hintstyle: hintslight
 Xft.lcdfilter: lcddefault
+Xft.dpi: 96
 
 ! Base16 Materia
 ! Scheme: Defman21
