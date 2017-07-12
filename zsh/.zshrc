@@ -30,6 +30,9 @@ fi
 
 alias vim="nvim"
 alias tmux="tmux -2"
-alias c="urxvt &"
 alias updmirrors="sudo reflector --country 'United States' --latest 15 --age 24 --sort rate --save /etc/pacman.d/mirrorlist"
-alias snap="sudo btrfs subvolume snapshot -r / /@snapshots/"root-$(date "+%FT%T")" && sudo btrfs subvolume snapshot -r /home /@snapshots/"home-$(date "+%FT%T")""
+snap() {
+    DATE=$(date "+%FT%T")
+    sudo btrfs subvolume snapshot -r / /@snapshots/"root-$DATE" && sudo btrfs subvolume snapshot -r /home /@snapshots/"home-$DATE"
+}
+alias se="sudoedit"
