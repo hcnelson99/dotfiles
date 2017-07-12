@@ -1,0 +1,9 @@
+rofi.font: Gohu GohuFont 14px
+rofi.color-enabled: true
+rofi.separator-style: solid
+
+! Property Name     BG       Border   Separator
+rofi.color-window:  #2C393F, #2C393F, #263238
+rofi.color-normal:  #2C393F, #CDD3DE, #2C393F, #2C393F, #FFFFFF
+rofi.color-active:  #2C393F, #89DDFF, #2C393F, #2C393F, #89DDFF
+rofi.color-urgent:  #2C393F, #EC5F67, #2C393F, #2C393F, #EC5F67
