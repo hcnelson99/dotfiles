@@ -9,3 +9,4 @@
 	default = simple
 [alias]
 	ds = diff --staged
+	co = checkout
