@@ -35,7 +35,7 @@ DE_PROGS="rofi rofi-pass thunar arandr"
 THEMES="numix-circle-icon-theme-git adapta-gtk-theme"
 XORG="xorg-server xorg-xinit xorg-xmodmap xorg-xsetroot"
 NET="networkmanager networkmanager-openvpn network-manager-applet google-chrome"
-FONT="gohufont fonts-meta-base ttf-font-awesome siji-git powerline-fonts-git"
+FONT="terminus-font-td1 fonts-meta-base ttf-font-awesome siji-git powerline-fonts-git"
 AUDIO="pulseaudio"
 
 pacaur -Syu --noconfirm --noedit "$XORG $UTIL $NET $DE $DE_PROGS $THEMES $FONT $AUDIO"
@@ -49,6 +49,7 @@ ln -s ~/.vim ~/.config/nvim
 ln -s ~/.vimrc ~/.config/nvim/init.vim
 
 git clone https://github.com/tarjoilija/zgen.git ~/.zgen
+git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shell
 stow zsh
 sudo chsh "$USER" -s "$(which zsh)"
 

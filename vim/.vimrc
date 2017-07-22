@@ -51,9 +51,10 @@ xnoremap <Leader>dg :diffget<CR>
 xnoremap <Leader>du :diffupdate<CR>
 
 set background=dark
-let g:hybrid_custom_term_colors = 1
-let g:hybrid_reduced_contrast = 1
-colorscheme base16-materia
+if filereadable(expand("~/.vimrc_background"))
+  let base16colorspace=256
+  source ~/.vimrc_background
+endif
 
 " disable comment continuation when inserting new lines
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
