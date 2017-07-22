@@ -1,6 +1,5 @@
 [options]
 font = xos4 Terminus 14px
-/* font = Gohu GohuFont 14px */
 
 [colors]
 foreground = #CDD3DE
