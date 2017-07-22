@@ -49,7 +49,6 @@ ln -s ~/.vim ~/.config/nvim
 ln -s ~/.vimrc ~/.config/nvim/init.vim
 
 git clone https://github.com/tarjoilija/zgen.git ~/.zgen
-git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shell
 stow zsh
 sudo chsh "$USER" -s "$(which zsh)"
 
