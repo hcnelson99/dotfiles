@@ -7,19 +7,19 @@ green = ${xrdb:color2}
 yellow = ${xrdb:color3}
 blue = ${xrdb:color5}
 green-blue = ${xrdb:color6}
-gray = ${xrdb:color11}
+gray = ${xrdb:color19}
 
 cyan = ${xrdb:color4}
 white = #ffffff
 
 bar1 = ${xrdb:color1}
-bar2 = ${xrdb:color9}
+bar2 = ${xrdb:color16}
 bar3 = ${xrdb:color3}
 bar4 = ${xrdb:color2}
 bar5 = ${xrdb:color6}
 bar6 = ${xrdb:color4}
 bar7 = ${xrdb:color5}
-bar8 = ${xrdb:color14}
+bar8 = ${xrdb:color1}
 
 [global/wm]
 margin-top = 5
@@ -28,7 +28,7 @@ margin-bottom = 5
 [bar/bar]
 monitor = ${env:MONITOR:eDP-1}
 bottom = true
-width = 1904
+width = ${env:POLYBAR_WIDTH:1904}
 height = 27
 offset-x = 8
 offset-y = 8
@@ -60,10 +60,10 @@ modules-right =  volume filesystem  memory cpu temperature battery wlan eth date
 tray-position = right
 tray-padding = 2
 
-;wm-restack = bspwm
+wm-restack = bspwm
 ;wm-restack = i3
 
-;override-redirect = true
+override-redirect = true
 
 ;scroll-up = bspwm-desknext
 ;scroll-down = bspwm-deskprev
