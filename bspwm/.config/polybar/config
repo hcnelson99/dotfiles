@@ -26,7 +26,7 @@ margin-top = 5
 margin-bottom = 5
 
 [bar/bar]
-;monitor = ${env:MONITOR:HDMI-1}
+monitor = ${env:MONITOR:eDP-1}
 bottom = true
 width = 1904
 height = 27
