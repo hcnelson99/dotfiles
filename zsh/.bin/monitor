@@ -4,19 +4,19 @@ main=${MAIN_MONITOR:-eDP-1}
 second=${ADDITIONAL_MONITOR:-DP-1-2}
 
 dual_monitor() {
-  if [ $(bspc query -M | wc -l) -eq "2" ]; then
+  if [ "$(bspc query -M | wc -l)" -eq "2" ]; then
     echo "There are already two monitors"
     exit 1
   fi
   focused=$(bspc query -d focused -D --names)
-  xrandr --output $second "$1" $main --auto
-  MONITOR=$second polybar bar &
+  xrandr --output "$second" "$1" "$main" --auto
+  MONITOR="$second" polybar bar &
 
-  bspc desktop 1 -m $second
-  bspc desktop 2 -m $second
-  bspc desktop 3 -m $second
+  bspc desktop 1 -m "$second"
+  bspc desktop 2 -m "$second"
+  bspc desktop 3 -m "$second"
   bspc desktop Desktop -r
-  bspc desktop -f $focused
+  bspc desktop -f "$focused"
 }
 
 case $1 in
@@ -28,14 +28,14 @@ case $1 in
   ;;
   off)
     focused=$(bspc query -d focused -D --names)
-    xrandr --output $second --off
+    xrandr --output "$second" --off
     killall -9 polybar
     polybar bar &
-    bspc monitor $main -o 1 2 3 4 5 6 7 8 9 10
-    bspc desktop -f $focused
+    bspc monitor "$main" -o 1 2 3 4 5 6 7 8 9 10
+    bspc desktop -f "$focused"
   ;;
   *)
-    echo "$(basename $0) left|right|off"
+    echo "$(basename "$0") left|right|off"
     exit 1
   ;;
 esac
