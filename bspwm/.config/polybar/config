@@ -21,10 +21,6 @@ bar6 = ${xrdb:color4}
 bar7 = ${xrdb:color5}
 bar8 = ${xrdb:color1}
 
-[global/wm]
-margin-top = 5
-margin-bottom = 5
-
 [bar/bar]
 monitor = ${env:MONITOR:eDP-1}
 bottom = true
