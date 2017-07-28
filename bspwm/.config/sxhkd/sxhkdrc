@@ -83,6 +83,10 @@ alt + ctrl + {x,y,z}
 alt + {_,shift + }{h,j,k,l}
 	bspc node -{f,s} {west,south,north,east}
 
+# focus the next/previous node
+alt + {comma, period}
+	bspc node -f {prev,next}.local
+
 # focus the next/previous desktop
 alt + bracket{left,right}
 	bspc desktop -f {prev,next}
