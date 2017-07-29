@@ -32,5 +32,21 @@ alias vim="nvim"
 alias tmux="tmux -2"
 alias updmirrors="sudo reflector --country 'United States' --latest 15 --age 24 --sort rate --save /etc/pacman.d/mirrorlist"
 alias snap-now="sudo systemctl start snapper-timeline.service"
-alias snap-push="sudo mount /mnt/backup_drive; sudo snap-sync -n -u ce550ec6-466b-4fb6-b812-5a34485d5c85"
+
+backup_drive-mount() {
+    sudo cryptsetup open --type luks /dev/disk/by-uuid/542dbeea-1c3f-4aea-9cdf-5c2d7c05fd61 backup_drive
+    sudo mount /mnt/backup_drive
+}
+
+backup_drive-umount() {
+    sudo umount /mnt/backup_drive
+    sudo cryptsetup close backup_drive
+}
+
+snap-push() {
+    backup_drive-mount
+    sudo snap-sync -n -u 87d71995-c8b9-4a2c-aa47-0f6fb78fe4bd
+    backup_drive-umount
+}
+
 alias se="sudoedit"
