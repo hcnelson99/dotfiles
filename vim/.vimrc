@@ -20,6 +20,8 @@ Plug 'chriskempson/base16-vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'edkolev/tmuxline.vim'
+Plug 'kovisoft/slimv'
+Plug 'bhurlow/vim-parinfer'
 
 call plug#end()
 filetype plugin indent on
@@ -27,6 +29,9 @@ filetype plugin indent on
 syntax enable
 
 let mapleader="\<Space>"
+
+let g:slimv_swank_cmd = '! tmux new-window -d -n REPL-SBCL "ros run --load ~/.vim/plugged/slimv/slime/start-swank.lisp"'
+let g:paredit_mode=0
 
 let g:airline_powerline_fonts = 1
 
