@@ -21,7 +21,8 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'edkolev/tmuxline.vim'
 Plug 'kovisoft/slimv'
-Plug 'bhurlow/vim-parinfer'
+Plug 'leafgarland/typescript-vim'
+Plug 'ianks/vim-tsx'
 
 call plug#end()
 filetype plugin indent on
@@ -31,11 +32,13 @@ syntax enable
 let mapleader="\<Space>"
 
 let g:slimv_swank_cmd = '! tmux new-window -d -n REPL-SBCL "ros run --load ~/.vim/plugged/slimv/slime/start-swank.lisp"'
-let g:paredit_mode=0
+let g:lisp_rainbow = 1
 
 let g:airline_powerline_fonts = 1
 
 let g:gitgutter_map_keys = 0
+
+autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescript.tsx
 
 noremap <Leader>gd :Gdiff<CR>
 noremap <Leader>gw :Gwrite<CR>
@@ -70,8 +73,8 @@ set backspace=2 "allow backspacing over linebreaks,indent, start of insert
 
 set tabstop=4 " number of visual spaces per TAB
 set shiftwidth=4 "indent width used for autoindent
-" set softtabstop=4 "number of spaces inserted when tab is pressed
-" set expandtab "tabs are spaces
+set softtabstop=4 "number of spaces inserted when tab is pressed
+set expandtab "tabs are spaces
 set autoindent
 set smartindent
 set autoread
