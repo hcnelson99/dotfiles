@@ -10,3 +10,4 @@
 [alias]
 	ds = diff --staged
 	co = checkout
+	graph = log --all --graph --pretty --oneline
