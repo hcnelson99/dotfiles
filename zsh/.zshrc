@@ -28,6 +28,8 @@ if ! zgen saved; then
     zgen save
 fi
 
+unsetopt share_history
+
 alias vim="nvim"
 alias tmux="tmux -2"
 alias updmirrors="sudo reflector --country 'United States' --latest 15 --age 24 --sort rate --save /etc/pacman.d/mirrorlist"
