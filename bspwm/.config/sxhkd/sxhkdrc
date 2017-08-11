@@ -93,9 +93,6 @@ alt + bracket{left,right}
 alt + {grave,Tab}
 	bspc {node,desktop} -f last
 
-alt + o
-	toggle-opacity
-
 # focus or send to the given desktop
 alt + {_,shift + }{1-9,0}
 	bspc {desktop -f,node -d} {1-9,10}

@@ -24,10 +24,10 @@ bar8 = ${xrdb:color1}
 [bar/bar]
 monitor = ${env:MONITOR:eDP-1}
 bottom = true
-width = ${env:POLYBAR_WIDTH:1904}
+width = 100%
 height = 27
-offset-x = 8
-offset-y = 8
+offset-x = 0
+offset-y = 0
 
 background = ${colors.background}
 foreground = ${colors.foreground}

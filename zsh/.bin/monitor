@@ -10,8 +10,6 @@ dual_monitor() {
   fi
   focused=$(bspc query -d focused -D --names)
   xrandr --output "$second" "$1" "$main" --auto
-  screen_width=$(xrandr | grep DP-1-2 | awk '{ print $3 }' | sed 's/x.*//')
-  export POLYBAR_WIDTH=$((screen_width - 16))
   MONITOR="$second" polybar bar &
 
   bspc desktop 1 -m "$second"

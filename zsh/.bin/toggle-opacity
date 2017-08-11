@@ -1,9 +1,0 @@
-#!/usr/bin/env bash
-if grep -q "^inactive-opacity = 1" ~/.config/compton.conf; then
-    sed -i "s/inactive-opacity = 1/inactive-opacity = 0.8/" ~/.config/compton.conf
-else
-    sed -i "s/inactive-opacity = 0.8/inactive-opacity = 1/" ~/.config/compton.conf
-fi
-
-killall compton
-compton &
