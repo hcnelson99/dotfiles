@@ -62,8 +62,11 @@ alt + m
 	bspc node -n 'last.!automatic.local'
 
 # swap the current node and the biggest node
-alt + g
+alt + b
 	bspc node -s biggest.tiled.local
+
+alt + {_, shift + } g
+	bspc config window_gap $(( $(bspc config window_gap) {+,-} 15 ))
 
 #
 # state/flags
