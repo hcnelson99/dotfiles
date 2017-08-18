@@ -29,7 +29,7 @@ alt + Escape
 
 # night mode
 alt + n
-	ps aux | grep redshift && pkill -USR1 '^redshift$' || redshift
+	ps aux | grep redshift && pkill -USR1 '^redshift$' || redshift -l 40:73
 
 # vpn
 alt + {_, shift +} v
