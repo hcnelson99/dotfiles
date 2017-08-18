@@ -10,7 +10,7 @@ dual_monitor() {
   fi
   focused=$(bspc query -d focused -D --names)
   xrandr --output "$second" "$1" "$main" --auto
-  MONITOR="$second" polybar bar &
+  MONITOR="$second" polybar -r bar &
 
   bspc desktop 1 -m "$second"
   bspc desktop 2 -m "$second"
@@ -30,7 +30,7 @@ case $1 in
     focused=$(bspc query -d focused -D --names)
     xrandr --output "$second" --off
     killall -9 polybar
-    polybar bar &
+    polybar -r bar &
     bspc monitor "$main" -o 1 2 3 4 5 6 7 8 9 10
     bspc desktop -f "$focused"
   ;;
