@@ -21,8 +21,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'edkolev/tmuxline.vim'
 Plug 'kovisoft/slimv'
-Plug 'leafgarland/typescript-vim'
-Plug 'ianks/vim-tsx'
+Plug 'cmugpi/vim-c0'
 
 call plug#end()
 filetype plugin indent on
