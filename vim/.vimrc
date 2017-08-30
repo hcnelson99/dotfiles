@@ -37,8 +37,6 @@ let g:airline_powerline_fonts = 1
 
 let g:gitgutter_map_keys = 0
 
-autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescript.tsx
-
 noremap <Leader>gd :Gdiff<CR>
 noremap <Leader>gw :Gwrite<CR>
 noremap <Leader>gr :Gread<CR>
