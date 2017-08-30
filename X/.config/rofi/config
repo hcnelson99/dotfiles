@@ -1,4 +1,4 @@
-rofi.font: xos4 Terminess Powerline 14px
+rofi.font: xos4 Terminus 14px
 rofi.color-enabled: true
 rofi.separator-style: solid
 
