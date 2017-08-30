@@ -1,3 +1,7 @@
+URxvt.font: xft:xos4 Terminus:size=12
+URxvt.boldFont: xft:xos4 Terminus:bold:size=12
+URxvt.scrollBar: false
+
 Xft.rgba: rgb
 Xft.autohint: 0
 Xft.hinting: 1

@@ -30,10 +30,15 @@ fi
 
 unsetopt share_history
 
+BASE16_SHELL=$HOME/.config/base16-shell/
+[ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
+base16_materia
+
 alias vim="nvim"
 alias tmux="tmux -2"
 alias updmirrors="sudo reflector --country 'United States' --latest 15 --age 24 --sort rate --save /etc/pacman.d/mirrorlist"
 alias snap-now="sudo systemctl start snapper-timeline.service"
+alias coin="rlwrap coin"
 
 backup_drive-mount() {
     sudo cryptsetup open --type luks /dev/disk/by-uuid/542dbeea-1c3f-4aea-9cdf-5c2d7c05fd61 backup_drive
@@ -52,3 +57,9 @@ snap-push() {
 }
 
 alias se="sudoedit"
+
+autotex() {
+    urxvt -e sh -c "echo $1 | entr -c pdflatex -halt-on-error $1" &
+    (zathura ${1%.tex}.pdf &)
+    vim $1
+}

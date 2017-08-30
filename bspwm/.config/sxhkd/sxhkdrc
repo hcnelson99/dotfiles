@@ -13,7 +13,7 @@ XF86AudioMute
 
 # terminal emulator
 alt + Return
-	termite
+	urxvt
 
 # browser
 alt + c
