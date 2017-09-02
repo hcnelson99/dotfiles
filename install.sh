@@ -27,10 +27,10 @@ sudo reflector --latest 15 --protocol http --protocol https --sort rate --save /
 cd ~/dotfiles
 
 sudo mkdir -p /etc/pacman.d/hooks
-sudo ln -s ~/dotfiles/mirrorupgrade.hook /etc/pacman.d/hooks
+sudo cp ~/dotfiles/mirrorupgrade.hook /etc/pacman.d/hooks
 
 UTIL="vim neovim xsel stow redshift tmux zsh pass rxvt-unicode python-virtualenvwrapper"
-DE="bspwm sxhkd wireless_tools polybar-git compton feh light unclutter-xfixes-git i3lock-fancy-git"
+DE="bspwm sxhkd wireless_tools polybar compton feh light unclutter-xfixes-git i3lock-fancy-git"
 DE_PROGS="rofi rofi-pass thunar arandr"
 THEMES="numix-circle-icon-theme-git adapta-gtk-theme"
 XORG="xorg-server xorg-xinit xorg-xmodmap xorg-xsetroot"
@@ -49,6 +49,7 @@ ln -s ~/.vim ~/.config/nvim
 ln -s ~/.vimrc ~/.config/nvim/init.vim
 
 git clone https://github.com/tarjoilija/zgen.git ~/.zgen
+git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shell
 stow zsh
 sudo chsh "$USER" -s "$(which zsh)"
 
