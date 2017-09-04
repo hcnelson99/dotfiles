@@ -60,6 +60,6 @@ alias se="sudoedit"
 
 autotex() {
     urxvt -e sh -c "echo $1 | entr -c pdflatex -halt-on-error $1" &
-    (zathura ${1%.tex}.pdf &)>/dev/null
+    (zathura ${1%.tex}.pdf &)2>/dev/null
     vim $1
 }
