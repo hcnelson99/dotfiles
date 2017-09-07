@@ -35,7 +35,7 @@ DE_PROGS="rofi rofi-pass thunar arandr"
 THEMES="numix-circle-icon-theme-git adapta-gtk-theme"
 XORG="xorg-server xorg-xinit xorg-xmodmap xorg-xsetroot"
 NET="networkmanager networkmanager-openvpn network-manager-applet google-chrome"
-FONT="terminus-font-td1 fonts-meta-base ttf-font-awesome siji-git"
+FONT="terminus-font-td1 fonts-meta-extended-lt ttf-font-awesome siji-git"
 AUDIO="pulseaudio"
 
 pacaur -Syu --noconfirm --noedit "$XORG $UTIL $NET $DE $DE_PROGS $THEMES $FONT $AUDIO"
@@ -53,8 +53,11 @@ git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shel
 stow zsh
 sudo chsh "$USER" -s "$(which zsh)"
 
+sudo ln -s /etc/fonts/conf.avail/11-lcdfilter-default.conf /etc/fonts/conf.d
+sudo ln -s /etc/fonts/conf.avail/10-sub-pixel-rgb.conf /etc/fonts/conf.d
+sudo ln -s /etc/fonts/conf.avail/30-infinality-aliases.conf /etc/fonts/conf.d
+
 stow X
-stow fontconfig
 stow git
 stow tmux
 stow bspwm
