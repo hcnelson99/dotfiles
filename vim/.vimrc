@@ -89,6 +89,9 @@ set inccommand=nosplit "neovim live preview
 inoremap jk <esc>
 
 noremap Y y$
+" i$ as text object
+onoremap i$ :normal! T$v,<CR>
+vnoremap i$ <esc>T$v,
 
 noremap <Leader>h :nohls<CR>
 noremap <Leader>w :w<CR>
