@@ -23,13 +23,14 @@ if ! zgen saved; then
     zgen oh-my-zsh plugins/virtualenvwrapper
     zgen load zsh-users/zsh-syntax-highlighting
 
-    zgen oh-my-zsh themes/agnoster
+    zgen oh-my-zsh themes/zhann
 
     zgen save
 fi
 
 unsetopt share_history
 
+BASE16_SHELL_SET_BACKGROUND=false
 BASE16_SHELL=$HOME/.config/base16-shell/
 [ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
 base16_materia

@@ -29,7 +29,7 @@ height = 27
 offset-x = 0
 offset-y = 0
 
-background = ${colors.background}
+background = #171e2c
 foreground = ${colors.foreground}
 
 overline-size = 2
@@ -90,19 +90,19 @@ type = internal/bspwm
 
 label-focused = ⚫
 label-focused-underline= ${colors.yellow}
-label-focused-background = ${colors.background}
+label-focused-background = #171e2c
 label-focused-padding = 2
 
 label-occupied = ⚫
 label-occupied-padding = 2
-label-occupied-background = ${colors.background}
+label-occupied-background = #171e2c
 
 label-urgent = !
-label-urgent-background = ${colors.red}
+label-urgent-background = #171e2c
 label-urgent-padding = 2
 
 label-empty = ⚪
-label-empty-background = ${colors.background}
+label-empty-background = #171e2c
 label-empty-padding = 2
 
 [module/mpd]
@@ -193,7 +193,7 @@ interval = 5
 
 date= "%a, %Y-%m-%d"
 
-time = %H:%M
+time = %I:%M %p
 
 format-prefix = 
 format-prefix-foreground = ${colors.foreground}

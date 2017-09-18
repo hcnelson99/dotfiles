@@ -56,6 +56,8 @@ set background=dark
 
 let base16colorspace=256
 colorscheme base16-materia
+hi Normal ctermbg=none
+hi NonText ctermbg=none
 
 " disable comment continuation when inserting new lines
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
