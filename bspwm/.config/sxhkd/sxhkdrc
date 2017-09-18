@@ -115,3 +115,8 @@ alt + ctrl + {1-9}
 # cancel the preselection for the focused desktop
 alt + ctrl + space
 	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
+
+alt + space
+	xdo hide -N "Polybar" && bspc config bottom_padding 0
+alt + shift + space
+	xdo show -N "Polybar" && bspc config bottom_padding 27
