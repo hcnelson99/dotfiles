@@ -58,6 +58,11 @@ let base16colorspace=256
 colorscheme base16-materia
 hi Normal ctermbg=none
 hi NonText ctermbg=none
+hi LineNr ctermbg=none
+hi GitGutterAdd ctermbg=none
+hi GitGutterChange ctermbg=none
+hi GitGutterDelete ctermbg=none
+hi GitGutterChangeDelete ctermbg=none
 
 " disable comment continuation when inserting new lines
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
