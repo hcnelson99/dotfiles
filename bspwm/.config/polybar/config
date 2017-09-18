@@ -1,5 +1,5 @@
 [colors]
-background = ${xrdb:background}
+background = #171e2c
 foreground = ${xrdb:foreground}
 
 red = ${xrdb:color1}
@@ -29,7 +29,7 @@ height = 27
 offset-x = 0
 offset-y = 0
 
-background = #171e2c
+background = ${colors.background}
 foreground = ${colors.foreground}
 
 overline-size = 2
@@ -90,19 +90,19 @@ type = internal/bspwm
 
 label-focused = ⚫
 label-focused-underline= ${colors.yellow}
-label-focused-background = #171e2c
+label-focused-background = ${colors.background}
 label-focused-padding = 2
 
 label-occupied = ⚫
 label-occupied-padding = 2
-label-occupied-background = #171e2c
+label-occupied-background = ${colors.background}
 
 label-urgent = !
-label-urgent-background = #171e2c
+label-urgent-background = ${colors.red}
 label-urgent-padding = 2
 
 label-empty = ⚪
-label-empty-background = #171e2c
+label-empty-background = ${colors.background}
 label-empty-padding = 2
 
 [module/mpd]
@@ -193,7 +193,7 @@ interval = 5
 
 date= "%a, %Y-%m-%d"
 
-time = %I:%M %p
+time = %H:%M
 
 format-prefix = 
 format-prefix-foreground = ${colors.foreground}
@@ -271,3 +271,4 @@ screenchange-reload = true
 ;compositing-border = over
 
 ; vim:ft=dosini
+
