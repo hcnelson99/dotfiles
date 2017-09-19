@@ -28,8 +28,8 @@ alt + Escape
 	i3lock-fancy && systemctl suspend
 
 # night mode
-alt + n
-	ps aux | grep redshift && pkill -USR1 '^redshift$' || redshift -l 40:80
+alt + {_, shift +} n
+	redshift -o {_,-x} -l 40:80
 
 # vpn
 alt + {_, shift +} v
