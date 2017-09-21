@@ -22,6 +22,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'edkolev/tmuxline.vim'
 Plug 'kovisoft/slimv'
 Plug 'cmugpi/vim-c0'
+Plug 'junegunn/vim-easy-align'
 
 call plug#end()
 filetype plugin indent on
@@ -51,6 +52,9 @@ noremap <Leader>du :diffupdate<CR>
 xnoremap <Leader>dp :diffput<CR>
 xnoremap <Leader>dg :diffget<CR>
 xnoremap <Leader>du :diffupdate<CR>
+
+xmap ga <Plug>(EasyAlign)
+nmap ga <Plug>(EasyAlign)
 
 set background=dark
 
