@@ -103,6 +103,9 @@ noremap Y y$
 " i$ as text object
 onoremap i$ :normal! T$v,<CR>
 vnoremap i$ <esc>T$v,
+" a$ as text object
+onoremap a$ :normal! F$v,<CR>
+vnoremap a$ <esc>F$v,
 
 noremap <Leader>h :nohls<CR>
 noremap <Leader>w :w<CR>
