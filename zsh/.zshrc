@@ -64,3 +64,8 @@ autotex() {
     (zathura ${1%.tex}.pdf &)2>/dev/null
     vim $1
 }
+
+bg() {
+    BASE16_SHELL_SET_BACKGROUND=true
+    base16_materia
+}
