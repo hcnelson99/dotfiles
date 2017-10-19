@@ -3,12 +3,9 @@ set shell=/usr/bin/zsh
 call plug#begin('~/.vim/plugged')
 
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'scrooloose/nerdtree'
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'nathanaelkane/vim-indent-guides'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'tpope/vim-sleuth'
-Plug 'tomtom/tcomment_vim'
+Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-unimpaired'
@@ -20,9 +17,12 @@ Plug 'chriskempson/base16-vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'edkolev/tmuxline.vim'
-Plug 'kovisoft/slimv'
 Plug 'cmugpi/vim-c0'
-Plug 'junegunn/vim-easy-align'
+Plug 'mileszs/ack.vim'
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
+Plug 'junegunn/goyo.vim'
+Plug 'mbbill/undotree'
 
 call plug#end()
 filetype plugin indent on
@@ -31,8 +31,13 @@ syntax enable
 
 let mapleader="\<Space>"
 
-let g:slimv_swank_cmd = '! tmux new-window -d -n REPL-SBCL "ros run --load ~/.vim/plugged/slimv/slime/start-swank.lisp"'
-let g:lisp_rainbow = 1
+if executable('rg')
+  let g:ackprg = 'rg --vimgrep'
+endif
+
+let g:lightline = {
+      \ 'colorscheme': 'base16',
+      \ }
 
 let g:airline_powerline_fonts = 1
 
@@ -44,6 +49,13 @@ noremap <Leader>gr :Gread<CR>
 noremap <Leader>gs :Gstatus<CR>
 noremap <Leader>gc :Gcommit<CR>
 noremap <Leader>gp :Gpush<CR>
+noremap <Leader>t :Tags<CR>
+noremap <Leader>f :Files<CR>
+noremap <Leader>b :Buffers<CR>
+noremap <Leader>a :Ack! "\b<cword>\b" <CR>
+noremap <Leader>u :UndotreeToggle<CR>
+
+noremap <Leader>T :set expandtab tabstop=8 shiftwidth=8 softtabstop=8<CR>
 
 set diffopt+=vertical
 noremap <Leader>dp :diffput<CR>
@@ -52,9 +64,6 @@ noremap <Leader>du :diffupdate<CR>
 xnoremap <Leader>dp :diffput<CR>
 xnoremap <Leader>dg :diffget<CR>
 xnoremap <Leader>du :diffupdate<CR>
-
-xmap ga <Plug>(EasyAlign)
-nmap ga <Plug>(EasyAlign)
 
 set background=dark
 
@@ -71,7 +80,11 @@ hi GitGutterChangeDelete ctermbg=none
 " disable comment continuation when inserting new lines
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
-set undodir=~/.vim/undo//
+set noshowmode
+if has("persistent_undo")
+    set undodir=~/.undodir/
+    set undofile
+endif
 set nobackup
 set nowritebackup
 set noswapfile
@@ -95,7 +108,9 @@ set wildmenu "visual autocomplete for command menu
 set showmatch "show matching braces/parens/brackets
 
 set incsearch "search as characters are entered
-set inccommand=nosplit "neovim live preview
+if has('nvim')
+  set inccommand=nosplit "neovim live preview
+endif
 
 inoremap jk <esc>
 
