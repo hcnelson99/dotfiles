@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+rdesktop-vrdp -K localhost:3389
