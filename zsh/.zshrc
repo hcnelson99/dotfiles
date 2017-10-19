@@ -23,6 +23,9 @@ if ! zgen saved; then
     zgen oh-my-zsh plugins/virtualenvwrapper
     zgen load zsh-users/zsh-syntax-highlighting
 
+    zgen load junegunn/fzf shell/completion.zsh
+    zgen load junegunn/fzf shell/key-bindings.zsh
+
     zgen oh-my-zsh themes/zhann
 
     zgen save
@@ -30,16 +33,17 @@ fi
 
 unsetopt share_history
 
-BASE16_SHELL_SET_BACKGROUND=false
 BASE16_SHELL=$HOME/.config/base16-shell/
 [ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
 base16_materia
 
 alias vim="nvim"
 alias tmux="tmux -2"
+alias coin="rlwrap coin"
+
 alias updmirrors="sudo reflector --country 'United States' --latest 15 --age 24 --sort rate --save /etc/pacman.d/mirrorlist"
 alias snap-now="sudo systemctl start snapper-timeline.service"
-alias coin="rlwrap coin"
+alias se="sudoedit"
 
 backup_drive-mount() {
     sudo cryptsetup open --type luks /dev/disk/by-uuid/542dbeea-1c3f-4aea-9cdf-5c2d7c05fd61 backup_drive
@@ -56,8 +60,6 @@ snap-push() {
     sudo snap-sync -n -u 87d71995-c8b9-4a2c-aa47-0f6fb78fe4bd
     backup_drive-umount
 }
-
-alias se="sudoedit"
 
 autotex() {
     urxvt -e sh -c "echo $1 | entr -c pdflatex -halt-on-error $1" &
