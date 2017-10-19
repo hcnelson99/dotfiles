@@ -31,6 +31,8 @@ if ! zgen saved; then
     zgen save
 fi
 
+bindkey '^[C' fzf-cd-widget
+
 unsetopt share_history
 
 BASE16_SHELL=$HOME/.config/base16-shell/
