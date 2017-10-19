@@ -50,8 +50,8 @@ noremap <Leader>gs :Gstatus<CR>
 noremap <Leader>gc :Gcommit<CR>
 noremap <Leader>gp :Gpush<CR>
 noremap <Leader>t :Tags<CR>
-noremap <Leader>f :Files<CR>
-noremap <Leader>b :Buffers<CR>
+noremap <C-p> :Files<CR>
+noremap <C-b> :Buffers<CR>
 noremap <Leader>a :Ack! "\b<cword>\b" <CR>
 noremap <Leader>u :UndotreeToggle<CR>
 

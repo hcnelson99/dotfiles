@@ -31,6 +31,7 @@ if ! zgen saved; then
     zgen save
 fi
 
+bindkey -s '^P' 'vim $(fzf)^M'
 bindkey '^[C' fzf-cd-widget
 
 unsetopt share_history
