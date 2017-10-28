@@ -26,10 +26,61 @@ if ! zgen saved; then
     zgen load junegunn/fzf shell/completion.zsh
     zgen load junegunn/fzf shell/key-bindings.zsh
 
-    zgen oh-my-zsh themes/zhann
+    zgen oh-my-zsh themes/af-magic
 
     zgen save
 fi
+
+BUILD_TYPE=debug
+
+run() {
+    if [ "$#" -eq 0 ]; then
+        if [ "${BUILD_TYPE}" = "debug" ]; then
+            echo ${RUN_DEBUG_COMMAND}
+            ${RUN_DEBUG_COMMAND}
+        else
+            echo ${RUN_RELEASE_COMMAND}
+            ${RUN_RELEASE_COMMAND}
+        fi
+    else
+        if [ "$1" = "release" ]; then
+            RUN_RELEASE_COMMAND=("${@:2}")
+        else
+            RUN_DEBUG_COMMAND=("${@:1}")
+        fi
+    fi
+}
+
+build() {
+    if [ "$#" -eq 0 ]; then
+        if [ "${BUILD_TYPE}" = "debug" ]; then
+            echo ${BUILD_DEBUG_COMMAND}
+            ${BUILD_DEBUG_COMMAND}
+        else
+            echo ${BUILD_RELEASE_COMMAND}
+            ${BUILD_RELEASE_COMMAND}
+        fi
+    else
+        if [ "$1" = "release" ]; then
+            BUILD_RELEASE_COMMAND=("${@:2}")
+        else
+            BUILD_DEBUG_COMMAND=("${@:1}")
+        fi
+    fi
+}
+
+toggle() {
+    if [ "${BUILD_TYPE}" = "release" ]; then
+        BUILD_TYPE=debug
+    else
+        BUILD_TYPE=release
+    fi
+    echo ${BUILD_TYPE}
+}
+
+bindkey -s '^B' "build^M"
+bindkey -s '^N' "toggle^M"
+bindkey -s '^G' "run^M"
 
 bindkey -s '^P' 'vim $(fzf)^M'
 bindkey '^[C' fzf-cd-widget
