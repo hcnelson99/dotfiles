@@ -4,6 +4,7 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'ntpeters/vim-better-whitespace'
+Plug 'tpope/vim-classpath'
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
@@ -18,11 +19,16 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'edkolev/tmuxline.vim'
 Plug 'cmugpi/vim-c0'
+Plug 'sheerun/vim-polyglot'
 Plug 'mileszs/ack.vim'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'mbbill/undotree'
+Plug 'guns/vim-sexp'
+Plug 'tpope/vim-sexp-mappings-for-regular-people'
+Plug 'jpalardy/vim-slime'
+Plug 'tpope/vim-fireplace'
 
 call plug#end()
 filetype plugin indent on
@@ -39,9 +45,15 @@ let g:lightline = {
       \ 'colorscheme': 'base16',
       \ }
 
+let g:slime_target = "tmux"
+let g:slime_default_config = {"socket_name": "default", "target_pane": ":.1"}
+
 let g:airline_powerline_fonts = 1
 
 let g:gitgutter_map_keys = 0
+
+" vim-fireplace eval entire file (like cpr for tests)
+noremap cpf :%Eval<CR>
 
 noremap <Leader>gd :Gdiff<CR>
 noremap <Leader>gw :Gwrite<CR>
