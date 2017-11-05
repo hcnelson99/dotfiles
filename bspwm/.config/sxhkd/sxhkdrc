@@ -29,7 +29,7 @@ alt + Escape
 
 # night mode
 alt + {_, shift +} n
-	redshift -o  -l 40:80 {-O 3700, -x}
+	redshift -o -l 40:80 {-O 3700,-x}
 
 # vpn
 alt + {_, shift +} v
