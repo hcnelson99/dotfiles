@@ -57,6 +57,8 @@ let g:gitgutter_map_keys = 0
 " vim-fireplace eval entire file (like cpr for tests)
 noremap cpf :%Eval<CR>
 
+noremap <Leader>gw :Gina add %<CR>
+noremap <Leader>gr :Gina checkout %<CR>:e<CR>
 noremap <Leader>gd :Gina compare<CR>
 noremap <Leader>gs :call magit#show_magit('h')<CR>
 noremap <Leader>gc :Gina commit<CR>
@@ -139,10 +141,11 @@ vnoremap a$ <esc>F$v,
 noremap <Leader>h :nohls<CR>
 noremap <Leader>w :w<CR>
 noremap <Leader>q :q<CR>
+noremap <Leader>Q :q!<CR>
 noremap <Leader>W :w !sudo tee % > /dev/null<CR>
 noremap <Leader>r :source ~/.vimrc<CR>
 noremap <Leader>i :PlugInstall<CR>
-nnoremap <Leader>l :Gina cd<CR>
+nnoremap <Leader>l :Gina cd<CR>:execute 'file '.fnameescape(resolve(expand('%:p')))<CR>
 
 set nospell
 map <Leader>s :setlocal spell! spelllang=en_us<CR>
