@@ -13,7 +13,7 @@ Plug 'tpope/vim-unimpaired'
 Plug 'tommcdo/vim-exchange'
 Plug 'easymotion/vim-easymotion'
 Plug 'lambdalisue/gina.vim'
-" Plug 'tpope/vim-fugitive'
+Plug 'jreybert/vimagit'
 Plug 'airblade/vim-gitgutter'
 Plug 'chriskempson/base16-vim'
 Plug 'vim-airline/vim-airline'
@@ -57,10 +57,8 @@ let g:gitgutter_map_keys = 0
 " vim-fireplace eval entire file (like cpr for tests)
 noremap cpf :%Eval<CR>
 
-" noremap <Leader>gd :Gdiff<CR>
-" noremap <Leader>gw :Gwrite<CR>
-" noremap <Leader>gr :Gread<CR>
-noremap <Leader>gs :Gina status<CR>
+noremap <Leader>gd :Gina compare<CR>
+noremap <Leader>gs :call magit#show_magit('h')<CR>
 noremap <Leader>gc :Gina commit<CR>
 noremap <Leader>gp :Gina push<CR>
 noremap <Leader>t :Tags<CR>
