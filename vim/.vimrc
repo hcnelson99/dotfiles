@@ -12,7 +12,8 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-unimpaired'
 Plug 'tommcdo/vim-exchange'
 Plug 'easymotion/vim-easymotion'
-Plug 'tpope/vim-fugitive'
+Plug 'lambdalisue/gina.vim'
+" Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'chriskempson/base16-vim'
 Plug 'vim-airline/vim-airline'
@@ -29,6 +30,7 @@ Plug 'guns/vim-sexp'
 Plug 'tpope/vim-sexp-mappings-for-regular-people'
 Plug 'jpalardy/vim-slime'
 Plug 'tpope/vim-fireplace'
+Plug 'vim-scripts/YankRing.vim'
 
 call plug#end()
 filetype plugin indent on
@@ -55,17 +57,19 @@ let g:gitgutter_map_keys = 0
 " vim-fireplace eval entire file (like cpr for tests)
 noremap cpf :%Eval<CR>
 
-noremap <Leader>gd :Gdiff<CR>
-noremap <Leader>gw :Gwrite<CR>
-noremap <Leader>gr :Gread<CR>
-noremap <Leader>gs :Gstatus<CR>
-noremap <Leader>gc :Gcommit<CR>
-noremap <Leader>gp :Gpush<CR>
+" noremap <Leader>gd :Gdiff<CR>
+" noremap <Leader>gw :Gwrite<CR>
+" noremap <Leader>gr :Gread<CR>
+noremap <Leader>gs :Gina status<CR>
+noremap <Leader>gc :Gina commit<CR>
+noremap <Leader>gp :Gina push<CR>
 noremap <Leader>t :Tags<CR>
-noremap <C-p> :Files<CR>
+noremap <C-f> :Files<CR>
 noremap <C-b> :Buffers<CR>
 noremap <Leader>a :Ack! "\b<cword>\b" <CR>
 noremap <Leader>u :UndotreeToggle<CR>
+noremap <Leader>y :YRShow<CR>
+noremap <Leader>c :YRCheckClipboard<CR>
 
 noremap <Leader>T :set expandtab tabstop=8 shiftwidth=8 softtabstop=8<CR>
 
@@ -78,7 +82,6 @@ xnoremap <Leader>dg :diffget<CR>
 xnoremap <Leader>du :diffupdate<CR>
 
 set background=dark
-
 let base16colorspace=256
 colorscheme base16-materia
 hi Normal ctermbg=none
@@ -115,6 +118,7 @@ set scrolloff=2
 
 set ruler "show cursor location
 set number "show line numbers
+set relativenumber "show line numbers
 set showcmd " show command in bottom bar
 set wildmenu "visual autocomplete for command menu
 set showmatch "show matching braces/parens/brackets

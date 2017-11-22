@@ -43,10 +43,10 @@ run() {
             ${RUN_RELEASE_COMMAND}
         fi
     else
-        if [ "$1" = "release" ]; then
-            RUN_RELEASE_COMMAND=("${@:2}")
-        else
+        if [ "${BUILD_TYPE}" = "debug" ]; then
             RUN_DEBUG_COMMAND=("${@:1}")
+        else
+            RUN_RELEASE_COMMAND=("${@:1}")
         fi
     fi
 }
@@ -61,10 +61,10 @@ build() {
             ${BUILD_RELEASE_COMMAND}
         fi
     else
-        if [ "$1" = "release" ]; then
-            BUILD_RELEASE_COMMAND=("${@:2}")
-        else
+        if [ "${BUILD_TYPE}" = "debug" ]; then
             BUILD_DEBUG_COMMAND=("${@:1}")
+        else
+            BUILD_RELEASE_COMMAND=("${@:1}")
         fi
     fi
 }
@@ -82,7 +82,7 @@ bindkey -s '^B' "build^M"
 bindkey -s '^N' "toggle^M"
 bindkey -s '^G' "run^M"
 
-bindkey -s '^P' 'vim $(fzf)^M'
+bindkey -s '^F' 'vim $(fzf)^M'
 bindkey '^[C' fzf-cd-widget
 
 unsetopt share_history
@@ -91,7 +91,6 @@ BASE16_SHELL=$HOME/.config/base16-shell/
 [ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
 base16_materia
 
-alias vim="nvim"
 alias tmux="tmux -2"
 alias coin="rlwrap coin"
 
