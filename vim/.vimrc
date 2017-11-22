@@ -58,7 +58,7 @@ let g:gitgutter_map_keys = 0
 noremap cpf :%Eval<CR>
 
 noremap <Leader>gw :Gina add %<CR>
-noremap <Leader>gr :Gina checkout %<CR>:e<CR>
+noremap <Leader>gr :w!<CR>:Gina checkout %<CR>:e<CR>
 noremap <Leader>gd :Gina compare<CR>
 noremap <Leader>gs :call magit#show_magit('h')<CR>
 noremap <Leader>gc :Gina commit<CR>
