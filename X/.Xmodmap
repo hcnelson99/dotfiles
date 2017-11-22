@@ -1,7 +1,2 @@
-clear lock
-clear control
-keycode 37 = Hyper_L
-keycode 66 = Control_L
-add control = Control_L Control_R
-! Compose key
+! compose key
 keycode 107 = Multi_key
