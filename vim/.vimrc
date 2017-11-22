@@ -3,7 +3,7 @@ set shell=/usr/bin/zsh
 call plug#begin('~/.vim/plugged')
 
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'ntpeters/vim-better-whitespace'
+Plug 'thirtythreeforty/lessspace.vim'
 Plug 'tpope/vim-classpath'
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-commentary'
@@ -141,11 +141,8 @@ noremap <Leader>w :w<CR>
 noremap <Leader>q :q<CR>
 noremap <Leader>W :w !sudo tee % > /dev/null<CR>
 noremap <Leader>r :source ~/.vimrc<CR>
-noremap <Leader>bd :q<CR>
 noremap <Leader>i :PlugInstall<CR>
-noremap <Leader><Tab> :IndentGuidesToggle<CR>
-nnoremap <Leader>l :<C-u>execute 'file '.fnameescape(resolve(expand('%:p')))<bar>
-    \ call fugitive#detect(fnameescape(expand('%:p:h')))<CR>
+nnoremap <Leader>l :Gina cd<CR>
 
 set nospell
 map <Leader>s :setlocal spell! spelllang=en_us<CR>
