@@ -31,6 +31,9 @@ Plug 'tpope/vim-sexp-mappings-for-regular-people'
 Plug 'jpalardy/vim-slime'
 Plug 'tpope/vim-fireplace'
 Plug 'vim-scripts/YankRing.vim'
+Plug 'xtal8/traces.vim'
+Plug 'kana/vim-textobj-user'
+Plug 'Julian/vim-textobj-variable-segment'
 
 call plug#end()
 filetype plugin indent on
@@ -131,12 +134,17 @@ endif
 inoremap jk <esc>
 
 noremap Y y$
-" i$ as text object
-onoremap i$ :normal! T$v,<CR>
-vnoremap i$ <esc>T$v,
-" a$ as text object
-onoremap a$ :normal! F$v,<CR>
-vnoremap a$ <esc>F$v,
+
+call textobj#user#plugin('latex', {
+\   'dollar-math-a': {
+\     '*pattern*': '[$][^$]*[$]',
+\     'select': 'a$',
+\   },
+\  'dollar-math-i': {
+\     '*pattern*': '[$]\zs[^$]*\ze[$]',
+\     'select': 'i$',
+\   },
+\ })
 
 noremap <Leader>h :nohls<CR>
 noremap <Leader>w :w<CR>
