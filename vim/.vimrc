@@ -55,6 +55,7 @@ let g:slime_default_config = {"socket_name": "default", "target_pane": ":.1"}
 
 let g:airline_powerline_fonts = 1
 
+let g:yankring_history_dir = "~/.vim"
 let g:gitgutter_map_keys = 0
 
 " vim-fireplace eval entire file (like cpr for tests)
@@ -98,9 +99,11 @@ hi GitGutterChangeDelete ctermbg=none
 " disable comment continuation when inserting new lines
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
+autocmd BufRead,BufWrite /dev/shm/pass* setlocal noundofile
+
 set noshowmode
 if has("persistent_undo")
-    set undodir=~/.undodir/
+    set undodir=~/.vim/undodir/
     set undofile
 endif
 set nobackup
