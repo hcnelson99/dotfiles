@@ -5,6 +5,7 @@
 	email = hcnelson99@gmail.com
 [core]
 	editor = /usr/bin/nvim
+	excludesfile = ~/.gitignore
 [push]
 	default = simple
 [alias]
