@@ -1,4 +1,3 @@
-set nocompatible
 set shell=/usr/bin/zsh
 call plug#begin('~/.vim/plugged')
 
@@ -10,154 +9,151 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-fugitive'
 Plug 'tommcdo/vim-exchange'
-Plug 'easymotion/vim-easymotion'
-Plug 'lambdalisue/gina.vim'
-Plug 'jreybert/vimagit'
 Plug 'airblade/vim-gitgutter'
 Plug 'chriskempson/base16-vim'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'edkolev/tmuxline.vim'
-Plug 'cmugpi/vim-c0'
+Plug 'cmugpi/vim-c0', { 'for': 'c0' }
 Plug 'sheerun/vim-polyglot'
 Plug 'mileszs/ack.vim'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'mbbill/undotree'
-Plug 'guns/vim-sexp'
-Plug 'tpope/vim-sexp-mappings-for-regular-people'
-Plug 'jpalardy/vim-slime'
-Plug 'tpope/vim-fireplace'
-Plug 'vim-scripts/YankRing.vim'
-Plug 'xtal8/traces.vim'
-Plug 'kana/vim-textobj-user'
-Plug 'Julian/vim-textobj-variable-segment'
+Plug 'guns/vim-sexp', { 'for': ['lisp', 'clojure', 'scheme'] }
+Plug 'tpope/vim-sexp-mappings-for-regular-people', { 'for': ['lisp', 'clojure', 'scheme'] }
+Plug 'jpalardy/vim-slime', { 'for': 'lisp' }
+Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
+Plug 'wellle/targets.vim'
+Plug 'justinmk/vim-sneak'
+Plug 'ludovicchabant/vim-gutentags'
+" Plug 'tweekmonster/startuptime.vim'
 
 call plug#end()
 filetype plugin indent on
 
 syntax enable
 
-let mapleader="\<Space>"
-
 if executable('rg')
   let g:ackprg = 'rg --vimgrep'
 endif
 
-let g:lightline = {
-      \ 'colorscheme': 'base16',
-      \ }
-
+let g:sneak#label = 1
 let g:slime_target = "tmux"
 let g:slime_default_config = {"socket_name": "default", "target_pane": ":.1"}
-
-let g:airline_powerline_fonts = 1
-
-let g:yankring_history_dir = "~/.vim"
 let g:gitgutter_map_keys = 0
 
+inoremap jk <esc>
+noremap Y y$
+
 " vim-fireplace eval entire file (like cpr for tests)
-noremap cpf :%Eval<CR>
+nnoremap cpf :%Eval<CR>
 
-noremap <Leader>gw :Gina add %<CR>
-noremap <Leader>gr :w!<CR>:Gina checkout %<CR>:e<CR>
-noremap <Leader>gd :Gina compare<CR>
-noremap <Leader>gs :call magit#show_magit('h')<CR>
-noremap <Leader>gc :Gina commit<CR>
-noremap <Leader>gp :Gina push<CR>
-noremap <Leader>t :Tags<CR>
-noremap <C-f> :Files<CR>
-noremap <C-b> :Buffers<CR>
-noremap <Leader>a :Ack! "\b<cword>\b" <CR>
-noremap <Leader>u :UndotreeToggle<CR>
-noremap <Leader>y :YRShow<CR>
-noremap <Leader>c :YRCheckClipboard<CR>
+nnoremap <C-b> :Buffers<CR>
+nnoremap <C-f> :Files<CR>
 
-noremap <Leader>T :set expandtab tabstop=8 shiftwidth=8 softtabstop=8<CR>
+nnoremap <Space>a :Ack! "\b<cword>\b" <CR>
 
+nnoremap <Space>dp :diffput<CR>
+xnoremap <Space>dp :diffput<CR>
+nnoremap <Space>dg :diffget<CR>
+xnoremap <Space>dg :diffget<CR>
+nnoremap <Space>du :diffupdate<CR>
+xnoremap <Space>du :diffupdate<CR>
+
+nnoremap <Space>gc :Gcommit<CR>
+nnoremap <Space>gd :Gdiff<CR>
+nnoremap <Space>gp :Gpush<CR>
+nnoremap <Space>gr :Gread<CR>
+nnoremap <Space>gs :Gstatus<CR>
+nnoremap <Space>gw :Gwrite<CR>
+
+nnoremap <Space>h :nohls<CR>
+nnoremap <Space>i :PlugInstall<CR>
+nnoremap <Space>l :Lines<CR>
+nnoremap <Space>L :<C-u>execute 'file '.fnameescape(resolve(expand('%:p')))<bar>
+    \ call fugitive#detect(fnameescape(expand('%:p:h')))<CR>
+nnoremap <Space>q :q<CR>
+nnoremap <Space>Q :q!<CR>
+nnoremap <Space>r :source ~/.vimrc<CR>
+nnoremap <Space>s :setlocal spell! spelllang=en_us<CR>
+nnoremap <Space>T :set expandtab tabstop=8 shiftwidth=8 softtabstop=8<CR>
+nnoremap <Space>t :Tags<CR>
+nnoremap <Space>u :UndotreeToggle<CR>
+nnoremap <Space>w :w<CR>
+nnoremap <Space>W :w !sudo tee % > /dev/null<CR>
+
+nnoremap <Space>dp :diffput<CR>
+xnoremap <Space>dp :diffput<CR>
+nnoremap <Space>dg :diffget<CR>
+xnoremap <Space>dg :diffget<CR>
+nnoremap <Space>du :diffupdate<CR>
+xnoremap <Space>du :diffupdate<CR>
 set diffopt+=vertical
-noremap <Leader>dp :diffput<CR>
-noremap <Leader>dg :diffget<CR>
-noremap <Leader>du :diffupdate<CR>
-xnoremap <Leader>dp :diffput<CR>
-xnoremap <Leader>dg :diffget<CR>
-xnoremap <Leader>du :diffupdate<CR>
 
 set background=dark
 let base16colorspace=256
 colorscheme base16-materia
-hi Normal ctermbg=none
-hi NonText ctermbg=none
-hi LineNr ctermbg=none
-hi GitGutterAdd ctermbg=none
-hi GitGutterChange ctermbg=none
-hi GitGutterDelete ctermbg=none
-hi GitGutterChangeDelete ctermbg=none
 
-" disable comment continuation when inserting new lines
-autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+function! MyColors() abort
+    highlight Normal ctermbg=none
+    highlight NonText ctermbg=none
+    highlight LineNr ctermbg=none
+    highlight GitGutterAdd ctermbg=none
+    highlight GitGutterChange ctermbg=none
+    highlight GitGutterDelete ctermbg=none
+    highlight GitGutterChangeDelete ctermbg=none
+endfunction
 
-autocmd BufRead,BufWrite /dev/shm/pass* setlocal noundofile
+augroup Colors
+    autocmd!
+    autocmd ColorScheme * call MyColors()
+augroup END
+
+augroup vimrc
+  autocmd!
+  autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+  autocmd BufRead,BufWrite /dev/shm/pass* setlocal noundofile
+  autocmd * Files write
+augroup END
 
 set noshowmode
 if has("persistent_undo")
     set undodir=~/.vim/undodir/
     set undofile
 endif
+
 set nobackup
 set nowritebackup
 set noswapfile
 
 set clipboard=unnamedplus
-set backspace=2 "allow backspacing over linebreaks,indent, start of insert
+set backspace=indent,eol,start
 
-set tabstop=4 " number of visual spaces per TAB
 set shiftwidth=4 "indent width used for autoindent
 set softtabstop=4 "number of spaces inserted when tab is pressed
 set expandtab "tabs are spaces
 set autoindent
-set smartindent
+set shiftround
+set smarttab
 set autoread
 set scrolloff=2
 
 set ruler "show cursor location
 set number "show line numbers
-set relativenumber "show line numbers
 set showcmd " show command in bottom bar
 set wildmenu "visual autocomplete for command menu
 set showmatch "show matching braces/parens/brackets
 
-set incsearch "search as characters are entered
-if has('nvim')
-  set inccommand=nosplit "neovim live preview
-endif
+set incsearch
+set hlsearch
 
-inoremap jk <esc>
+set list
+set listchars=tab:»\ ,extends:›,precedes:‹,nbsp:·,trail:·
+set showbreak=›››\
 
-noremap Y y$
-
-call textobj#user#plugin('latex', {
-\   'dollar-math-a': {
-\     '*pattern*': '[$][^$]*[$]',
-\     'select': 'a$',
-\   },
-\  'dollar-math-i': {
-\     '*pattern*': '[$]\zs[^$]*\ze[$]',
-\     'select': 'i$',
-\   },
-\ })
-
-noremap <Leader>h :nohls<CR>
-noremap <Leader>w :w<CR>
-noremap <Leader>q :q<CR>
-noremap <Leader>Q :q!<CR>
-noremap <Leader>W :w !sudo tee % > /dev/null<CR>
-noremap <Leader>r :source ~/.vimrc<CR>
-noremap <Leader>i :PlugInstall<CR>
-nnoremap <Leader>l :Gina cd<CR>:execute 'file '.fnameescape(resolve(expand('%:p')))<CR>
+set statusline=%<\ %f\ %m%r%w%=%l\/%-6L\ %3c
+set laststatus=2
 
 set nospell
-map <Leader>s :setlocal spell! spelllang=en_us<CR>
-set wrap lbr
+set wrap linebreak

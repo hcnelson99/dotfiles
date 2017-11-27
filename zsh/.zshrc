@@ -99,7 +99,7 @@ alias snap-now="sudo systemctl start snapper-timeline.service"
 alias se="sudoedit"
 
 backup_drive-mount() {
-    sudo cryptsetup open --type luks /dev/disk/by-uuid/542dbeea-1c3f-4aea-9cdf-5c2d7c05fd61 backup_drive
+    sudo cryptsetup open --type luks /dev/disk/by-uuid/936af459-502b-4a66-a6aa-4942b8429fe4 backup_drive
     sudo mount /mnt/backup_drive
 }
 
@@ -110,7 +110,7 @@ backup_drive-umount() {
 
 snap-push() {
     backup_drive-mount
-    sudo snap-sync -n -u 87d71995-c8b9-4a2c-aa47-0f6fb78fe4bd
+    sudo snap-sync -n -u 07aaa7bd-3616-44d2-91c8-d36f07fbfbcd
     backup_drive-umount
 }
 
