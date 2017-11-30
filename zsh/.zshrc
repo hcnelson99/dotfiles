@@ -84,6 +84,7 @@ bindkey -s '^G' "run^M"
 
 bindkey -s '^F' 'vim $(fzf)^M'
 bindkey '^[C' fzf-cd-widget
+bindkey -s '^Z' "fg^M"
 
 unsetopt share_history
 

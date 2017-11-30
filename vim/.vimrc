@@ -133,6 +133,7 @@ set backspace=indent,eol,start
 set shiftwidth=4 "indent width used for autoindent
 set softtabstop=4 "number of spaces inserted when tab is pressed
 set expandtab "tabs are spaces
+set smartindent
 set autoindent
 set shiftround
 set smarttab
@@ -148,8 +149,6 @@ set showmatch "show matching braces/parens/brackets
 set incsearch
 set hlsearch
 
-set list
-set listchars=tab:»\ ,extends:›,precedes:‹,nbsp:·,trail:·
 set showbreak=›››\
 
 set statusline=%<\ %f\ %m%r%w%=%l\/%-6L\ %3c
