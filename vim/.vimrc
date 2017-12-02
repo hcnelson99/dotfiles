@@ -2,7 +2,7 @@ set shell=/usr/bin/zsh
 call plug#begin('~/.vim/plugged')
 
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'thirtythreeforty/lessspace.vim'
+Plug 'ntpeters/vim-better-whitespace'
 Plug 'tpope/vim-classpath'
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-commentary'
