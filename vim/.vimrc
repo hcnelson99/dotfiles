@@ -27,7 +27,7 @@ Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 Plug 'wellle/targets.vim'
 Plug 'justinmk/vim-sneak'
 Plug 'ludovicchabant/vim-gutentags'
-" Plug 'tweekmonster/startuptime.vim'
+Plug 'tweekmonster/startuptime.vim'
 
 call plug#end()
 filetype plugin indent on
@@ -73,6 +73,7 @@ nnoremap <Space>i :PlugInstall<CR>
 nnoremap <Space>l :Lines<CR>
 nnoremap <Space>L :<C-u>execute 'file '.fnameescape(resolve(expand('%:p')))<bar>
     \ call fugitive#detect(fnameescape(expand('%:p:h')))<CR>
+nnoremap <Space>m :make<CR>
 nnoremap <Space>q :q<CR>
 nnoremap <Space>Q :q!<CR>
 nnoremap <Space>r :source ~/.vimrc<CR>

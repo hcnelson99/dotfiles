@@ -1,0 +1,16 @@
+"light -A 5"
+    XF86MonBrightnessUp
+"light -U 5"
+    XF86MonBrightnessDown
+
+"bash -c 'wmctrl -xa google-chrome || google-chrome-stable'"
+    F5 + Release
+"bash -c 'wmctrl -xa urxvt || urxvt'"
+    F6 + Release
+"rofi -show run"
+    F7 + Release
+"rofi-pass"
+    F8 + Release
+
+"bash -c 'i3lock-fancy && systemctl suspend'"
+    F12 + Release

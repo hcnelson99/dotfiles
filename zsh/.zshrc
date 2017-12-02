@@ -79,7 +79,7 @@ toggle() {
 }
 
 bindkey -s '^B' "build^M"
-bindkey -s '^N' "toggle^M"
+bindkey -s '^H' "toggle^M"
 bindkey -s '^G' "run^M"
 
 bindkey -s '^F' 'vim $(fzf)^M'
@@ -91,6 +91,8 @@ unsetopt share_history
 BASE16_SHELL=$HOME/.config/base16-shell/
 [ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
 base16_materia
+
+alias andrew-auth="kinit hnelson1@ANDREW.CMU.EDU"
 
 alias tmux="tmux -2"
 alias coin="rlwrap coin"

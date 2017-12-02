@@ -1,7 +1,7 @@
 export XDG_CONFIG_HOME="$HOME/.config"
 
 export TERM=xterm-256color
-export EDITOR=nvim
+export EDITOR=vim
 
 export CVSROOT=:ext:henry@cvs.fsl.cs.sunysb.edu:/scm/cvsroot
 export CVS_RSH=/usr/bin/ssh
