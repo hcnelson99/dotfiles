@@ -100,6 +100,10 @@ nnoremap <Space>du :diffupdate<CR>
 xnoremap <Space>du :diffupdate<CR>
 set diffopt+=vertical
 
+if has('gui_running')
+  set guifont=Roboto\ Mono\ 11
+  set guioptions=i
+endif
 set background=dark
 let base16colorspace=256
 colorscheme base16-materia

@@ -7,10 +7,12 @@
     F5 + Release
 "bash -c 'wmctrl -xa urxvt || urxvt'"
     F6 + Release
-"rofi -show run"
+"bash -c 'wmctrl -xa gvim || gvim --servername GVIM'"
     F7 + Release
-"rofi-pass"
+"rofi -show run"
     F8 + Release
 
+"rofi-pass"
+    F11 + Release
 "bash -c 'i3lock-fancy && systemctl suspend'"
     F12 + Release
