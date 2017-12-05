@@ -7,6 +7,7 @@
       <value type="string" value="Power Manager"/>
       <value type="string" value="snap-sync"/>
       <value type="string" value="Spotify"/>
+      <value type="string" value="Transmission"/>
       <value type="string" value="Xfce volume control"/>
     </property>
   </property>
