@@ -10,6 +10,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-eunuch'
 Plug 'tommcdo/vim-exchange'
 Plug 'airblade/vim-gitgutter'
 Plug 'chriskempson/base16-vim'
@@ -27,12 +28,19 @@ Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 Plug 'wellle/targets.vim'
 Plug 'justinmk/vim-sneak'
 Plug 'ludovicchabant/vim-gutentags'
+Plug 'vimwiki/vimwiki'
 Plug 'tweekmonster/startuptime.vim'
 
 call plug#end()
 filetype plugin indent on
 
 syntax enable
+
+let g:vimwiki_map_prefix = '<Space>o'
+let wiki = {}
+let wiki.path = '~/vimwiki/'
+let wiki.nested_syntaxes = {'vim': 'vim'}
+let g:vimwiki_list = [wiki]
 
 if executable('rg')
   let g:ackprg = 'rg --vimgrep'
@@ -70,9 +78,9 @@ nnoremap <Space>gw :Gwrite<CR>
 
 nnoremap <Space>h :nohls<CR>
 nnoremap <Space>i :PlugInstall<CR>
-nnoremap <Space>l :Lines<CR>
-nnoremap <Space>L :<C-u>execute 'file '.fnameescape(resolve(expand('%:p')))<bar>
+nnoremap <Space>l :<C-u>execute 'file '.fnameescape(resolve(expand('%:p')))<bar>
     \ call fugitive#detect(fnameescape(expand('%:p:h')))<CR>
+nnoremap <Space>L :Lines<CR>
 nnoremap <Space>m :make<CR>
 nnoremap <Space>q :q<CR>
 nnoremap <Space>Q :q!<CR>
@@ -82,7 +90,7 @@ nnoremap <Space>T :set expandtab tabstop=8 shiftwidth=8 softtabstop=8<CR>
 nnoremap <Space>t :Tags<CR>
 nnoremap <Space>u :UndotreeToggle<CR>
 nnoremap <Space>w :w<CR>
-nnoremap <Space>W :w !sudo tee % > /dev/null<CR>
+nnoremap <Space>W :SudoWrite<CR>
 
 nnoremap <Space>dp :diffput<CR>
 xnoremap <Space>dp :diffput<CR>

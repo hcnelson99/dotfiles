@@ -35,7 +35,7 @@ DE_PROGS="rofi rofi-pass thunar arandr"
 THEMES="numix-circle-icon-theme-git adapta-gtk-theme"
 XORG="xorg-server xorg-xinit xorg-xmodmap xorg-xsetroot"
 NET="networkmanager networkmanager-openvpn network-manager-applet google-chrome"
-FONT="terminus-font-td1 fonts-meta-extended-lt ttf-font-awesome siji-git"
+FONT="ttf-roboto-mono fonts-meta-extended-lt ttf-font-awesome siji-git"
 AUDIO="pulseaudio"
 
 pacaur -Syu --noconfirm --noedit "$XORG $UTIL $NET $DE $DE_PROGS $THEMES $FONT $AUDIO"

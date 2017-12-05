@@ -1,4 +1,4 @@
-URxvt.font: xft:xos4 Terminus:pixelsize=14
+URxvt.font: xft:Roboto Mono:size=11
 URxvt.scrollBar: false
 URxvt.perl-ext-common: resize-font,new-window
 URxvt.iso14755: false
