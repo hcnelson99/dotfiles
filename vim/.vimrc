@@ -11,6 +11,7 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-vinegar'
 Plug 'tommcdo/vim-exchange'
 Plug 'airblade/vim-gitgutter'
 Plug 'chriskempson/base16-vim'
@@ -102,26 +103,12 @@ set diffopt+=vertical
 
 if has('gui_running')
   set guifont=Roboto\ Mono\ 11
+  set guicursor+=a:blinkon0
   set guioptions=i
 endif
+
 set background=dark
-let base16colorspace=256
 colorscheme base16-materia
-
-function! MyColors() abort
-    highlight Normal ctermbg=none
-    highlight NonText ctermbg=none
-    highlight LineNr ctermbg=none
-    highlight GitGutterAdd ctermbg=none
-    highlight GitGutterChange ctermbg=none
-    highlight GitGutterDelete ctermbg=none
-    highlight GitGutterChangeDelete ctermbg=none
-endfunction
-
-augroup Colors
-    autocmd!
-    autocmd ColorScheme * call MyColors()
-augroup END
 
 augroup vimrc
   autocmd!

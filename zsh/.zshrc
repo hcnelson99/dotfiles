@@ -31,6 +31,9 @@ if ! zgen saved; then
     zgen save
 fi
 
+export LSCOLORS="exfxcxdxbxbxbxbxbxbxbx"
+export LS_COLORS="di=34;40:ln=35;40:so=32;40:pi=33;40:ex=31;40:bd=31;40:cd=31;40:su=31;40:sg=31;40:tw=31;40:ow=31;40:"
+
 BUILD_TYPE=debug
 
 run() {
@@ -88,12 +91,16 @@ bindkey -s '^Z' "fg^M"
 
 unsetopt share_history
 
-BASE16_SHELL=$HOME/.config/base16-shell/
-[ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
-base16_materia
+vim() {
+    if [[ $(/usr/bin/vim --serverlist) ]]; then
+        /usr/bin/vim --servername GVIM --remote $@
+    else
+        gvim --servername GVIM
+        vim $@
+    fi
+}
 
-alias vim='vim --servername GVIM --remote'
-alias andrew-auth="kinit hnelson1@ANDREW.CMU.EDU"
+alias andrew="sshfs andrew:/afs/andrew.cmu.edu/usr15/hnelson1/private ~/andrew"
 
 alias tmux="tmux -2"
 alias coin="rlwrap coin"
@@ -122,9 +129,4 @@ autotex() {
     urxvt -e sh -c "echo $1 | entr -c pdflatex -halt-on-error $1" &
     (zathura ${1%.tex}.pdf &)2>/dev/null
     vim $1
-}
-
-bg() {
-    BASE16_SHELL_SET_BACKGROUND=true
-    base16_materia
 }
