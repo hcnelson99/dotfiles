@@ -5,7 +5,7 @@
 
 "bash -c 'wmctrl -xa google-chrome || google-chrome-stable'"
     F5 + Release
-"bash -c 'wmctrl -xa urxvt || urxvt'"
+"bash -c 'wmctrl -xa xfce4-terminal || xfce4-terminal'"
     F6 + Release
 "bash -c 'wmctrl -xa nvim-qt || nvim-qt'"
     F7 + Release

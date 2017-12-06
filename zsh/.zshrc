@@ -126,7 +126,7 @@ snap-push() {
 }
 
 autotex() {
-    urxvt -e sh -c "echo $1 | entr -c pdflatex -halt-on-error $1" &
-    (zathura ${1%.tex}.pdf &)2>/dev/null
     vim $1
+    (zathura ${1%.tex}.pdf &)2>/dev/null
+    echo $1 | entr -c pdflatex -halt-on-error $1
 }
