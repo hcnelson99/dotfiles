@@ -7,7 +7,7 @@
     F5 + Release
 "bash -c 'wmctrl -xa urxvt || urxvt'"
     F6 + Release
-"bash -c 'wmctrl -xa gvim || gvim --servername GVIM'"
+"bash -c 'wmctrl -xa nvim-qt || nvim-qt'"
     F7 + Release
 "rofi -show run"
     F8 + Release

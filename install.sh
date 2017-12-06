@@ -29,7 +29,7 @@ cd ~/dotfiles
 sudo mkdir -p /etc/pacman.d/hooks
 sudo cp ~/dotfiles/mirrorupgrade.hook /etc/pacman.d/hooks
 
-UTIL="vim xsel stow redshift tmux zsh pass rxvt-unicode urxvt-resize-font-git python-virtualenvwrapper fzf ripgrep"
+UTIL="vim neovim neovim-qt neovim-remote xsel stow redshift tmux zsh pass rxvt-unicode urxvt-resize-font-git python-virtualenvwrapper fzf ripgrep"
 DE="xfce4 xfce4-goodies light unclutter-xfixes-git i3lock-fancy-git"
 DE_PROGS="rofi rofi-pass thunar arandr"
 THEMES="numix-circle-icon-theme-git adapta-gtk-theme"

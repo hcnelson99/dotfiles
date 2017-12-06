@@ -92,11 +92,11 @@ bindkey -s '^Z' "fg^M"
 unsetopt share_history
 
 vim() {
-    if [[ $(/usr/bin/vim --serverlist) ]]; then
-        /usr/bin/vim --servername GVIM --remote $@
+    if [[ $(nvr --serverlist) ]]; then
+        nvr --servername `nvr --serverlist` $@
+        wmctrl -xa nvim-qt
     else
-        gvim --servername GVIM
-        vim $@
+        nvim-qt $@
     fi
 }
 
