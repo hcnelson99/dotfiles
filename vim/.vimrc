@@ -30,12 +30,12 @@ Plug 'wellle/targets.vim'
 Plug 'justinmk/vim-sneak'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'vimwiki/vimwiki'
+Plug 'majutsushi/tagbar'
 Plug 'tweekmonster/startuptime.vim'
 
 call plug#end()
 filetype plugin indent on
-
-syntax enable
+syntax on
 
 let g:vimwiki_map_prefix = '<Space>o'
 let wiki = {}
@@ -62,6 +62,7 @@ nnoremap <C-b> :Buffers<CR>
 nnoremap <C-f> :Files<CR>
 
 nnoremap <Space>a :Ack! "\b<cword>\b" <CR>
+nnoremap <Space>c :cd %:p:h<CR>:pwd<CR>
 
 nnoremap <Space>dp :diffput<CR>
 xnoremap <Space>dp :diffput<CR>
@@ -69,6 +70,7 @@ nnoremap <Space>dg :diffget<CR>
 xnoremap <Space>dg :diffget<CR>
 nnoremap <Space>du :diffupdate<CR>
 xnoremap <Space>du :diffupdate<CR>
+set diffopt+=vertical
 
 nnoremap <Space>gc :Gcommit<CR>
 nnoremap <Space>gd :Gdiff<CR>
@@ -92,14 +94,6 @@ nnoremap <Space>t :Tags<CR>
 nnoremap <Space>u :UndotreeToggle<CR>
 nnoremap <Space>w :w<CR>
 nnoremap <Space>W :SudoWrite<CR>
-
-nnoremap <Space>dp :diffput<CR>
-xnoremap <Space>dp :diffput<CR>
-nnoremap <Space>dg :diffget<CR>
-xnoremap <Space>dg :diffget<CR>
-nnoremap <Space>du :diffupdate<CR>
-xnoremap <Space>du :diffupdate<CR>
-set diffopt+=vertical
 
 if has('gui_running')
   set guifont=Roboto\ Mono\ 11

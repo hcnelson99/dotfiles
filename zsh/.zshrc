@@ -91,19 +91,11 @@ bindkey -s '^Z' "fg^M"
 
 unsetopt share_history
 
-vim() {
-    if [[ $(nvr --serverlist) ]]; then
-        nvr --servername `nvr --serverlist` $@
-        wmctrl -xa nvim-qt
-    else
-        nvim-qt $@
-    fi
-}
-
 alias andrew="sshfs andrew:/afs/andrew.cmu.edu/usr15/hnelson1/private ~/andrew"
 
 alias tmux="tmux -2"
 alias coin="rlwrap coin"
+alias vim='v'
 
 alias updmirrors="sudo reflector --country 'United States' --latest 15 --age 24 --sort rate --save /etc/pacman.d/mirrorlist"
 alias snap-now="sudo systemctl start snapper-timeline.service"

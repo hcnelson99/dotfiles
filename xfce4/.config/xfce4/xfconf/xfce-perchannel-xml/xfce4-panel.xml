@@ -35,11 +35,12 @@
         <value type="string" value="xfce4-power-manager"/>
         <value type="string" value="keybase"/>
         <value type="string" value="redshift-gtk"/>
+        <value type="string" value="vlc"/>
       </property>
     </property>
     <property name="plugin-1" type="string" value="pulseaudio">
       <property name="enable-keyboard-shortcuts" type="bool" value="true"/>
-      <property name="mpris-players" type="string" value=";spotify"/>
+      <property name="mpris-players" type="string" value=";spotify;vlc"/>
     </property>
     <property name="plugin-4" type="string" value="battery"/>
   </property>

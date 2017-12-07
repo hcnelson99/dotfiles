@@ -1,7 +1,7 @@
 export XDG_CONFIG_HOME="$HOME/.config"
 
 export TERM=xterm-256color
-export EDITOR=vim
+export EDITOR=v
 
 export CVSROOT=:ext:henry@cvs.fsl.cs.sunysb.edu:/scm/cvsroot
 export CVS_RSH=/usr/bin/ssh
@@ -15,4 +15,4 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 
 export FZF_DEFAULT_COMMAND='rg --files --hidden --follow 2> /dev/null'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-export FZF_ALT_C_COMMAND="find . -type d"
+export FZF_ALT_C_COMMAND="find . -type d 2> /dev/null"

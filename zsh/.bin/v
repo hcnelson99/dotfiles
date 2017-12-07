@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+if [[ -z $(nvr --serverlist) ]]; then
+    nvim-qt
+fi
+
+wmctrl -xa nvim-qt
+nvr --servername `nvr --serverlist` $@
