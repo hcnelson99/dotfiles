@@ -58,8 +58,8 @@ noremap Y y$
 " vim-fireplace eval entire file (like cpr for tests)
 nnoremap cpf :%Eval<CR>
 
-nnoremap <C-b> :Buffers<CR>
-nnoremap <C-f> :Files<CR>
+nnoremap <C-o> :Buffers<CR>
+nnoremap <C-p> :Files<CR>
 
 nnoremap <Space>a :Ack! "\b<cword>\b" <CR>
 nnoremap <Space>c :cd %:p:h<CR>:pwd<CR>
