@@ -85,7 +85,7 @@ bindkey -s '^B' "build^M"
 bindkey -s '^H' "toggle^M"
 bindkey -s '^G' "run^M"
 
-bindkey -s '^F' 'vim $(fzf)^M'
+bindkey -s '^P' 'vim $(fzf)^M'
 bindkey '^[C' fzf-cd-widget
 bindkey -s '^Z' "fg^M"
 

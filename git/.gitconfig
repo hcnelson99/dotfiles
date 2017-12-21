@@ -4,7 +4,6 @@
 	name = Henry Nelson
 	email = hcnelson99@gmail.com
 [core]
-	editor = v --remote-wait
 	excludesfile = ~/.gitignore
 [push]
 	default = simple
