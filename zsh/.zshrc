@@ -97,8 +97,8 @@ alias tmux="tmux -2"
 alias coin="rlwrap coin"
 alias vim='v'
 
+alias netbackup="sudo borg create --remote-path=borg1 --progress --stats --exclude-from=.borgexclude --compression auto,lzma 58073@usw-s008.rsync.net:backup::{hostname}-{user}-{now:%Y-%m-%dT%H:%M:%S} /home /etc"
 alias updmirrors="sudo reflector --country 'United States' --latest 15 --age 24 --sort rate --save /etc/pacman.d/mirrorlist"
-alias snap-now="sudo systemctl start snapper-timeline.service"
 alias se="sudoedit"
 
 backup_drive-mount() {
@@ -111,11 +111,11 @@ backup_drive-umount() {
     sudo cryptsetup close backup_drive
 }
 
-snap-push() {
-    backup_drive-mount
-    sudo snap-sync -n -u 07aaa7bd-3616-44d2-91c8-d36f07fbfbcd
-    backup_drive-umount
-}
+# snap-push() {
+#     backup_drive-mount
+#     sudo snap-sync -n -u 07aaa7bd-3616-44d2-91c8-d36f07fbfbcd
+#     backup_drive-umount
+# }
 
 autotex() {
     vim $1

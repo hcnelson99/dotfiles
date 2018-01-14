@@ -14,5 +14,5 @@
 
 "rofi-pass"
     F11 + Release
-"bash -c 'i3lock-fancy && systemctl suspend'"
+"betterlockscreen -s"
     F12 + Release

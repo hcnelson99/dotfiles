@@ -1,4 +1,4 @@
-rofi.font: xos4 Terminus 14px
+rofi.font: Roboto Mono 11
 rofi.color-enabled: true
 rofi.separator-style: solid
 

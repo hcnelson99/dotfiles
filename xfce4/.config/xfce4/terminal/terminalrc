@@ -30,4 +30,5 @@ MiscSlimTabs=FALSE
 FontName=Roboto Mono 11
 ScrollingBar=TERMINAL_SCROLLBAR_NONE
 ScrollingUnlimited=TRUE
+ScrollingOnOutput=FALSE
 
