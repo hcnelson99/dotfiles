@@ -1,4 +1,4 @@
-rofi.font: Roboto Mono 11
+rofi.font: Sans 10
 rofi.color-enabled: true
 rofi.separator-style: solid
 

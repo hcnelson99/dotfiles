@@ -16,7 +16,6 @@ Plug 'tommcdo/vim-exchange'
 Plug 'airblade/vim-gitgutter'
 Plug 'chriskempson/base16-vim'
 Plug 'cmugpi/vim-c0', { 'for': 'c0' }
-Plug 'sheerun/vim-polyglot'
 Plug 'mileszs/ack.vim'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
@@ -30,7 +29,6 @@ Plug 'wellle/targets.vim'
 Plug 'justinmk/vim-sneak'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'vimwiki/vimwiki'
-Plug 'majutsushi/tagbar'
 Plug 'tweekmonster/startuptime.vim'
 
 call plug#end()
@@ -72,6 +70,8 @@ nnoremap <Space>du :diffupdate<CR>
 xnoremap <Space>du :diffupdate<CR>
 set diffopt+=vertical
 
+nnoremap <Space>f :Guifont! Roboto Mono:h20<CR>
+nnoremap <Space>F :Guifont! Roboto Mono:h11<CR>
 nnoremap <Space>gc :Gcommit<CR>
 nnoremap <Space>gd :Gdiff<CR>
 nnoremap <Space>gp :Gpush<CR>
@@ -93,23 +93,20 @@ nnoremap <Space>T :set expandtab tabstop=8 shiftwidth=8 softtabstop=8<CR>
 nnoremap <Space>t :Tags<CR>
 nnoremap <Space>u :UndotreeToggle<CR>
 nnoremap <Space>w :w<CR>
-nnoremap <Space>W :SudoWrite<CR>
-
-if has('gui_running')
-  set guifont=Roboto\ Mono\ 11
-  set guicursor+=a:blinkon0
-  set guioptions=i
-endif
+nnoremap <Space>W :w !sudo tee %<CR>
 
 set background=dark
 colorscheme base16-materia
+
 
 augroup vimrc
   autocmd!
   autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
   autocmd BufRead,BufWrite /dev/shm/pass* setlocal noundofile
   autocmd * Files write
+  autocmd FileType c,cpp setlocal commentstring=//\ %s
 augroup END
+
 
 set noshowmode
 if has("persistent_undo")
@@ -141,6 +138,9 @@ set wildmenu "visual autocomplete for command menu
 set showmatch "show matching braces/parens/brackets
 
 set incsearch
+if has('nvim')
+  set inccommand=split
+end
 set hlsearch
 
 set showbreak=›››\

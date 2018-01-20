@@ -95,8 +95,13 @@ alias andrew="sshfs andrew:/afs/andrew.cmu.edu/usr15/hnelson1/private ~/andrew"
 
 alias tmux="tmux -2"
 alias coin="rlwrap coin"
+alias smlnj="rlwrap sml"
 alias vim='v'
 
+alias extmonitor-on="xrandr --auto --output eDP-1 --same-as DP-1-2"
+alias extmonitor-off="xrandr --output DP-1-2 --off"
+export netborg_server="58073@usw-s008.rsync.net:backup"
+alias netborg="borg --remote-path=borg1"
 alias netbackup="borg create --remote-path=borg1 --progress --stats --exclude-from=.borgexclude --compression auto,lzma 58073@usw-s008.rsync.net:backup::{hostname}-{user}-{now:%Y-%m-%dT%H:%M:%S} /home /etc"
 alias updmirrors="sudo reflector --country 'United States' --latest 15 --age 24 --sort rate --save /etc/pacman.d/mirrorlist"
 alias se="sudoedit"

@@ -11,7 +11,7 @@
     <property name="button_spacing" type="int" value="0"/>
     <property name="click_to_focus" type="bool" value="true"/>
     <property name="cycle_apps_only" type="bool" value="false"/>
-    <property name="cycle_draw_frame" type="bool" value="true"/>
+    <property name="cycle_draw_frame" type="bool" value="false"/>
     <property name="cycle_hidden" type="bool" value="true"/>
     <property name="cycle_minimum" type="bool" value="true"/>
     <property name="cycle_preview" type="bool" value="false"/>
@@ -54,7 +54,7 @@
     <property name="snap_resist" type="bool" value="false"/>
     <property name="snap_to_border" type="bool" value="true"/>
     <property name="snap_to_windows" type="bool" value="false"/>
-    <property name="snap_width" type="int" value="10"/>
+    <property name="snap_width" type="int" value="9"/>
     <property name="sync_to_vblank" type="bool" value="false"/>
     <property name="theme" type="string" value="Adapta-Nokto"/>
     <property name="tile_on_move" type="bool" value="true"/>
@@ -77,10 +77,13 @@
       <value type="string" value="Workspace 2"/>
       <value type="string" value="Workspace 3"/>
       <value type="string" value="Workspace 4"/>
+      <value type="string" value="Workspace 5"/>
+      <value type="string" value="Workspace 6"/>
+      <value type="string" value="Workspace 7"/>
     </property>
-    <property name="wrap_layout" type="bool" value="true"/>
+    <property name="wrap_layout" type="bool" value="false"/>
     <property name="wrap_resistance" type="int" value="10"/>
-    <property name="wrap_windows" type="bool" value="true"/>
+    <property name="wrap_windows" type="bool" value="false"/>
     <property name="wrap_workspaces" type="bool" value="false"/>
     <property name="zoom_desktop" type="bool" value="true"/>
   </property>
