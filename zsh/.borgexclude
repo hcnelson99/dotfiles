@@ -3,3 +3,5 @@
 /home/*/Media
 /home/*/.config/google-chrome
 /home/*/.vim/plugged
+/home/*/.dropbox
+/home/*/.dropbox-dist
