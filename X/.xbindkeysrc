@@ -5,6 +5,8 @@
 
 "xdotool key 'alt+Tab'"
     F2 + Release
+"skippy-xd"
+    F3 + Release
 "bash -c 'wmctrl -xa google-chrome || google-chrome-stable'"
     F5 + Release
 "bash -c 'wmctrl -xa xfce4-terminal || xfce4-terminal'"

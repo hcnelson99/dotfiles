@@ -36,6 +36,7 @@
         <value type="string" value="keybase"/>
         <value type="string" value="redshift-gtk"/>
         <value type="string" value="vlc"/>
+        <value type="string" value="screen actions daemon"/>
       </property>
     </property>
     <property name="plugin-1" type="string" value="pulseaudio">

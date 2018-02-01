@@ -5,3 +5,4 @@
 /home/*/.vim/plugged
 /home/*/.dropbox
 /home/*/.dropbox-dist
+/home/*/.cargo
