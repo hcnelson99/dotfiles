@@ -96,7 +96,6 @@ alias andrew="sshfs andrew:/afs/andrew.cmu.edu/usr15/hnelson1/private ~/andrew"
 alias tmux="tmux -2"
 alias coin="rlwrap coin"
 alias smlnj="rlwrap sml"
-alias vim='v'
 
 alias extmonitor-on="xrandr --auto --output eDP-1 --same-as DP-1-2"
 alias extmonitor-off="xrandr --output DP-1-2 --off"

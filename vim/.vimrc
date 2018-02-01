@@ -96,8 +96,10 @@ nnoremap <Space>w :w<CR>
 nnoremap <Space>W :w !sudo tee %<CR>
 
 set background=dark
-set t_8f=\[[38;2;%lu;%lu;%lum
-set t_8b=\[[48;2;%lu;%lu;%lum
+set t_8f=[38;2;%lu;%lu;%lum
+set t_8b=[48;2;%lu;%lu;%lum
+let &t_SI .= "\<Esc>[6 q"
+let &t_EI .= "\<Esc>[2 q"
 set termguicolors
 colorscheme base16-materia
 
