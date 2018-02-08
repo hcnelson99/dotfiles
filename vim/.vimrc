@@ -113,6 +113,7 @@ augroup vimrc
 augroup END
 
 
+set mouse=a
 set noshowmode
 if has("persistent_undo")
     set undodir=~/.vim/undodir/
