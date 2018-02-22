@@ -15,7 +15,7 @@ Plug 'tpope/vim-vinegar'
 Plug 'tommcdo/vim-exchange'
 Plug 'airblade/vim-gitgutter'
 Plug 'chriskempson/base16-vim'
-Plug 'cmugpi/vim-c0', { 'for': 'c0' }
+Plug 'stfl/meson.vim', { 'for': 'meson' }
 Plug 'mileszs/ack.vim'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
@@ -35,6 +35,7 @@ call plug#end()
 filetype plugin indent on
 syntax on
 
+let g:vimwiki_folding='list'
 let g:vimwiki_map_prefix = '<Space>o'
 let wiki = {}
 let wiki.path = '~/vimwiki/'
@@ -94,6 +95,7 @@ nnoremap <Space>t :Tags<CR>
 nnoremap <Space>u :UndotreeToggle<CR>
 nnoremap <Space>w :w<CR>
 nnoremap <Space>W :w !sudo tee %<CR>
+nnoremap <Space>8 /\%>80v.\+<CR>
 
 set background=dark
 set t_8f=[38;2;%lu;%lu;%lum
@@ -110,6 +112,7 @@ augroup vimrc
   autocmd BufRead,BufWrite /dev/shm/pass* setlocal noundofile
   autocmd * Files write
   autocmd FileType c,cpp setlocal commentstring=//\ %s
+  autocmd FileType meson setl cms=#%s
 augroup END
 
 
