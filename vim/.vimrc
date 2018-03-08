@@ -30,6 +30,7 @@ Plug 'justinmk/vim-sneak'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'vimwiki/vimwiki'
 Plug 'tweekmonster/startuptime.vim'
+Plug 'zah/nim.vim', { 'for': 'nim' }
 
 call plug#end()
 filetype plugin indent on
@@ -52,6 +53,8 @@ let g:slime_default_config = {"socket_name": "default", "target_pane": ":.1"}
 let g:gitgutter_map_keys = 0
 
 inoremap jk <esc>
+nnoremap <expr> j v:count ? (v:count > 5 ? "m'" . v:count : '') . 'j' : 'gj'
+nnoremap <expr> k v:count ? (v:count > 5 ? "m'" . v:count : '') . 'k' : 'gk'
 noremap Y y$
 
 " vim-fireplace eval entire file (like cpr for tests)
@@ -113,6 +116,7 @@ augroup vimrc
   autocmd * Files write
   autocmd FileType c,cpp setlocal commentstring=//\ %s
   autocmd FileType meson setl cms=#%s
+  autocmd FileType sml setl cms=(*%s*)
 augroup END
 
 
@@ -152,7 +156,7 @@ if has('nvim')
 end
 set hlsearch
 
-set showbreak=›››\
+set showbreak=››\
 
 set statusline=%<\ %f\ %m%r%w%=%l\/%-6L\ %3c
 set laststatus=2

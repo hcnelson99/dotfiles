@@ -92,8 +92,6 @@ bindkey -s '^Z' "fg^M"
 unsetopt share_history
 
 alias andrew="sshfs andrew:/afs/andrew.cmu.edu/usr15/hnelson1/private ~/andrew"
-alias v="vim"
-alias vim="nvim"
 alias tmux="tmux -2"
 alias coin="rlwrap coin"
 alias smlnj="rlwrap sml"

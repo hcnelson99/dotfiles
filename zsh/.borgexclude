@@ -7,3 +7,4 @@
 /home/*/.dropbox-dist
 /home/*/.cargo
 /home/*/.local/share/Steam
+/home/*/.stack
