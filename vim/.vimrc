@@ -21,9 +21,10 @@ Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'mbbill/undotree'
-Plug 'guns/vim-sexp', { 'for': ['lisp', 'clojure', 'scheme'] }
-Plug 'tpope/vim-sexp-mappings-for-regular-people', { 'for': ['lisp', 'clojure', 'scheme'] }
-Plug 'jpalardy/vim-slime', { 'for': 'lisp' }
+" Plug 'guns/vim-sexp', { 'for': ['lisp', 'clojure', 'scheme'] }
+" Plug 'tpope/vim-sexp-mappings-for-regular-people', { 'for': ['lisp', 'clojure', 'scheme'] }
+Plug 'bhurlow/vim-parinfer', { 'for': ['lisp', 'clojure', 'scheme'] }
+Plug 'l04m33/vlime', {'rtp': 'vim/'}
 Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 Plug 'wellle/targets.vim'
 Plug 'justinmk/vim-sneak'
@@ -47,9 +48,15 @@ if executable('rg')
   let g:ackprg = 'rg --vimgrep'
 endif
 
+let maplocalleader = ","
+let g:vlime_cl_impl = "ros"
+function! VlimeBuildServerCommandFor_ros(vlime_loader, vlime_eval)
+  return ["ros", "run",
+        \ "--load", a:vlime_loader,
+        \ "--eval", a:vlime_eval]
+endfunction
+
 let g:sneak#label = 1
-let g:slime_target = "tmux"
-let g:slime_default_config = {"socket_name": "default", "target_pane": ":.1"}
 let g:gitgutter_map_keys = 0
 
 inoremap jk <esc>
@@ -59,6 +66,8 @@ noremap Y y$
 
 " vim-fireplace eval entire file (like cpr for tests)
 nnoremap cpf :%Eval<CR>
+nnoremap cpe :Eval<CR>
+nnoremap cpc :Piggieback (adzerk.boot-cljs-repl/repl-env)<CR>
 
 nnoremap <C-o> :Buffers<CR>
 nnoremap <C-p> :Files<CR>
@@ -104,10 +113,10 @@ set background=dark
 set t_8f=[38;2;%lu;%lu;%lum
 set t_8b=[48;2;%lu;%lu;%lum
 let &t_SI .= "\<Esc>[6 q"
+let &t_SR .= "\<Esc>[3 q"
 let &t_EI .= "\<Esc>[2 q"
 set termguicolors
 colorscheme base16-materia
-
 
 augroup vimrc
   autocmd!
@@ -118,7 +127,6 @@ augroup vimrc
   autocmd FileType meson setl cms=#%s
   autocmd FileType sml setl cms=(*%s*)
 augroup END
-
 
 set mouse=a
 set noshowmode

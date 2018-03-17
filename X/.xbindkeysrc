@@ -9,7 +9,7 @@
     F5 + Release
 "bash -c 'wmctrl -xa xfce4-terminal || xfce4-terminal'"
     F6 + Release
-"bash -c "wmctrl -a nvim || xfce4-terminal -e \"zsh -c \\\"nvim; zsh\\\"\"""
+"bash -c 'wmctrl -xa emacs || emacs'"
     F7 + Release
 "rofi -show run"
     F8 + Release

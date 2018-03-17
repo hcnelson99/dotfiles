@@ -8,3 +8,5 @@
 /home/*/.cargo
 /home/*/.local/share/Steam
 /home/*/.stack
+/home/*/.m2
+/home/*/.boot
