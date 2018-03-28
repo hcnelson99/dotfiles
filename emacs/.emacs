@@ -16,6 +16,10 @@
   :config
   (load-theme 'base16-materia t))
 
+(setq ido-enable-flex-matching t)
+(setq ido-everywhere t)
+(ido-mode 1)
+
 (use-package evil-leader
   :config (global-evil-leader-mode)
   (evil-leader/set-leader "<SPC>")
@@ -78,7 +82,6 @@
           '(defaults       ; should be included.
 	     pretty-parens  ; different paren styles for different modes.
 	     evil           ; If you use Evil.
-	     paredit        ; Introduce some paredit commands.
 	     smart-tab      ; C-b & C-f jump positions and smart shift with tab & S-tab.
 	     smart-yank))   ; Yank behavior depend on mode.
     (add-hook 'clojure-mode-hook #'parinfer-mode)

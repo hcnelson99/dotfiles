@@ -10,3 +10,5 @@
 /home/*/.stack
 /home/*/.m2
 /home/*/.boot
+/home/*/.roswell
+/home/*/.emacs.d
