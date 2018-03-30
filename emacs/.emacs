@@ -1,10 +1,9 @@
 (require 'package)
 (add-to-list 'package-archives
-             '("melpa" . "https://melpa.org/packages/") t)
+	     '("melpa" . "https://melpa.org/packages/") t)
 (package-initialize)
 
 (setq vc-handled-backends nil) ; disable emacs version control
-(global-unset-key (kbd "C-u"))
 
 (setq backup-directory-alist `(("." . "~/.emacs.d/backup-files")))
 
@@ -20,58 +19,16 @@
 (setq ido-everywhere t)
 (ido-mode 1)
 
-(use-package evil-leader
-  :config (global-evil-leader-mode)
-  (evil-leader/set-leader "<SPC>")
-  (evil-leader/set-key
-    "r" 'eval-buffer
-    "w" 'save-buffer
-    "j" 'evil-numbers/dec-at-pt
-    "k" 'evil-numbers/inc-at-pt
-    "q" 'kill-this-buffer))
-
-(use-package evil
-  :init (setq evil-want-integration nil)
-  :config
-  (evil-mode 1)
-  (evil-define-key 'normal (current-global-map)
-    (kbd "C-j") 'evil-window-down
-    (kbd "C-k") 'evil-window-up
-    (kbd "C-h") 'evil-window-left
-    (kbd "C-l") 'evil-window-right
-    (kbd "C-u") 'evil-scroll-up))
-
-(use-package evil-surround
-  :config
-  (global-evil-surround-mode 1))
-
-(use-package evil-numbers)
-  
-
-(use-package key-chord
-  :config
-  (key-chord-mode 1)
-  (setq key-chord-two-keys-delay 0.1)
-  (key-chord-define evil-insert-state-map  "jk" 'evil-normal-state))
-
 (use-package magit)
-(use-package evil-magit
-  :config
-  (key-chord-define evil-normal-state-map " g" 'magit-status))
 
 (use-package org)
-(use-package evil-org
-  :config
-  (add-hook 'org-mode-hook 'evil-org-mode)
-  (add-hook 'evil-org-mode-hook
-	    (lambda ()
-	      (evil-org-set-key-theme))))
 
 (use-package slime
   :config
   (setq inferior-lisp-program "ros run")
   (setq slime-contribs '(slime-fancy)))
 
+; use paredit instead eventually?
 (use-package parinfer
   :ensure t
   :bind
