@@ -1,6 +1,6 @@
 export XDG_CONFIG_HOME="$HOME/.config"
 
-export EDITOR=vim
+export EDITOR=emacsclient
 
 export CVSROOT=:ext:henry@cvs.fsl.cs.sunysb.edu:/scm/cvsroot
 export CVS_RSH=/usr/bin/ssh

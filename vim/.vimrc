@@ -21,17 +21,21 @@ Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'mbbill/undotree'
-" Plug 'guns/vim-sexp', { 'for': ['lisp', 'clojure', 'scheme'] }
-" Plug 'tpope/vim-sexp-mappings-for-regular-people', { 'for': ['lisp', 'clojure', 'scheme'] }
-Plug 'bhurlow/vim-parinfer', { 'for': ['lisp', 'clojure', 'scheme'] }
-Plug 'l04m33/vlime', {'rtp': 'vim/'}
+Plug 'guns/vim-sexp', { 'for': ['lisp', 'clojure', 'scheme'] }
+Plug 'tpope/vim-sexp-mappings-for-regular-people', { 'for': ['lisp', 'clojure', 'scheme'] }
 Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 Plug 'wellle/targets.vim'
 Plug 'justinmk/vim-sneak'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'vimwiki/vimwiki'
-Plug 'tweekmonster/startuptime.vim'
 Plug 'zah/nim.vim', { 'for': 'nim' }
+
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'tomtom/tlib_vim'
+Plug 'garbas/vim-snipmate'
+Plug 'honza/vim-snippets'
+
+Plug 'tweekmonster/startuptime.vim'
 
 call plug#end()
 filetype plugin indent on

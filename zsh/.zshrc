@@ -1,7 +1,8 @@
 HISTSIZE=999999999
 SAVEHIST=$HISTSIZE
 setopt appendhistory autocd correct extendedglob notify
-unsetopt beep
+setopt auto_pushd
+unsetopt beep share_history
 bindkey -v
 
 bindkey -M viins 'jk' vi-cmd-mode
@@ -15,7 +16,6 @@ source ~/.zgen/zgen.zsh
 
 if ! zgen saved; then
     zgen oh-my-zsh
-    zgen oh-my-zsh plugins/git
     zgen oh-my-zsh plugins/compleat
     zgen oh-my-zsh plugins/command-not-found
     zgen oh-my-zsh plugins/vi-mode
@@ -81,16 +81,15 @@ toggle() {
     echo ${BUILD_TYPE}
 }
 
+bindkey -s '^Z' "fg^M"
 bindkey -s '^B' "build^M"
 bindkey -s '^H' "toggle^M"
 bindkey -s '^G' "run^M"
 
 bindkey -s '^P' 'vim $(fzf)^M'
 bindkey '^[C' fzf-cd-widget
-bindkey -s '^Z' "fg^M"
 
-unsetopt share_history
-
+alias vim="emacsclient -n"
 alias andrew="sshfs andrew:/afs/andrew.cmu.edu/usr15/hnelson1/private ~/andrew"
 alias tmux="tmux -2"
 alias coin="rlwrap coin"
@@ -103,6 +102,17 @@ alias netborg="borg --remote-path=borg1"
 alias netbackup="borg create --remote-path=borg1 --progress --stats --exclude-from=.borgexclude --compression auto,lzma 58073@usw-s008.rsync.net:backup::{hostname}-{user}-{now:%Y-%m-%dT%H:%M:%S} /home /etc"
 alias updmirrors="sudo reflector --country 'United States' --latest 15 --age 24 --sort rate --save /etc/pacman.d/mirrorlist"
 alias se="sudoedit"
+
+alias g="git"
+alias ga="git add"
+alias gc="git commit"
+alias gca="git commit -a"
+alias gco="git checkout"
+alias gd="git diff"
+alias gds="git diff --staged"
+alias gl="git pull"
+alias gp="git push"
+alias gs="git status"
 
 backup_drive-mount() {
     sudo cryptsetup open --type luks /dev/disk/by-uuid/936af459-502b-4a66-a6aa-4942b8429fe4 backup_drive
