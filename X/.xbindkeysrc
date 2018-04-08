@@ -9,7 +9,7 @@
     F5 + Release
 "bash -c 'wmctrl -xa xfce4-terminal || xfce4-terminal'"
     F6 + Release
-"bash -c "wmctrl -a vim || xfce4-terminal -e \"zsh -c \\\"vim; zsh\\\"\"""
+"bash -c 'wmctrl -F -a Terminal\ -\ ranger || xfce4-terminal -e ranger'"
     F7 + Release
 "rofi -show run"
     F8 + Release

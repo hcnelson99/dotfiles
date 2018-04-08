@@ -96,6 +96,7 @@ alias netbackup="borg create --remote-path=borg1 --progress --stats --exclude-fr
 alias updmirrors="sudo reflector --country 'United States' --latest 15 --age 24 --sort rate --save /etc/pacman.d/mirrorlist"
 alias se="sudoedit"
 
+alias f="ranger"
 alias g="git"
 alias ga="git add"
 alias gc="git commit"
