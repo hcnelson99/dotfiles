@@ -5,11 +5,11 @@
 
 "skippy-xd"
     F3 + Release
-"bash -c 'wmctrl -xa google-chrome || google-chrome-stable'"
+"bash -c 'wmctrl -xa firefox || firefox'"
     F5 + Release
 "bash -c 'wmctrl -xa xfce4-terminal || xfce4-terminal'"
     F6 + Release
-"bash -c 'wmctrl -xa emacs || emacs'"
+"bash -c "wmctrl -a vim || xfce4-terminal -e \"zsh -c \\\"vim; zsh\\\"\"""
     F7 + Release
 "rofi -show run"
     F8 + Release

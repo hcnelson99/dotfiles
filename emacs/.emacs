@@ -1,4 +1,3 @@
-;; We'll let customize handle fonts, but all other config should be in here
 (setq custom-file "~/.emacs.d/custom.el")
 (load custom-file 'noerror)
 
@@ -25,14 +24,33 @@
 (setq ido-everywhere t)
 (ido-mode 1)
 
+(setf sentence-end-double-space nil)
+
+(global-subword-mode 1)
+
+(global-set-key (kbd "M-o") 'other-window)
+;; unbind C-x o until we learn the above
+(global-unset-key (kbd "C-x o"))
+;; Use C-/ instead for now
+(global-unset-key (kbd "C-x u"))
 
 (eval-when-compile
   (require 'use-package))
 (setq use-package-always-ensure t)
 
+(use-package smex
+  :config
+  (smex-initialize)
+  (global-set-key (kbd "M-x") 'smex)
+  (global-set-key (kbd "M-X") 'smex-major-mode-commands))
+
 (use-package base16-theme
   :config
   (load-theme 'base16-materia t))
+
+(use-package ws-butler
+  :config
+  (add-hook 'prog-mode-hook #'ws-butler-mode))
 
 (use-package magit)
 

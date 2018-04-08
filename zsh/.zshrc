@@ -23,9 +23,6 @@ if ! zgen saved; then
     zgen oh-my-zsh plugins/virtualenvwrapper
     zgen load zsh-users/zsh-syntax-highlighting
 
-    zgen load junegunn/fzf shell/completion.zsh
-    zgen load junegunn/fzf shell/key-bindings.zsh
-
     zgen oh-my-zsh themes/af-magic
 
     zgen save
@@ -86,10 +83,6 @@ bindkey -s '^B' "build^M"
 bindkey -s '^H' "toggle^M"
 bindkey -s '^G' "run^M"
 
-bindkey -s '^P' 'vim $(fzf)^M'
-bindkey '^[C' fzf-cd-widget
-
-alias vim="emacsclient -n"
 alias andrew="sshfs andrew:/afs/andrew.cmu.edu/usr15/hnelson1/private ~/andrew"
 alias tmux="tmux -2"
 alias coin="rlwrap coin"
