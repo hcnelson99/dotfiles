@@ -3,7 +3,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'thirtythreeforty/lessspace.vim'
 Plug 'tpope/vim-classpath'
 Plug 'tpope/vim-sleuth'
-Plug 'tpope/vim-commentary'
+Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-unimpaired'
@@ -11,7 +11,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-vinegar'
 Plug 'tommcdo/vim-exchange'
 Plug 'airblade/vim-gitgutter'
-Plug 'chriskempson/base16-vim'
 Plug 'junegunn/goyo.vim'
 Plug 'mbbill/undotree'
 Plug 'guns/vim-sexp', { 'for': ['lisp', 'clojure', 'scheme'] }
@@ -27,20 +26,13 @@ call plug#end()
 filetype plugin indent on
 syntax on
 
-let g:vimwiki_folding='list'
-let g:vimwiki_map_prefix = '<Space>o'
-let wiki = {}
-let wiki.path = '~/vimwiki/'
-let wiki.nested_syntaxes = {'vim': 'vim'}
-let g:vimwiki_list = [wiki]
-nmap <Space>of <Plug>VimwikiFollowLink
-
 if executable('rg')
     set grepprg=rg\ --vimgrep
     set grepformat^=%f:%l:%c:%m
 endif
 
 let g:sneak#label = 1
+
 let g:gitgutter_map_keys = 0
 
 inoremap jk <esc>
@@ -48,6 +40,18 @@ nnoremap <expr> j v:count ? (v:count > 5 ? "m'" . v:count : '') . 'j' : 'gj'
 nnoremap <expr> k v:count ? (v:count > 5 ? "m'" . v:count : '') . 'k' : 'gk'
 noremap Y y$
 nnoremap <CR> :nohls<CR>
+
+" C-i and tab are the same in terminal so we remap C-i to C-p
+nnoremap <C-p> <C-i>
+nnoremap <tab> :
+vnoremap <tab> :
+" temporary while learning tab binding
+nnoremap : <nop>
+vnoremap : <nop>
+
+nnoremap / /\v
+vnoremap / /\v
+set gdefault
 
 noremap <C-h> <C-w>h
 noremap <C-j> <C-w>j
@@ -59,7 +63,7 @@ nnoremap cpf :%Eval<CR>
 nnoremap cpe :Eval<CR>
 nnoremap cpc :Piggieback (adzerk.boot-cljs-repl/repl-env)<CR>
 
-nnoremap <Space>a :Ack! "\b<cword>\b" <CR>
+nnoremap <Space>a :grep "\b<cword>\b" <CR>
 nnoremap <Space>c :cd %:p:h<CR>:pwd<CR>
 
 nnoremap <Space>dp :diffput<CR>
@@ -80,13 +84,11 @@ nnoremap <Space>gw :Gwrite<CR>
 nnoremap <Space>i :PlugInstall<CR>
 nnoremap <Space>l :<C-u>execute 'file '.fnameescape(resolve(expand('%:p')))<bar>
     \ call fugitive#detect(fnameescape(expand('%:p:h')))<CR>
-nnoremap <Space>L :Lines<CR>
 nnoremap <Space>m :make<CR>
 nnoremap <Space>q :q<CR>
 nnoremap <Space>r :source ~/.vimrc<CR>
 nnoremap <Space>s :setlocal spell! spelllang=en_us<CR>
 nnoremap <Space>T :set expandtab tabstop=8 shiftwidth=8 softtabstop=8<CR>
-nnoremap <Space>t :Tags<CR>
 nnoremap <Space>u :UndotreeToggle<CR>
 nnoremap <Space>w :w<CR>
 nnoremap <Space>W :w !sudo tee %<CR>
@@ -104,16 +106,19 @@ colorscheme base16-materia
 
 augroup vimrc
   autocmd!
+  autocmd BufReadPost *
+        \ if line("'\"") > 0 && line("'\"") <= line("$") |
+        \   exe "normal g`\"" |
+        \ endif
   autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
   autocmd BufRead,BufWrite /dev/shm/pass* setlocal noundofile
-  autocmd * Files write
   autocmd FileType c,cpp setlocal commentstring=//\ %s
   autocmd FileType meson setl cms=#%s
   autocmd FileType sml setl cms=(*%s*)
 augroup END
 
 set path+=**
-set wildignore+=~/.cache/**/*,~/.local/**/*,~/builds/**/*
+set wildignore+=*/.cache/**/*,*/.local/**/*,*/builds/**/*
 set wildignore+=*/.git/**/*,*/.hg/**/*,*/.svn/**/*
 set wildignore+=tags
 set wildmenu
@@ -128,6 +133,7 @@ endif
 set nobackup
 set nowritebackup
 set noswapfile
+
 
 set clipboard=unnamedplus
 set backspace=indent,eol,start
