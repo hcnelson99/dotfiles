@@ -21,16 +21,14 @@ cd ~/dotfiles
 sudo mkdir -p /etc/pacman.d/hooks
 sudo cp ~/dotfiles/mirrorupgrade.hook /etc/pacman.d/hooks
 
-PKGS="vim ranger xsel stow redshift python-gobject python-xdg tmux zsh pass python-virtualenvwrapper ripgrep xfce4 xfce4-goodies rofi arandr adapta-gtk-theme xorg-server xorg-xinit xorg-xmodmap networkmanager networkmanager-openvpn network-manager-applet pulseaudio ctags xbindkeys wmctrl"
-AUR="light unclutter-xfixes-git betterlockscreen rofi-pass numix-circle-icon-theme-git firefox ttf-roboto-mono fonts-meta-extended-lt"
+PKGS="vim ranger xsel stow redshift python-gobject python-xdg tmux zsh pass python-virtualenvwrapper ripgrep fzf xfce4 xfce4-goodies rofi arandr adapta-gtk-theme xorg-server xorg-xinit xorg-xmodmap networkmanager networkmanager-openvpn network-manager-applet pulseaudio ctags xbindkeys wmctrl firefox"
+AUR="light unclutter-xfixes-git betterlockscreen rofi-pass numix-circle-icon-theme-git ttf-roboto-mono fonts-meta-extended-lt"
 pacaur -Syu --needed $PKGS $AUR
 
 systemctl enable NetworkManager
 
 stow vim
 mkdir -p ~/.config
-ln -s ~/.vim ~/.config/nvim
-ln -s ~/.vimrc ~/.config/nvim/init.vim
 
 git clone https://github.com/tarjoilija/zgen.git ~/.zgen
 stow zsh

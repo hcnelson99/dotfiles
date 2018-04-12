@@ -1,6 +1,8 @@
 call plug#begin('~/.vim/plugged')
 
-Plug 'thirtythreeforty/lessspace.vim'
+Plug 'mileszs/ack.vim'
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-classpath'
 Plug 'tpope/vim-sleuth'
 Plug 'tomtom/tcomment_vim'
@@ -27,9 +29,9 @@ filetype plugin indent on
 syntax on
 
 if executable('rg')
-    set grepprg=rg\ --vimgrep
-    set grepformat^=%f:%l:%c:%m
+  let g:ackprg = 'rg --vimgrep --no-heading'
 endif
+
 
 let g:sneak#label = 1
 
@@ -41,17 +43,12 @@ nnoremap <expr> k v:count ? (v:count > 5 ? "m'" . v:count : '') . 'k' : 'gk'
 noremap Y y$
 nnoremap <CR> :nohls<CR>
 
-" C-i and tab are the same in terminal so we remap C-i to C-p
-nnoremap <C-p> <C-i>
-nnoremap <tab> :
-vnoremap <tab> :
-" temporary while learning tab binding
-nnoremap : <nop>
-vnoremap : <nop>
-
 nnoremap / /\v
 vnoremap / /\v
 set gdefault
+
+nnoremap <C-p> :Files<CR>
+nnoremap <C-t> :Buffers<CR>
 
 noremap <C-h> <C-w>h
 noremap <C-j> <C-w>j
@@ -63,7 +60,7 @@ nnoremap cpf :%Eval<CR>
 nnoremap cpe :Eval<CR>
 nnoremap cpc :Piggieback (adzerk.boot-cljs-repl/repl-env)<CR>
 
-nnoremap <Space>a :grep "\b<cword>\b" <CR>
+nnoremap <Space>a :Ack! "\b<cword>\b" <CR>
 nnoremap <Space>c :cd %:p:h<CR>:pwd<CR>
 
 nnoremap <Space>dp :diffput<CR>
@@ -117,17 +114,13 @@ augroup vimrc
   autocmd FileType sml setl cms=(*%s*)
 augroup END
 
-set path+=**
-set wildignore+=*/.cache/**/*,*/.local/**/*,*/builds/**/*
-set wildignore+=*/.git/**/*,*/.hg/**/*,*/.svn/**/*
-set wildignore+=tags
 set wildmenu
 
 set mouse=a
 set noshowmode
 if has("persistent_undo")
-    set undodir=~/.vim/undodir/
-    set undofile
+  set undodir=~/.vim/undodir/
+  set undofile
 endif
 
 set nobackup
