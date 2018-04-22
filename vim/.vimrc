@@ -15,12 +15,13 @@ Plug 'tommcdo/vim-exchange'
 Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/goyo.vim'
 Plug 'mbbill/undotree'
+Plug 'justinmk/vim-sneak'
+Plug 'ludovicchabant/vim-gutentags'
+
+Plug 'stfl/meson.vim', { 'for': 'meson' }
 Plug 'guns/vim-sexp', { 'for': ['lisp', 'clojure', 'scheme'] }
 Plug 'tpope/vim-sexp-mappings-for-regular-people', { 'for': ['lisp', 'clojure', 'scheme'] }
 Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
-Plug 'justinmk/vim-sneak'
-Plug 'ludovicchabant/vim-gutentags'
-Plug 'stfl/meson.vim', { 'for': 'meson' }
 
 Plug 'tweekmonster/startuptime.vim'
 
@@ -48,7 +49,7 @@ vnoremap / /\v
 set gdefault
 
 nnoremap <C-p> :Files<CR>
-nnoremap <C-t> :Buffers<CR>
+nnoremap <C-g> :Buffers<CR>
 
 noremap <C-h> <C-w>h
 noremap <C-j> <C-w>j
