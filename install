@@ -43,3 +43,4 @@ betterlockscreen -u .background.png
 stow git
 stow tmux
 stow xfce4
+stow zathura
