@@ -22,6 +22,7 @@ Plug 'stfl/meson.vim', { 'for': 'meson' }
 Plug 'guns/vim-sexp', { 'for': ['lisp', 'clojure', 'scheme'] }
 Plug 'tpope/vim-sexp-mappings-for-regular-people', { 'for': ['lisp', 'clojure', 'scheme'] }
 Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
+Plug 'alvan/vim-closetag'
 
 Plug 'tweekmonster/startuptime.vim'
 

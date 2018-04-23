@@ -48,7 +48,9 @@ prompt() {
         fi
 
         PS1+="$RESET_COLOR $BRANCH_COLOR$BRANCH"
-        PS1+="$DIRTY_COLOR($DIRTY)"
+        if [ ! -z "$DIRTY" ]; then
+            PS1+="$DIRTY_COLOR($DIRTY)"
+        fi
     fi
     PS1+="\n"
     if [ $ret -ne 0 ]; then
