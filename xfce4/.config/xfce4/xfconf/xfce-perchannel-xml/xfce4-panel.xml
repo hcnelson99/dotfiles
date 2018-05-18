@@ -20,7 +20,6 @@
     </property>
   </property>
   <property name="plugins" type="empty">
-    <property name="plugin-3" type="string" value="tasklist"/>
     <property name="plugin-15" type="string" value="separator">
       <property name="expand" type="bool" value="true"/>
       <property name="style" type="uint" value="0"/>
@@ -44,5 +43,6 @@
       <property name="mpris-players" type="string" value=";spotify"/>
     </property>
     <property name="plugin-2" type="string" value="battery"/>
+    <property name="plugin-3" type="string" value="tasklist"/>
   </property>
 </channel>

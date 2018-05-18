@@ -7,8 +7,11 @@
 /home/*/.dropbox-dist
 /home/*/.cargo
 /home/*/.local/share/Steam
+/home/*/.local/share/lutris
 /home/*/.stack
 /home/*/.m2
 /home/*/.boot
 /home/*/.roswell
 /home/*/.emacs.d
+/home/*/.opam
+/home/**/_build/**/*

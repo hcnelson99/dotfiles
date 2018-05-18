@@ -93,6 +93,7 @@ alias andrew="sshfs andrew:/afs/andrew.cmu.edu/usr15/hnelson1/private ~/andrew"
 alias tmux="tmux -2"
 alias coin="rlwrap coin"
 alias smlnj="rlwrap sml"
+alias ocaml="rlwrap ocaml"
 
 alias extmonitor-on="xrandr --auto --output eDP-1 --same-as DP-1-2"
 alias extmonitor-off="xrandr --output DP-1-2 --off"
@@ -129,3 +130,6 @@ autotex() {
     (zathura ${1%.tex}.pdf &)2>/dev/null
     echo $1 | entr -c pdflatex -halt-on-error $1
 }
+
+# OPAM configuration
+. /home/henry/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true

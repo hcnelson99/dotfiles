@@ -5,7 +5,7 @@
 
 "skippy-xd"
     F3 + Release
-"bash -c 'wmctrl -xa firefox || firefox'"
+"bash -c 'wmctrl -xa google-chrome-stable || google-chrome-stable'"
     F5 + Release
 "bash -c 'wmctrl -xa xfce4-terminal || xfce4-terminal'"
     F6 + Release

@@ -44,3 +44,9 @@ stow git
 stow tmux
 stow xfce4
 stow zathura
+
+# for kak
+# This sets up terminfo overrides properly so that kakoune colors work within tmux
+# Taken from kakoune faq :doc faq
+# $ curl -O https://raw.githubusercontent.com/mawww/kakoune/master/contrib/tmux-256color.terminfo
+# $ tic tmux-256color.terminfo

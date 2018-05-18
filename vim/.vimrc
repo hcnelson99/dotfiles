@@ -5,6 +5,7 @@ Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-classpath'
 Plug 'tpope/vim-sleuth'
+Plug 'tpope/vim-eunuch'
 Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
@@ -17,6 +18,7 @@ Plug 'junegunn/goyo.vim'
 Plug 'mbbill/undotree'
 Plug 'justinmk/vim-sneak'
 Plug 'ludovicchabant/vim-gutentags'
+Plug 'tommcdo/vim-lion'
 
 Plug 'stfl/meson.vim', { 'for': 'meson' }
 Plug 'guns/vim-sexp', { 'for': ['lisp', 'clojure', 'scheme'] }
@@ -64,6 +66,7 @@ nnoremap cpc :Piggieback (adzerk.boot-cljs-repl/repl-env)<CR>
 
 nnoremap <Space>a :Ack! "\b<cword>\b" <CR>
 nnoremap <Space>c :cd %:p:h<CR>:pwd<CR>
+nnoremap <Space>e :Errors<CR>
 
 nnoremap <Space>dp :diffput<CR>
 xnoremap <Space>dp :diffput<CR>
@@ -87,6 +90,7 @@ nnoremap <Space>m :make<CR>
 nnoremap <Space>q :q<CR>
 nnoremap <Space>r :source ~/.vimrc<CR>
 nnoremap <Space>s :setlocal spell! spelllang=en_us<CR>
+nnoremap <Space>t :MerlinTypeOf<CR>
 nnoremap <Space>T :set expandtab tabstop=8 shiftwidth=8 softtabstop=8<CR>
 nnoremap <Space>u :UndotreeToggle<CR>
 nnoremap <Space>w :w<CR>
@@ -136,7 +140,6 @@ set backspace=indent,eol,start
 set shiftwidth=4 "indent width used for autoindent
 set softtabstop=4 "number of spaces inserted when tab is pressed
 set expandtab "tabs are spaces
-set smartindent
 set autoindent
 set shiftround
 set smarttab
