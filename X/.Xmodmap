@@ -1,2 +1,4 @@
 ! compose key
 keycode 107 = Multi_key
+keycode 133 = Alt_L
+keycode 64 = Super_L

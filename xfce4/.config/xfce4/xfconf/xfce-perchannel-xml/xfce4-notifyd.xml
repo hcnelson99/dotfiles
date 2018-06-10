@@ -5,9 +5,11 @@
     <property name="known_applications" type="array">
       <value type="string" value="Dropbox"/>
       <value type="string" value="google-chrome"/>
+      <value type="string" value="lxqt-powermanagement"/>
       <value type="string" value="Network management"/>
       <value type="string" value="nm-applet"/>
       <value type="string" value="Power Manager"/>
+      <value type="string" value="Skype"/>
       <value type="string" value="snap-sync"/>
       <value type="string" value="Spotify"/>
       <value type="string" value="Transmission"/>

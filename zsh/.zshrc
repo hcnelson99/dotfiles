@@ -20,7 +20,6 @@ if ! zgen saved; then
     zgen oh-my-zsh plugins/command-not-found
     zgen oh-my-zsh plugins/vi-mode
     zgen oh-my-zsh plugins/pass
-    zgen oh-my-zsh plugins/virtualenvwrapper
     zgen load zsh-users/zsh-syntax-highlighting
 
     zgen load junegunn/fzf shell/completion.zsh
@@ -102,6 +101,9 @@ alias netborg="borg --remote-path=borg1"
 alias netbackup="borg create --remote-path=borg1 --progress --stats --exclude-from=.borgexclude --compression auto,lzma 58073@usw-s008.rsync.net:backup::{hostname}-{user}-{now:%Y-%m-%dT%H:%M:%S} /home /etc"
 alias updmirrors="sudo reflector --country 'United States' --latest 15 --age 24 --sort rate --save /etc/pacman.d/mirrorlist"
 alias se="sudoedit"
+
+alias wypy="~/wyvern/bin/wypy"
+alias wyvern="~/wyvern/bin/wyvern"
 
 alias f="ranger"
 alias g="git"

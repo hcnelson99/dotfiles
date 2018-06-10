@@ -15,3 +15,4 @@
 /home/*/.emacs.d
 /home/*/.opam
 /home/**/_build/**/*
+/home/*/.rustup

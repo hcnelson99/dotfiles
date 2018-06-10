@@ -19,6 +19,7 @@ Plug 'mbbill/undotree'
 Plug 'justinmk/vim-sneak'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'tommcdo/vim-lion'
+Plug 'christoomey/vim-tmux-navigator'
 
 Plug 'stfl/meson.vim', { 'for': 'meson' }
 Plug 'guns/vim-sexp', { 'for': ['lisp', 'clojure', 'scheme'] }
@@ -27,6 +28,8 @@ Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 Plug 'alvan/vim-closetag'
 
 Plug 'tweekmonster/startuptime.vim'
+
+Plug 'hcnelson99/wyvern.vim'
 
 call plug#end()
 filetype plugin indent on
@@ -58,6 +61,10 @@ noremap <C-h> <C-w>h
 noremap <C-j> <C-w>j
 noremap <C-k> <C-w>k
 noremap <C-l> <C-w>l
+tnoremap <C-h> <C-w>h
+tnoremap <C-j> <C-w>j
+tnoremap <C-k> <C-w>k
+tnoremap <C-l> <C-w>l
 
 " vim-fireplace eval entire file (like cpr for tests)
 nnoremap cpf :%Eval<CR>
@@ -90,7 +97,6 @@ nnoremap <Space>m :make<CR>
 nnoremap <Space>q :q<CR>
 nnoremap <Space>r :source ~/.vimrc<CR>
 nnoremap <Space>s :setlocal spell! spelllang=en_us<CR>
-nnoremap <Space>t :MerlinTypeOf<CR>
 nnoremap <Space>T :set expandtab tabstop=8 shiftwidth=8 softtabstop=8<CR>
 nnoremap <Space>u :UndotreeToggle<CR>
 nnoremap <Space>w :w<CR>
