@@ -6,9 +6,8 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
 fi
 
 xrdb ~/.Xresources
-xmodmap ~/.Xmodmap
 setxkbmap -option ctrl:nocaps
-
+xmodmap ~/.Xmodmap
 
 unclutter &
-exec startxfce4
+exec bspwm

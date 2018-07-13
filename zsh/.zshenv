@@ -17,3 +17,8 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_C_COMMAND="find . -type d 2> /dev/null"
 
 export BORG_PASSCOMMAND='pass show borg'
+
+export WYVERN_HOME="/home/henry/wyvern"
+
+export AUR_PAGER="ranger"
+export _JAVA_OPTIONS="-Xmx12g"

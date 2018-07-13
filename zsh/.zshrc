@@ -88,7 +88,11 @@ bindkey -s '^G' "run^M"
 bindkey -s '^P' 'vim $(fzf)^M'
 bindkey '^[C' fzf-cd-widget
 
-alias andrew="sshfs andrew:/afs/andrew.cmu.edu/usr15/hnelson1/private ~/andrew"
+alias andrew-fs="sshfs andrew:/afs/andrew.cmu.edu/usr15/hnelson1/private ~/andrew"
+alias andrew='sshpass -p $(pass andrewID | head -1) ssh andrew'
+alias diff='diff -u --color=always'
+alias prettier='prettier --write --print-width 9999'
+
 alias tmux="tmux -2"
 alias coin="rlwrap coin"
 alias smlnj="rlwrap sml"
@@ -102,7 +106,12 @@ alias netbackup="borg create --remote-path=borg1 --progress --stats --exclude-fr
 alias updmirrors="sudo reflector --country 'United States' --latest 15 --age 24 --sort rate --save /etc/pacman.d/mirrorlist"
 alias se="sudoedit"
 
+alias alert="notify-send 'COMMAND COMPLETED'"
+
+alias aurclean="paccache -r && paccache -ruk0 && repoctl update"
+
 alias wypy="~/wyvern/bin/wypy"
+alias wyby="~/wyvern/bin/wyby"
 alias wyvern="~/wyvern/bin/wyvern"
 
 alias f="ranger"

@@ -13,13 +13,12 @@ Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-vinegar'
 Plug 'tommcdo/vim-exchange'
-Plug 'airblade/vim-gitgutter'
+Plug 'mhinz/vim-signify'
 Plug 'junegunn/goyo.vim'
 Plug 'mbbill/undotree'
-Plug 'justinmk/vim-sneak'
-Plug 'ludovicchabant/vim-gutentags'
 Plug 'tommcdo/vim-lion'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'b4winckler/vim-angry'
 
 Plug 'stfl/meson.vim', { 'for': 'meson' }
 Plug 'guns/vim-sexp', { 'for': ['lisp', 'clojure', 'scheme'] }
@@ -38,11 +37,6 @@ syntax on
 if executable('rg')
   let g:ackprg = 'rg --vimgrep --no-heading'
 endif
-
-
-let g:sneak#label = 1
-
-let g:gitgutter_map_keys = 0
 
 inoremap jk <esc>
 nnoremap <expr> j v:count ? (v:count > 5 ? "m'" . v:count : '') . 'j' : 'gj'
