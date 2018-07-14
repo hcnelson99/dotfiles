@@ -4,6 +4,7 @@
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
+[[ -f ~/.bashrc.local ]] && . ~/.bashrc.local
 
 alias ls='ls --color=auto'
 
