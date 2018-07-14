@@ -1,8 +1,5 @@
 HISTSIZE=999999999
 SAVEHIST=$HISTSIZE
-setopt appendhistory autocd correct extendedglob notify
-setopt auto_pushd
-unsetopt beep share_history
 bindkey -v
 
 bindkey -M viins 'jk' vi-cmd-mode
@@ -29,6 +26,10 @@ if ! zgen saved; then
 
     zgen save
 fi
+
+setopt auto_pushd autocd correct extendedglob notify
+setopt inc_append_history_time 
+unsetopt beep share_history inc_append_history
 
 export LSCOLORS="exfxcxdxbxbxbxbxbxbxbx"
 export LS_COLORS="di=34;40:ln=35;40:so=32;40:pi=33;40:ex=31;40:bd=31;40:cd=31;40:su=31;40:sg=31;40:tw=31;40:ow=31;40:"
