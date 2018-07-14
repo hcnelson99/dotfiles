@@ -3,16 +3,11 @@
 
 mkdir -p ~/builds
 cd ~/builds
-git clone https://aur.archlinux.org/cower.git
-cd cower
-gpg --recv-keys --keyserver hkp://pgp.mit.edu 1EB2638FF56C0C53
-yes | makepkg -sri
-cd ..
-git clone https://aur.archlinux.org/pacaur.git
-cd pacaur
-yes | makepkg -sri
+git clone https://aur.archlinux.org/aurutils-git.git
+makepkg -sri
 
-pacaur -Syu --noconfirm reflector
+aur sync reflector
+sudo pacman -S reflector
 
 sudo reflector --latest 15 --protocol http --protocol https --sort rate --save /etc/pacman.d/mirrorlist
 
@@ -21,9 +16,12 @@ cd ~/dotfiles
 sudo mkdir -p /etc/pacman.d/hooks
 sudo cp ~/dotfiles/mirrorupgrade.hook /etc/pacman.d/hooks
 
-PKGS="vim ranger xsel stow redshift python-gobject python-xdg tmux zsh pass python-virtualenvwrapper ripgrep fzf xfce4 xfce4-goodies rofi arandr adapta-gtk-theme xorg-server xorg-xinit xorg-xmodmap networkmanager networkmanager-openvpn network-manager-applet pulseaudio ctags xbindkeys wmctrl firefox"
+PKGS="vim ranger xsel stow redshift python-gobject python-xdg tmux zsh pass ripgrep tokei fzf xfce-panel xfce4-terminal xfce4-battery-plugin rofi arandr adapta-gtk-theme xorg-server xorg-xinit xorg-xmodmap networkmanager networkmanager-openvpn network-manager-applet pulseaudio ctags firefox"
 AUR="light unclutter-xfixes-git betterlockscreen rofi-pass numix-circle-icon-theme-git ttf-roboto-mono fonts-meta-extended-lt"
-pacaur -Syu --needed $PKGS $AUR
+
+aur sync $AUR
+
+sudo pacman -S $PKGS $AUR
 
 systemctl enable NetworkManager
 
@@ -39,7 +37,8 @@ sudo ln -s /etc/fonts/conf.avail/10-sub-pixel-rgb.conf /etc/fonts/conf.d
 sudo ln -s /etc/fonts/conf.avail/30-infinality-aliases.conf /etc/fonts/conf.d
 
 stow X
-betterlockscreen -u .background.png
+feh --bg-fill ~/.background.png
+betterlockscreen -u ~/.background.png
 stow git
 stow tmux
 stow xfce4

@@ -6,6 +6,7 @@ xsetroot -cursor_name left_ptr
 sh .fehbg
 xfce4-panel &
 nm-applet &
+redshift-gtk &
 
 bspc monitor -d 1 2 3 4 5 6 7 8 9 10
 
