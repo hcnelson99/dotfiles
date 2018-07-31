@@ -123,7 +123,7 @@ alias gca="git commit -a"
 alias gco="git checkout"
 alias gd="git diff"
 alias gds="git diff --staged"
-alias gl="git pull"
+alias gl="git log"
 alias gp="git push"
 alias gs="git status"
 

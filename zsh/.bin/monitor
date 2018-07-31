@@ -1,7 +1,8 @@
 #!/bin/bash
+set -ex
 
 main=${MAIN_MONITOR:-eDP-1}
-second=${ADDITIONAL_MONITOR:-DP-1-2}
+second=${ADDITIONAL_MONITOR:-DP-2}
 
 dual_monitor() {
   if [ "$(bspc query -M | wc -l)" -eq "2" ]; then

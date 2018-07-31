@@ -4,7 +4,6 @@ Plug 'mileszs/ack.vim'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-classpath'
-Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-eunuch'
 Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-surround'
@@ -25,6 +24,7 @@ Plug 'guns/vim-sexp', { 'for': ['lisp', 'clojure', 'scheme'] }
 Plug 'tpope/vim-sexp-mappings-for-regular-people', { 'for': ['lisp', 'clojure', 'scheme'] }
 Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 Plug 'alvan/vim-closetag'
+Plug 'leafgarland/typescript-vim'
 
 Plug 'tweekmonster/startuptime.vim'
 
@@ -91,6 +91,7 @@ nnoremap <Space>m :make<CR>
 nnoremap <Space>q :q<CR>
 nnoremap <Space>r :source ~/.vimrc<CR>
 nnoremap <Space>s :setlocal spell! spelllang=en_us<CR>
+nnoremap <Space>t /\v\s+$<CR>
 nnoremap <Space>T :set expandtab tabstop=8 shiftwidth=8 softtabstop=8<CR>
 nnoremap <Space>u :UndotreeToggle<CR>
 nnoremap <Space>w :w<CR>

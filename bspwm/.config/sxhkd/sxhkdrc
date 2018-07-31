@@ -1,12 +1,16 @@
 # General
+XF86Audio{Raise,Lower}Volume
+	pactl set-sink-mute 0 false ; pactl set-sink-volume 0 {+5%, -5%}
 
-{XF86MonBrightnessDown, XF86MonBrightnessUp}
-	light -{U,A} 5
+XF86AudioMute
+	pactl set-sink-mute 0 toggle
 
+XF86MonBrightness{Up,Down}
+	light {-A,-U} 5%
 
 # terminal emulator
 super + Return
-	xfce4-terminal
+	termite
 
 # browser
 super + c
@@ -97,10 +101,6 @@ super + ctrl + {h,j,k,l}
 # preselect the ratio
 super + ctrl + {1-9}
 	bspc node -o 0.{1-9}
-
-super + {_, shift} + minus
-    bspc node {_,$(bspc query -N -d -n .hidden | head -n 1)} -g hidden
-
 
 # cancel the preselection for the focused desktop
 super + ctrl + space
