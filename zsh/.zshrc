@@ -27,6 +27,8 @@ if ! zgen saved; then
     zgen save
 fi
 
+source /etc/profile.d/vte.sh
+
 setopt auto_pushd autocd correct extendedglob notify
 setopt inc_append_history_time 
 unsetopt beep share_history inc_append_history
