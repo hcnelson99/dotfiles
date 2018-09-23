@@ -1,0 +1,4 @@
+#!/bin/bash
+export WINEPREFIX=~/.wine-witness
+cd "/home/henry/.wine-witness/drive_c/Program Files (x86)/Steam/steamapps/common/The Witness/"
+wine "/home/henry/.wine-witness/drive_c/Program Files (x86)/Steam/steamapps/common/The Witness/witness64_d3d11.exe"

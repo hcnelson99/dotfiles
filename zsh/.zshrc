@@ -93,7 +93,6 @@ bindkey '^[C' fzf-cd-widget
 
 alias andrew-fs="sshfs andrew:/afs/andrew.cmu.edu/usr15/hnelson1/private ~/andrew"
 alias andrew='sshpass -p $(pass andrewID | head -1) ssh andrew'
-alias diff='diff -u --color=always'
 alias prettier='prettier --write --print-width 9999'
 
 alias tmux="tmux -2"

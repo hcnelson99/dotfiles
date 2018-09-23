@@ -16,3 +16,4 @@
 /home/*/.opam
 /home/**/_build/**/*
 /home/*/.rustup
+/home/*/.wine-witness

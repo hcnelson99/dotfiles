@@ -5,7 +5,6 @@ compton &
 xsetroot -cursor_name left_ptr
 sh .fehbg
 polybar -r bar &
-redshift-gtk -l 40:80 &
 nm-applet &
 
 bspc monitor -d 1 2 3 4 5 6 7 8 9 10

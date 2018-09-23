@@ -18,6 +18,7 @@ Plug 'mbbill/undotree'
 Plug 'tommcdo/vim-lion'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'b4winckler/vim-angry'
+Plug 'jamessan/vim-gnupg'
 
 Plug 'stfl/meson.vim', { 'for': 'meson' }
 Plug 'guns/vim-sexp', { 'for': ['lisp', 'clojure', 'scheme'] }
@@ -25,6 +26,7 @@ Plug 'tpope/vim-sexp-mappings-for-regular-people', { 'for': ['lisp', 'clojure', 
 Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 Plug 'alvan/vim-closetag'
 Plug 'leafgarland/typescript-vim'
+Plug 'ziglang/zig.vim'
 
 Plug 'tweekmonster/startuptime.vim'
 
