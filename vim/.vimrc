@@ -12,13 +12,11 @@ Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-vinegar'
 Plug 'tommcdo/vim-exchange'
-Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/goyo.vim'
 Plug 'mbbill/undotree'
 Plug 'tommcdo/vim-lion'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'b4winckler/vim-angry'
-Plug 'jamessan/vim-gnupg'
 
 Plug 'stfl/meson.vim', { 'for': 'meson' }
 Plug 'guns/vim-sexp', { 'for': ['lisp', 'clojure', 'scheme'] }
@@ -27,6 +25,8 @@ Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 Plug 'alvan/vim-closetag'
 Plug 'leafgarland/typescript-vim'
 Plug 'ziglang/zig.vim'
+Plug 'zah/nim.vim'
+Plug 'fidian/hexmode'
 
 Plug 'tweekmonster/startuptime.vim'
 
@@ -39,6 +39,8 @@ syntax on
 if executable('rg')
   let g:ackprg = 'rg --vimgrep --no-heading'
 endif
+
+let g:nim_highlight_space_errors = 0
 
 inoremap jk <esc>
 nnoremap <expr> j v:count ? (v:count > 5 ? "m'" . v:count : '') . 'j' : 'gj'
@@ -149,7 +151,6 @@ set smarttab
 set autoread
 set scrolloff=2
 
-set number
 set showcmd
 set showmatch "show matching braces/parens/brackets
 
@@ -161,6 +162,7 @@ set hlsearch
 
 set showbreak=››\
 
+set number
 set statusline=%<%f\ %m%r%w%=%l\,%c
 set laststatus=2
 
