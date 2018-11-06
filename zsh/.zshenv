@@ -21,4 +21,3 @@ export BORG_PASSCOMMAND='pass show borg'
 export WYVERN_HOME="/home/henry/wyvern"
 
 export AUR_PAGER="ranger"
-export _JAVA_OPTIONS="-Xmx12g"

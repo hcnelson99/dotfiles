@@ -17,7 +17,7 @@ sudo mkdir -p /etc/pacman.d/hooks
 sudo cp ~/dotfiles/mirrorupgrade.hook /etc/pacman.d/hooks
 
 PKGS="vim ranger xsel stow tmux zsh pass ripgrep tokei fzf xfce-panel xfce4-terminal xfce4-battery-plugin rofi arandr adapta-gtk-theme xorg-server xorg-xinit xorg-xmodmap networkmanager networkmanager-openvpn network-manager-applet pulseaudio ctags firefox"
-AUR="sct light unclutter-xfixes-git betterlockscreen rofi-pass numix-circle-icon-theme-git ttf-roboto-mono fonts-meta-extended-lt"
+AUR="sct brillo unclutter-xfixes-git betterlockscreen rofi-pass numix-circle-icon-theme-git ttf-roboto-mono fonts-meta-extended-lt"
 
 aur sync $AUR
 
@@ -44,6 +44,7 @@ stow tmux
 stow xfce4
 stow zathura
 
+# to get brillo to work, gpasswd -a henry video and restart
 # for spotify to play local files install aur/ffmpeg-compat-54
 
 # for kak (i don't remember if this also fixes it for vim in tmux)

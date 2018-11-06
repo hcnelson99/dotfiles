@@ -6,7 +6,7 @@ XF86AudioMute
 	pactl set-sink-mute 0 toggle
 
 XF86MonBrightness{Up,Down}
-	light {-A,-U} 5%
+	brillo -equ 1500 {-A,-U} 5%
 
 # terminal emulator
 super + Return

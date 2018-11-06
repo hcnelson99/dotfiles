@@ -65,6 +65,7 @@ tnoremap <C-k> <C-w>k
 tnoremap <C-l> <C-w>l
 
 " vim-fireplace eval entire file (like cpr for tests)
+nnoremap cpu :execute "Eval (ns-unmap *ns* '" . expand("<cword>") . ")"<cr>
 nnoremap cpf :%Eval<CR>
 nnoremap cpe :Eval<CR>
 nnoremap cpc :Piggieback (adzerk.boot-cljs-repl/repl-env)<CR>
@@ -162,7 +163,6 @@ set hlsearch
 
 set showbreak=››\
 
-set number
 set statusline=%<%f\ %m%r%w%=%l\,%c
 set laststatus=2
 
