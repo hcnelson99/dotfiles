@@ -92,7 +92,8 @@ bindkey -s '^P' 'vim $(fzf)^M'
 bindkey '^[C' fzf-cd-widget
 
 alias andrew-fs="sshfs andrew:/afs/andrew.cmu.edu/usr15/hnelson1/private ~/andrew"
-alias andrew='sshpass -p $(pass andrewID | head -1) ssh andrew'
+alias andrew='sshpass -p $(pass andrewID | head -1) mosh andrew'
+alias 213remote='sshpass -p $(pass andrewID | head -1) mosh hnelson1@lemonshark.ics.cs.cmu.edu'
 alias prettier='prettier --write --print-width 9999'
 
 alias tmux="tmux -2"
