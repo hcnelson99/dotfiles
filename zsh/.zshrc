@@ -91,44 +91,9 @@ bindkey -s '^G' "run^M"
 bindkey -s '^P' 'vim $(fzf)^M'
 bindkey '^[C' fzf-cd-widget
 
-alias andrew-fs="sshfs andrew:/afs/andrew.cmu.edu/usr15/hnelson1/private ~/andrew"
-alias andrew='sshpass -p $(pass andrewID | head -1) mosh andrew'
-alias 213remote='sshpass -p $(pass andrewID | head -1) mosh hnelson1@lemonshark.ics.cs.cmu.edu'
-alias prettier='prettier --write --print-width 9999'
-
-alias tmux="tmux -2"
-alias coin="rlwrap coin"
-alias smlnj="rlwrap sml"
-alias ocaml="rlwrap ocaml"
-
-alias extmonitor-on="xrandr --auto --output eDP-1 --same-as DP-1-2"
-alias extmonitor-off="xrandr --output DP-1-2 --off"
-export netborg_server="58073@usw-s008.rsync.net:backup"
-alias netborg="borg --remote-path=borg1"
-alias netbackup="borg create --remote-path=borg1 --progress --stats --exclude-from=.borgexclude --compression auto,lzma 58073@usw-s008.rsync.net:backup::{hostname}-{user}-{now:%Y-%m-%dT%H:%M:%S} /home /etc"
-alias updmirrors="sudo reflector --country 'United States' --latest 15 --age 24 --sort rate --save /etc/pacman.d/mirrorlist"
-alias se="sudoedit"
-
-alias alert="notify-send 'COMMAND COMPLETED'"
-
-alias aurclean="paccache -r && paccache -ruk0 && repoctl update"
-
-alias wypy="~/wyvern/bin/wypy"
-alias wyby="~/wyvern/bin/wyby"
-alias wyvern="~/wyvern/bin/wyvern"
-
-alias f="ranger"
-alias g="git"
-alias ga="git add"
-alias gc="git commit"
-alias gca="git commit -a"
-alias gco="git checkout"
-alias gd="git diff"
-alias gds="git diff --staged"
-alias gl="git log"
-alias gu="git pull"
-alias gp="git push"
-alias gs="git status"
+if [ -f ~/.aliases ]; then
+    source ~/.aliases
+fi
 
 backup_drive-mount() {
     sudo cryptsetup open --type luks /dev/disk/by-uuid/936af459-502b-4a66-a6aa-4942b8429fe4 backup_drive

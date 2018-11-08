@@ -5,6 +5,7 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 [[ -f ~/.bashrc.local ]] && . ~/.bashrc.local
+[[ -f ~/.aliases ]] && . ~/.aliases
 
 alias ls='ls --color=auto'
 
