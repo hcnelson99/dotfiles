@@ -23,6 +23,7 @@ Plug 'guns/vim-sexp', { 'for': ['lisp', 'clojure', 'scheme'] }
 Plug 'tpope/vim-sexp-mappings-for-regular-people', { 'for': ['lisp', 'clojure', 'scheme'] }
 Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 Plug 'alvan/vim-closetag'
+Plug 'jez/vim-better-sml'
 Plug 'leafgarland/typescript-vim'
 Plug 'ziglang/zig.vim'
 Plug 'zah/nim.vim'
@@ -48,8 +49,6 @@ nnoremap <expr> k v:count ? (v:count > 5 ? "m'" . v:count : '') . 'k' : 'gk'
 noremap Y y$
 nnoremap <CR> :nohls<CR>
 
-nnoremap / /\v
-vnoremap / /\v
 set gdefault
 
 nnoremap <C-p> :Files<CR>
@@ -66,6 +65,7 @@ tnoremap <C-l> <C-w>l
 
 " vim-fireplace eval entire file (like cpr for tests)
 nnoremap cpu :execute "Eval (ns-unmap *ns* '" . expand("<cword>") . ")"<cr>
+nnoremap cpR :RunAllTests<CR>
 nnoremap cpf :%Eval<CR>
 nnoremap cpe :Eval<CR>
 nnoremap cpc :Piggieback (adzerk.boot-cljs-repl/repl-env)<CR>

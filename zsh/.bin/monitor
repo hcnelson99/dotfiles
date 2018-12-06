@@ -1,5 +1,5 @@
 #!/bin/bash
-set -ex
+set -e
 
 main=${MAIN_MONITOR:-eDP-1}
 second=${ADDITIONAL_MONITOR:-DP-2}
