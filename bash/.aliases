@@ -18,7 +18,7 @@ alias se="sudoedit"
 
 alias alert="notify-send 'COMMAND COMPLETED'"
 
-alias aurclean="paccache -r && paccache -ruk0 && repoctl update"
+alias pacclean="paccache -r && paccache -ruk0"
 
 alias wypy="~/wyvern/bin/wypy"
 alias wyby="~/wyvern/bin/wyby"

@@ -7,7 +7,7 @@ export CVS_RSH=/usr/bin/ssh
 
 export RUST_SRC_PATH="$HOME/.multirust/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src"
 
-export PATH="$HOME/.nimble/bin:$HOME/.bin:$HOME/.cargo/bin:$HOME/.local/bin:$PATH"
+export PATH="$HOME/.node_modules/bin:$HOME/.nimble/bin:$HOME/.bin:$HOME/.cargo/bin:$HOME/.local/bin:$PATH"
 
 export JAVA_HOME="/usr/lib/jvm/default"
 export _JAVA_AWT_WM_NONREPARENTING=1
@@ -21,3 +21,5 @@ export BORG_PASSCOMMAND='pass show borg'
 export WYVERN_HOME="/home/henry/wyvern"
 
 export AUR_PAGER="ranger"
+
+export npm_config_prefix=~/.node_modules

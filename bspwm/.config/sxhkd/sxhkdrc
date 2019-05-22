@@ -85,6 +85,10 @@ super + {_,shift + }{h,j,k,l}
 super + bracket{left,right}
 	bspc desktop -f {prev,next}
 
+# focus or send to the next/previous desktop
+super + {_,shift + } bracket{left,right}
+	bspc {desktop -f,node -d} {prev, next}
+
 # focus the last node/desktop
 super + {grave,Tab}
 	bspc {node,desktop} -f last
@@ -92,6 +96,7 @@ super + {grave,Tab}
 # focus or send to the given desktop
 super + {_,shift + }{1-9,0}
 	bspc {desktop -f,node -d} {1-9,10}
+
 
 #
 # preselect

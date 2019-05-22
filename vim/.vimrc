@@ -11,12 +11,14 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-vinegar'
+Plug 'tpope/vim-sleuth'
 Plug 'tommcdo/vim-exchange'
 Plug 'junegunn/goyo.vim'
 Plug 'mbbill/undotree'
 Plug 'tommcdo/vim-lion'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'b4winckler/vim-angry'
+Plug 'fxn/vim-monochrome'
 
 Plug 'stfl/meson.vim', { 'for': 'meson' }
 Plug 'guns/vim-sexp', { 'for': ['lisp', 'clojure', 'scheme'] }
@@ -28,6 +30,7 @@ Plug 'leafgarland/typescript-vim'
 Plug 'ziglang/zig.vim'
 Plug 'zah/nim.vim'
 Plug 'fidian/hexmode'
+Plug 'vim-syntastic/syntastic'
 
 Plug 'tweekmonster/startuptime.vim'
 
@@ -36,6 +39,10 @@ Plug 'hcnelson99/wyvern.vim'
 call plug#end()
 filetype plugin indent on
 syntax on
+
+let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
+execute "set rtp+=" . g:opamshare . "/merlin/vim"
+let g:syntastic_ocaml_checkers = ['merlin']
 
 if executable('rg')
   let g:ackprg = 'rg --vimgrep --no-heading'
@@ -47,9 +54,7 @@ inoremap jk <esc>
 nnoremap <expr> j v:count ? (v:count > 5 ? "m'" . v:count : '') . 'j' : 'gj'
 nnoremap <expr> k v:count ? (v:count > 5 ? "m'" . v:count : '') . 'k' : 'gk'
 noremap Y y$
-nnoremap <CR> :nohls<CR>
-
-set gdefault
+nnoremap <expr> <CR> &buftype ==# 'quickfix' ? "\<CR>" : ':nohls<CR>'
 
 nnoremap <C-p> :Files<CR>
 nnoremap <C-g> :Buffers<CR>
@@ -89,19 +94,24 @@ nnoremap <Space>gr :Gread<CR>
 nnoremap <Space>gs :Gstatus<CR>
 nnoremap <Space>gw :Gwrite<CR>
 
+nnoremap <Space>h :split<CR>
 nnoremap <Space>i :PlugInstall<CR>
 nnoremap <Space>l :<C-u>execute 'file '.fnameescape(resolve(expand('%:p')))<bar>
     \ call fugitive#detect(fnameescape(expand('%:p:h')))<CR>
 nnoremap <Space>m :make<CR>
 nnoremap <Space>q :q<CR>
 nnoremap <Space>r :source ~/.vimrc<CR>
-nnoremap <Space>s :setlocal spell! spelllang=en_us<CR>
+nnoremap <Space>s :vsplit<CR>
+nnoremap <Space>S :setlocal spell! spelllang=en_us<CR>
 nnoremap <Space>t /\v\s+$<CR>
 nnoremap <Space>T :set expandtab tabstop=8 shiftwidth=8 softtabstop=8<CR>
 nnoremap <Space>u :UndotreeToggle<CR>
 nnoremap <Space>w :w<CR>
 nnoremap <Space>W :w !sudo tee %<CR>
 nnoremap <Space>8 /\%>80v.\+<CR>
+nnoremap <Space>] :YcmCompleter GoToDefinition<CR>
+
+command StripWhitespace %s/\v\s+$//
 
 set background=dark
 set t_8f=[38;2;%lu;%lu;%lum

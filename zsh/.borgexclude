@@ -17,3 +17,5 @@
 /home/**/_build/**/*
 /home/*/.rustup
 /home/*/.wine-witness
+/home/*/.wine
+/home/*/Games
