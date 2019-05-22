@@ -1,3 +1,5 @@
+scriptencoding utf-8
+
 call plug#begin('~/.vim/plugged')
 
 Plug 'mileszs/ack.vim'
@@ -63,10 +65,12 @@ noremap <C-h> <C-w>h
 noremap <C-j> <C-w>j
 noremap <C-k> <C-w>k
 noremap <C-l> <C-w>l
-tnoremap <C-h> <C-w>h
-tnoremap <C-j> <C-w>j
-tnoremap <C-k> <C-w>k
-tnoremap <C-l> <C-w>l
+if exists(":tnoremap")
+  tnoremap <C-h> <C-w>h
+  tnoremap <C-j> <C-w>j
+  tnoremap <C-k> <C-w>k
+  tnoremap <C-l> <C-w>l
+endif
 
 " vim-fireplace eval entire file (like cpr for tests)
 nnoremap cpu :execute "Eval (ns-unmap *ns* '" . expand("<cword>") . ")"<cr>
@@ -114,12 +118,14 @@ nnoremap <Space>] :YcmCompleter GoToDefinition<CR>
 command StripWhitespace %s/\v\s+$//
 
 set background=dark
-set t_8f=[38;2;%lu;%lu;%lum
-set t_8b=[48;2;%lu;%lu;%lum
-let &t_SI .= "\<Esc>[6 q"
-let &t_SR .= "\<Esc>[3 q"
-let &t_EI .= "\<Esc>[2 q"
-set termguicolors
+if has("termguicolors")
+  set t_8f=[38;2;%lu;%lu;%lum
+  set t_8b=[48;2;%lu;%lu;%lum
+  let &t_SI .= "\<Esc>[6 q"
+  let &t_SR .= "\<Esc>[3 q"
+  let &t_EI .= "\<Esc>[2 q"
+  set termguicolors
+endif
 colorscheme base16-materia
 
 
