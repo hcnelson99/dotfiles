@@ -50,6 +50,8 @@ if executable('rg')
   let g:ackprg = 'rg --vimgrep --no-heading'
 endif
 
+let g:ycm_always_populate_location_list = 1
+
 let g:nim_highlight_space_errors = 0
 
 inoremap jk <esc>

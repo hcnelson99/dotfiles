@@ -17,12 +17,13 @@ if ! zgen saved; then
     zgen oh-my-zsh plugins/command-not-found
     zgen oh-my-zsh plugins/vi-mode
     zgen oh-my-zsh plugins/pass
+    zgen oh-my-zsh plugins/virtualenvwrapper
     zgen load zsh-users/zsh-syntax-highlighting
 
     zgen load junegunn/fzf shell/completion.zsh
     zgen load junegunn/fzf shell/key-bindings.zsh
 
-    zgen oh-my-zsh themes/af-magic
+    zgen load hcnelson99/zsh themes/af-magic
 
     zgen save
 fi

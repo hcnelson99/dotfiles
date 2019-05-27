@@ -32,3 +32,4 @@ bspc config pointer_action3 resize_side
 bspc config pointer_action3 resize_corner
 
 bspc rule -a Pinentry state=floating
+bspc rule -a wineconsole.exe state=floating
