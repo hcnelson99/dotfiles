@@ -21,6 +21,7 @@ Plug 'tommcdo/vim-lion'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'b4winckler/vim-angry'
 Plug 'fxn/vim-monochrome'
+Plug 'jpalardy/vim-slime'
 
 Plug 'stfl/meson.vim', { 'for': 'meson' }
 Plug 'guns/vim-sexp', { 'for': ['lisp', 'clojure', 'scheme'] }
@@ -42,6 +43,7 @@ call plug#end()
 filetype plugin indent on
 syntax on
 
+let g:slime_target = "kitty"
 let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
 execute "set rtp+=" . g:opamshare . "/merlin/vim"
 let g:syntastic_ocaml_checkers = ['merlin']
@@ -50,6 +52,7 @@ if executable('rg')
   let g:ackprg = 'rg --vimgrep --no-heading'
 endif
 
+" let g:loaded_youcompleteme = 1
 let g:ycm_always_populate_location_list = 1
 
 let g:nim_highlight_space_errors = 0
@@ -59,6 +62,12 @@ nnoremap <expr> j v:count ? (v:count > 5 ? "m'" . v:count : '') . 'j' : 'gj'
 nnoremap <expr> k v:count ? (v:count > 5 ? "m'" . v:count : '') . 'k' : 'gk'
 noremap Y y$
 nnoremap <expr> <CR> &buftype ==# 'quickfix' ? "\<CR>" : ':nohls<CR>'
+nnoremap ` '
+nnoremap ' `
+
+if v:version > 703 || v:version == 703 && has("patch541")
+  set formatoptions+=j " Delete comment character when joining commented lines
+endif
 
 nnoremap <C-p> :Files<CR>
 nnoremap <C-g> :Buffers<CR>
@@ -83,7 +92,6 @@ nnoremap cpc :Piggieback (adzerk.boot-cljs-repl/repl-env)<CR>
 
 nnoremap <Space>a :Ack! "\b<cword>\b" <CR>
 nnoremap <Space>c :cd %:p:h<CR>:pwd<CR>
-nnoremap <Space>e :Errors<CR>
 
 nnoremap <Space>dp :diffput<CR>
 xnoremap <Space>dp :diffput<CR>
@@ -92,6 +100,10 @@ xnoremap <Space>dg :diffget<CR>
 nnoremap <Space>du :diffupdate<CR>
 xnoremap <Space>du :diffupdate<CR>
 set diffopt+=vertical
+
+nnoremap <Space>e :Errors<CR>
+nnoremap <Space>f :<C-u>execute 'file '.fnameescape(resolve(expand('%:p')))<bar>
+    \ call fugitive#detect(fnameescape(expand('%:p:h')))<CR>:w!<CR>
 
 nnoremap <Space>gc :Gcommit<CR>
 nnoremap <Space>gd :Gdiff<CR>
@@ -102,8 +114,8 @@ nnoremap <Space>gw :Gwrite<CR>
 
 nnoremap <Space>h :split<CR>
 nnoremap <Space>i :PlugInstall<CR>
-nnoremap <Space>l :<C-u>execute 'file '.fnameescape(resolve(expand('%:p')))<bar>
-    \ call fugitive#detect(fnameescape(expand('%:p:h')))<CR>
+set listchars=eol:$,tab:>-,trail:~,space:␣
+nnoremap <Space>l :set list!<CR>
 nnoremap <Space>m :make<CR>
 nnoremap <Space>q :q<CR>
 nnoremap <Space>r :source ~/.vimrc<CR>
@@ -129,7 +141,6 @@ if has("termguicolors")
   set termguicolors
 endif
 colorscheme base16-materia
-
 
 augroup vimrc
   autocmd!
@@ -158,8 +169,10 @@ set nowritebackup
 set noswapfile
 
 
-set clipboard=unnamedplus
+set clipboard^=unnamedplus
 set backspace=indent,eol,start
+
+set complete-=i
 
 set shiftwidth=4 "indent width used for autoindent
 set softtabstop=4 "number of spaces inserted when tab is pressed

@@ -10,7 +10,7 @@ XF86MonBrightness{Up,Down}
 
 # terminal emulator
 super + Return
-	termite
+	kitty
 
 # browser
 super + c
@@ -60,6 +60,10 @@ super + b
 
 super + {_, shift + } g
 	bspc config window_gap $(( $(bspc config window_gap) {+,-} 15 ))
+
+super + shift + s
+	gnome-screenshot -i
+
 
 #
 # state/flags

@@ -9,6 +9,11 @@ bindkey -M vicmd "k" vi-up-line-or-history
 # Case-sensitive completion (oh-my-zsh)
 CASE_SENSITIVE="true"
 
+# set default_user for agnoster prompt
+DEFAULT_USER='henry'
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs)
+
 source ~/.zgen/zgen.zsh
 
 if ! zgen saved; then
@@ -23,12 +28,16 @@ if ! zgen saved; then
     zgen load junegunn/fzf shell/completion.zsh
     zgen load junegunn/fzf shell/key-bindings.zsh
 
-    zgen load hcnelson99/zsh themes/af-magic
+    zgen load romkatv/powerlevel10k powerlevel10k
+    # zgen load sindresorhus/pure pure
+    # zgen oh-my-zsh themes/agnoster
+    # zgen load hcnelson99/zsh themes/af-magic
 
     zgen save
 fi
 
 source /etc/profile.d/vte.sh
+# source ~/zsh/themes/af-magic.zsh-theme
 
 setopt auto_pushd autocd correct extendedglob notify
 setopt inc_append_history_time 
@@ -89,7 +98,7 @@ bindkey -s '^B' "build^M"
 bindkey -s '^H' "toggle^M"
 bindkey -s '^G' "run^M"
 
-bindkey -s '^P' 'vim $(fzf)^M'
+bindkey -s '^P' 'F=$(fzf) && vim ${F}^M'
 bindkey '^[C' fzf-cd-widget
 
 if [ -f ~/.aliases ]; then
