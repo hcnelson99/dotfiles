@@ -36,7 +36,7 @@ if ! zgen saved; then
     zgen save
 fi
 
-source /etc/profile.d/vte.sh
+# source /etc/profile.d/vte.sh
 # source ~/zsh/themes/af-magic.zsh-theme
 
 setopt auto_pushd autocd correct extendedglob notify
