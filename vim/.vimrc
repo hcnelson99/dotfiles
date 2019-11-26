@@ -20,8 +20,9 @@ Plug 'mbbill/undotree'
 Plug 'tommcdo/vim-lion'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'b4winckler/vim-angry'
-Plug 'fxn/vim-monochrome'
 Plug 'jpalardy/vim-slime'
+
+Plug 'lifepillar/vim-solarized8'
 
 Plug 'stfl/meson.vim', { 'for': 'meson' }
 Plug 'guns/vim-sexp', { 'for': ['lisp', 'clojure', 'scheme'] }
@@ -47,6 +48,8 @@ let g:slime_target = "kitty"
 let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
 execute "set rtp+=" . g:opamshare . "/merlin/vim"
 let g:syntastic_ocaml_checkers = ['merlin']
+let g:merlin_textobject_grow   = 'm'
+let g:merlin_textobject_shrink = 'M'
 
 if executable('rg')
   let g:ackprg = 'rg --vimgrep --no-heading'
@@ -56,6 +59,7 @@ endif
 let g:ycm_always_populate_location_list = 1
 
 let g:nim_highlight_space_errors = 0
+let g:go_highlight_trailing_whitespace_error = 0
 
 inoremap jk <esc>
 nnoremap <expr> j v:count ? (v:count > 5 ? "m'" . v:count : '') . 'j' : 'gj'
@@ -121,26 +125,30 @@ nnoremap <Space>q :q<CR>
 nnoremap <Space>r :source ~/.vimrc<CR>
 nnoremap <Space>s :vsplit<CR>
 nnoremap <Space>S :setlocal spell! spelllang=en_us<CR>
-nnoremap <Space>t /\v\s+$<CR>
+nnoremap <Space>t :MerlinTypeOf<CR>
+" nnoremap <Space>t /\v\s+$<CR>
 nnoremap <Space>T :set expandtab tabstop=8 shiftwidth=8 softtabstop=8<CR>
 nnoremap <Space>u :UndotreeToggle<CR>
 nnoremap <Space>w :w<CR>
 nnoremap <Space>W :w !sudo tee %<CR>
 nnoremap <Space>8 /\%>80v.\+<CR>
-nnoremap <Space>] :YcmCompleter GoToDefinition<CR>
 
 command StripWhitespace %s/\v\s+$//
 
-set background=dark
+set background=light
 if has("termguicolors")
   set t_8f=[38;2;%lu;%lu;%lum
   set t_8b=[48;2;%lu;%lu;%lum
   let &t_SI .= "\<Esc>[6 q"
   let &t_SR .= "\<Esc>[3 q"
   let &t_EI .= "\<Esc>[2 q"
+  " disable background color erase so termguicolors 
+  " background color isn't lost on scroll
+  set t_ut=""
   set termguicolors
 endif
 colorscheme base16-materia
+" colorscheme solarized8
 
 augroup vimrc
   autocmd!
@@ -151,9 +159,12 @@ augroup vimrc
   autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
   autocmd BufRead,BufWrite /dev/shm/pass* setlocal noundofile
   autocmd FileType c,cpp setlocal commentstring=//\ %s
+  autocmd FileType c,cpp nnoremap <buffer> <C-]> :YcmCompleter GoTo<CR>
+  autocmd FileType ocaml nnoremap <buffer> <C-]> :MerlinLocate<CR>
   autocmd FileType meson setl cms=#%s
   autocmd FileType sml setl cms=(*%s*)
 augroup END
+
 
 set wildmenu
 
