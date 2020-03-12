@@ -34,7 +34,8 @@ Plug 'leafgarland/typescript-vim'
 Plug 'ziglang/zig.vim'
 Plug 'zah/nim.vim'
 Plug 'fidian/hexmode'
-Plug 'vim-syntastic/syntastic'
+Plug 'dhruvasagar/vim-table-mode'
+" Plug 'vim-syntastic/syntastic'
 
 Plug 'tweekmonster/startuptime.vim'
 
@@ -105,7 +106,7 @@ nnoremap <Space>du :diffupdate<CR>
 xnoremap <Space>du :diffupdate<CR>
 set diffopt+=vertical
 
-nnoremap <Space>e :Errors<CR>
+nnoremap <Space>e :e!<CR>
 nnoremap <Space>f :<C-u>execute 'file '.fnameescape(resolve(expand('%:p')))<bar>
     \ call fugitive#detect(fnameescape(expand('%:p:h')))<CR>:w!<CR>
 
