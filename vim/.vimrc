@@ -46,11 +46,14 @@ filetype plugin indent on
 syntax on
 
 let g:slime_target = "kitty"
-let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
-execute "set rtp+=" . g:opamshare . "/merlin/vim"
-let g:syntastic_ocaml_checkers = ['merlin']
-let g:merlin_textobject_grow   = 'm'
-let g:merlin_textobject_shrink = 'M'
+
+if executable('opam') && isdirectory('~/.opam')
+  let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
+  execute "set rtp+=" . g:opamshare . "/merlin/vim"
+  let g:syntastic_ocaml_checkers = ['merlin']
+  let g:merlin_textobject_grow   = 'm'
+  let g:merlin_textobject_shrink = 'M'
+endif
 
 if executable('rg')
   let g:ackprg = 'rg --vimgrep --no-heading'
@@ -194,6 +197,8 @@ set shiftround
 set smarttab
 set autoread
 set scrolloff=2
+
+set number
 
 set showcmd
 set showmatch "show matching braces/parens/brackets
