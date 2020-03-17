@@ -132,7 +132,7 @@ nnoremap <Space>S :setlocal spell! spelllang=en_us<CR>
 nnoremap <Space>t :MerlinTypeOf<CR>
 " nnoremap <Space>t /\v\s+$<CR>
 nnoremap <Space>T :set expandtab tabstop=8 shiftwidth=8 softtabstop=8<CR>
-nnoremap <Space>u :UndotreeToggle<CR>
+nnoremap <Space>u g~iw
 nnoremap <Space>w :w<CR>
 nnoremap <Space>W :w !sudo tee %<CR>
 nnoremap <Space>8 /\%>80v.\+<CR>
