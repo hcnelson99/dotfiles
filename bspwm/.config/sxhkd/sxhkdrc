@@ -20,6 +20,10 @@ super + c
 super + {_, shift +} p
 	rofi-pass {_, --last-used}
 
+# pavucontrol
+super + a
+	pavucontrol
+
 # lock
 super + Escape
 	betterlockscreen -s
