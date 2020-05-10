@@ -5,6 +5,7 @@ alias prettier='prettier --write --print-width 9999'
 
 alias tmux="tmux -2"
 alias coin="rlwrap coin"
+alias sml=smlnj
 alias smlnj="rlwrap sml"
 alias ocaml="rlwrap ocaml"
 

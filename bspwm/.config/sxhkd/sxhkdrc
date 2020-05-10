@@ -58,8 +58,8 @@ super + m
 super + b
 	bspc node -s biggest.tiled.local
 
-super + {_, shift + } g
-	bspc config window_gap $(( $(bspc config window_gap) {+,-} 15 ))
+super + g
+	sudo gpu_fix_artifacts.sh
 
 super + shift + s
 	gnome-screenshot -i

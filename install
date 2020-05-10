@@ -16,6 +16,8 @@ cd ~/dotfiles
 sudo mkdir -p /etc/pacman.d/hooks
 sudo cp ~/dotfiles/mirrorupgrade.hook /etc/pacman.d/hooks
 
+# set makeflags
+
 PKGS="vim ranger xsel stow tmux zsh pass ripgrep tokei fzf xfce-panel xfce4-terminal xfce4-battery-plugin rofi arandr adapta-gtk-theme xorg-server xorg-xinit xorg-xmodmap networkmanager networkmanager-openvpn network-manager-applet pulseaudio ctags firefox"
 AUR="sct brillo unclutter-xfixes-git betterlockscreen rofi-pass numix-circle-icon-theme-git ttf-roboto-mono fonts-meta-extended-lt"
 
