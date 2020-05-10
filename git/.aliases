@@ -1,5 +1,8 @@
 alias andrew-fs="sshfs andrew:/afs/andrew.cmu.edu/usr15/hnelson1/private ~/andrew"
 alias andrew='sshpass -p $(pass andrewID | head -1) mosh andrew'
+alias ax11='sshpass -p $(pass andrewID | head -1) ssh -CY andrew'
+alias ascp='sshpass -p $(pass andrewID | head -1) scp'
+alias 410fs="sshfs andrew:/afs/andrew.cmu.edu/usr15/hnelson1/410/scratch ~/15410"
 alias 213remote='sshpass -p $(pass andrewID | head -1) mosh hnelson1@lemonshark.ics.cs.cmu.edu'
 alias prettier='prettier --write --print-width 9999'
 
@@ -19,7 +22,7 @@ alias se="sudoedit"
 
 alias alert="notify-send 'COMMAND COMPLETED'"
 
-alias aurclean="paccache -r && paccache -ruk0 && repoctl update"
+alias pacclean="paccache -r && paccache -ruk0"
 
 alias wypy="~/wyvern/bin/wypy"
 alias wyby="~/wyvern/bin/wyby"
@@ -37,3 +40,5 @@ alias gl="git log"
 alias gu="git pull"
 alias gp="git push"
 alias gs="git status"
+alias gus="git restore --staged"
+alias gr="git restore"

@@ -34,7 +34,8 @@ Plug 'leafgarland/typescript-vim'
 Plug 'ziglang/zig.vim'
 Plug 'zah/nim.vim'
 Plug 'fidian/hexmode'
-Plug 'vim-syntastic/syntastic'
+Plug 'dhruvasagar/vim-table-mode'
+" Plug 'vim-syntastic/syntastic'
 
 Plug 'tweekmonster/startuptime.vim'
 
@@ -45,11 +46,14 @@ filetype plugin indent on
 syntax on
 
 let g:slime_target = "kitty"
-let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
-execute "set rtp+=" . g:opamshare . "/merlin/vim"
-let g:syntastic_ocaml_checkers = ['merlin']
-let g:merlin_textobject_grow   = 'm'
-let g:merlin_textobject_shrink = 'M'
+
+if executable('opam') && isdirectory('~/.opam')
+  let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
+  execute "set rtp+=" . g:opamshare . "/merlin/vim"
+  let g:syntastic_ocaml_checkers = ['merlin']
+  let g:merlin_textobject_grow   = 'm'
+  let g:merlin_textobject_shrink = 'M'
+endif
 
 if executable('rg')
   let g:ackprg = 'rg --vimgrep --no-heading'
@@ -105,7 +109,7 @@ nnoremap <Space>du :diffupdate<CR>
 xnoremap <Space>du :diffupdate<CR>
 set diffopt+=vertical
 
-nnoremap <Space>e :Errors<CR>
+nnoremap <Space>e :e!<CR>
 nnoremap <Space>f :<C-u>execute 'file '.fnameescape(resolve(expand('%:p')))<bar>
     \ call fugitive#detect(fnameescape(expand('%:p:h')))<CR>:w!<CR>
 
@@ -128,7 +132,7 @@ nnoremap <Space>S :setlocal spell! spelllang=en_us<CR>
 nnoremap <Space>t :MerlinTypeOf<CR>
 " nnoremap <Space>t /\v\s+$<CR>
 nnoremap <Space>T :set expandtab tabstop=8 shiftwidth=8 softtabstop=8<CR>
-nnoremap <Space>u :UndotreeToggle<CR>
+nnoremap <Space>u g~iw
 nnoremap <Space>w :w<CR>
 nnoremap <Space>W :w !sudo tee %<CR>
 nnoremap <Space>8 /\%>80v.\+<CR>
@@ -193,6 +197,8 @@ set shiftround
 set smarttab
 set autoread
 set scrolloff=2
+
+set number
 
 set showcmd
 set showmatch "show matching braces/parens/brackets
