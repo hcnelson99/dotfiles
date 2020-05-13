@@ -29,7 +29,7 @@ MiscUseShiftArrowsToScroll=FALSE
 MiscSlimTabs=FALSE
 MiscNewTabAdjacent=FALSE
 MiscSearchDialogOpacity=100
-MiscShowUnsafePasteDialog=TRUE
+MiscShowUnsafePasteDialog=FALSE
 FontName=PragmataPro Mono 12
 ScrollingBar=TERMINAL_SCROLLBAR_NONE
 
