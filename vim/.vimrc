@@ -35,7 +35,7 @@ Plug 'ziglang/zig.vim'
 Plug 'zah/nim.vim'
 Plug 'fidian/hexmode'
 Plug 'dhruvasagar/vim-table-mode'
-" Plug 'vim-syntastic/syntastic'
+Plug 'vim-syntastic/syntastic'
 
 Plug 'tweekmonster/startuptime.vim'
 
@@ -47,7 +47,7 @@ syntax on
 
 let g:slime_target = "kitty"
 
-if executable('opam') && isdirectory('~/.opam')
+if executable('opam') && isdirectory(fnamemodify('~/.opam', ':p'))
   let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
   execute "set rtp+=" . g:opamshare . "/merlin/vim"
   let g:syntastic_ocaml_checkers = ['merlin']
