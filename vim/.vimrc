@@ -33,6 +33,8 @@ Plug 'jez/vim-better-sml'
 Plug 'leafgarland/typescript-vim'
 Plug 'ziglang/zig.vim'
 Plug 'zah/nim.vim'
+Plug 'fatih/vim-go'
+Plug 'udalov/kotlin-vim'
 Plug 'fidian/hexmode'
 Plug 'dhruvasagar/vim-table-mode'
 Plug 'vim-syntastic/syntastic'
@@ -167,6 +169,8 @@ augroup vimrc
   autocmd FileType ocaml nnoremap <buffer> <C-]> :MerlinLocate<CR>
   autocmd FileType meson setl cms=#%s
   autocmd FileType sml setl cms=(*%s*)
+  autocmd FileType go setl tabstop=4
+  autocmd FileType template setl cms=<!--%s-->
 augroup END
 
 

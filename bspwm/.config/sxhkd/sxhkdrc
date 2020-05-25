@@ -10,7 +10,7 @@ XF86MonBrightness{Up,Down}
 
 # terminal emulator
 super + Return
-	kitty
+	xfce4-terminal
 
 # browser
 super + c
