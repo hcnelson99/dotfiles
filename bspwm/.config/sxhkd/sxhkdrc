@@ -10,7 +10,11 @@ XF86MonBrightness{Up,Down}
 
 # terminal emulator
 super + Return
-	xfce4-terminal
+	kitty
+
+super + shift + Return
+    id=$(cat /tmp/scratchid);\
+    bspc node $id --flag hidden;bspc node -f $id
 
 # browser
 super + c

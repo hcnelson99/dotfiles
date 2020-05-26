@@ -33,3 +33,6 @@ bspc config pointer_action3 resize_corner
 
 bspc rule -a Pinentry state=floating
 bspc rule -a wineconsole.exe state=floating
+
+bspc rule -a scratchpad sticky=on state=floating hidden=on
+kitty --class scratchpad -e ~/.bin/scratch &
