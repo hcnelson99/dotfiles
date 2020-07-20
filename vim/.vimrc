@@ -39,6 +39,8 @@ Plug 'fidian/hexmode'
 Plug 'dhruvasagar/vim-table-mode'
 Plug 'vim-syntastic/syntastic'
 
+Plug 'sbdchd/neoformat'
+
 Plug 'tweekmonster/startuptime.vim'
 
 Plug 'hcnelson99/wyvern.vim'
@@ -167,6 +169,7 @@ augroup vimrc
   autocmd FileType c,cpp setlocal commentstring=//\ %s
   autocmd FileType c,cpp nnoremap <buffer> <C-]> :YcmCompleter GoTo<CR>
   autocmd FileType ocaml nnoremap <buffer> <C-]> :MerlinLocate<CR>
+  autocmd FileType ocaml autocmd! BufWritePre <buffer> undojoin | silent Neoformat
   autocmd FileType meson setl cms=#%s
   autocmd FileType sml setl cms=(*%s*)
   autocmd FileType go setl tabstop=4
