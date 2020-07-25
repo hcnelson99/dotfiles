@@ -10,11 +10,11 @@ XF86MonBrightness{Up,Down}
 
 # terminal emulator
 super + Return
-	kitty
+	xfce4-terminal
 
 super + shift + Return
-    id=$(cat /tmp/scratchid);\
-    bspc node $id --flag hidden;bspc node -f $id
+	id=$(cat /tmp/scratchid);\
+	bspc node $id --flag hidden;bspc node -f $id
 
 # browser
 super + c
@@ -44,7 +44,7 @@ super + shift + r
 	pkill -USR1 -x sxhkd
 
 super + {_, shift +} n
-    sct {3000, _}
+	sct {3000, _}
 
 #
 # bspwm hotkeys
