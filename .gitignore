@@ -5,3 +5,6 @@ ncmpcpp/.config/mpd/state
 ncmpcpp/.config/mpd/sticker.sql
 ncmpcpp/.ncmpcpp/error.log
 xfce/.config/xfce4/xfconf/xfce-perchannel-xml/thunar.xml
+vim/.vim/.netrwhist
+vim/.vim/plugged
+vim/.vim/undodir

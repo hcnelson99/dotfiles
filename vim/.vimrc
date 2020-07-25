@@ -37,7 +37,7 @@ Plug 'fatih/vim-go'
 Plug 'udalov/kotlin-vim'
 Plug 'fidian/hexmode'
 Plug 'dhruvasagar/vim-table-mode'
-" Plug 'vim-syntastic/syntastic'
+Plug 'vim-syntastic/syntastic'
 
 Plug 'sbdchd/neoformat'
 Plug 'kana/vim-altr'
@@ -105,6 +105,7 @@ nnoremap cpf :%Eval<CR>
 nnoremap cpe :Eval<CR>
 nnoremap cpc :Piggieback (adzerk.boot-cljs-repl/repl-env)<CR>
 
+nnoremap <Space><Space> :MerlinErrorCheck<CR>
 nnoremap <Space>a :Ack! "\b<cword>\b" <CR>
 nnoremap <Space>c :cd %:p:h<CR>:pwd<CR>
 
