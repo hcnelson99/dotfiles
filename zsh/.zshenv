@@ -12,7 +12,7 @@ export PATH="$HOME/go/bin:$HOME/.node_modules/bin:$HOME/.nimble/bin:$HOME/.bin:$
 export JAVA_HOME="/usr/lib/jvm/default"
 export _JAVA_AWT_WM_NONREPARENTING=1
 
-export FZF_DEFAULT_COMMAND='rg --files --hidden --follow 2> /dev/null'
+export FZF_DEFAULT_COMMAND='rg --files --follow 2> /dev/null'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_C_COMMAND="find . -type d 2> /dev/null"
 

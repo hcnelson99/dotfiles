@@ -37,9 +37,10 @@ Plug 'fatih/vim-go'
 Plug 'udalov/kotlin-vim'
 Plug 'fidian/hexmode'
 Plug 'dhruvasagar/vim-table-mode'
-Plug 'vim-syntastic/syntastic'
+" Plug 'vim-syntastic/syntastic'
 
 Plug 'sbdchd/neoformat'
+Plug 'kana/vim-altr'
 
 Plug 'tweekmonster/startuptime.vim'
 
@@ -58,6 +59,8 @@ if executable('opam') && isdirectory(fnamemodify('~/.opam', ':p'))
   let g:merlin_textobject_grow   = 'm'
   let g:merlin_textobject_shrink = 'M'
 endif
+
+let g:syntastic_always_populate_loc_list = 1
 
 if executable('rg')
   let g:ackprg = 'rg --vimgrep --no-heading'
@@ -125,7 +128,7 @@ nnoremap <Space>gs :Gstatus<CR>
 nnoremap <Space>gw :Gwrite<CR>
 
 nnoremap <Space>h :split<CR>
-nnoremap <Space>i :PlugInstall<CR>
+nnoremap <Space>i :call altr#forward()<CR>
 set listchars=eol:$,tab:>-,trail:~,space:␣
 nnoremap <Space>l :set list!<CR>
 nnoremap <Space>m :make<CR>
@@ -169,7 +172,7 @@ augroup vimrc
   autocmd FileType c,cpp setlocal commentstring=//\ %s
   autocmd FileType c,cpp nnoremap <buffer> <C-]> :YcmCompleter GoTo<CR>
   autocmd FileType ocaml nnoremap <buffer> <C-]> :MerlinLocate<CR>
-  autocmd FileType ocaml autocmd! BufWritePre <buffer> undojoin | silent Neoformat
+  autocmd FileType ocaml autocmd! BufWritePre <buffer> silent! undojoin | Neoformat
   autocmd FileType meson setl cms=#%s
   autocmd FileType sml setl cms=(*%s*)
   autocmd FileType go setl tabstop=4
