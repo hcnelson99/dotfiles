@@ -95,15 +95,23 @@ super + {_,shift + }{h,j,k,l}
 
 # focus the next/previous desktop
 super + bracket{left,right}
-	bspc desktop -f {prev,next}
+	bspc desktop -f {prev.local,next.local}
 
 # focus or send to the next/previous desktop
 super + {_,shift + } bracket{left,right}
-	bspc {desktop -f,node -d} {prev, next}
+	bspc {desktop -f,node -d} {prev.local,next.local}
 
-# focus the last node/desktop
-super + {grave,Tab}
-	bspc {monitor,desktop} -f last
+# focus the last node
+super + Tab
+	bspc desktop -f last.local
+
+# focus the last monitor
+super + grave
+	bspc monitor -f last
+
+# move to the last monitor
+super + shift + grave
+	bspc node -m last
 
 # focus or send to the given desktop
 super + {_,shift + }{1-9,0}
