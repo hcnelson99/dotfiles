@@ -42,3 +42,5 @@ alias gp="git push"
 alias gs="git status"
 alias gus="git restore --staged"
 alias gr="git restore"
+
+alias kb="setxkbmap -option ctrl:nocaps && xmodmap ~/.Xmodmap"

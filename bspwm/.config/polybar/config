@@ -10,7 +10,7 @@ secondary = #e60053
 alert = #bd2c40
 
 [bar/bar]
-#monitor = ${env:MONITOR:eDP-1}
+monitor = ${env:MONITOR:eDP-1-1}
 width = 100%
 height = 27
 radius = 0
@@ -76,8 +76,6 @@ label = %date%
 
 [module/pulseaudio]
 type = internal/pulseaudio
-
-sink = alsa_output.pci-0000_00_1f.3.analog-stereo
 
 format-volume = <bar-volume>
 label-volume-foreground = ${root.foreground}

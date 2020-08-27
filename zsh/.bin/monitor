@@ -1,8 +1,8 @@
 #!/bin/bash
 set -e
 
-main=${MAIN_MONITOR:-eDP-1}
-second=${ADDITIONAL_MONITOR:-DP-2}
+main=${MAIN_MONITOR:-eDP-1-1}
+second=${ADDITIONAL_MONITOR:-DP-3}
 
 dual_monitor() {
   if [ "$(bspc query -M | wc -l)" -eq "2" ]; then
@@ -13,11 +13,7 @@ dual_monitor() {
   xrandr --output "$second" "$1" "$main" --auto
   MONITOR="$second" polybar -r bar &
 
-  bspc desktop 1 -m "$second"
-  bspc desktop 2 -m "$second"
-  bspc desktop 3 -m "$second"
-  bspc desktop Desktop -r
-  bspc desktop -f "$focused"
+  feh --bg-fill ~/.background.png
 }
 
 case $1 in
@@ -28,12 +24,9 @@ case $1 in
     dual_monitor "--right-of"
   ;;
   off)
-    focused=$(bspc query -d focused -D --names)
     xrandr --output "$second" --off
     killall -9 polybar
     polybar -r bar &
-    bspc monitor "$main" -o 1 2 3 4 5 6 7 8 9 10
-    bspc desktop -f "$focused"
   ;;
   *)
     echo "$(basename "$0") left|right|off"
