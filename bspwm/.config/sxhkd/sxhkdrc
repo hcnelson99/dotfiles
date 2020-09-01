@@ -18,7 +18,7 @@ super + shift + Return
 
 # browser
 super + c
-	firefox
+	google-chrome-stable
 
 # pass
 super + {_, shift +} p

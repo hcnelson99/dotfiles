@@ -2,6 +2,7 @@
 /home/*/Downloads
 /home/*/Media
 /home/*/.config/google-chrome
+/home/*/.config/discord
 /home/*/.vim/plugged
 /home/*/.dropbox
 /home/*/.dropbox-dist
@@ -19,3 +20,6 @@
 /home/*/.wine-witness
 /home/*/.wine
 /home/*/Games
+/home/*/builds
+/home/*/.choosenim
+/home/*/.npm

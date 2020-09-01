@@ -22,6 +22,8 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'b4winckler/vim-angry'
 Plug 'jpalardy/vim-slime'
 
+Plug 'will133/vim-dirdiff'
+
 Plug 'lifepillar/vim-solarized8'
 
 Plug 'stfl/meson.vim', { 'for': 'meson' }
@@ -58,6 +60,7 @@ if executable('opam') && isdirectory(fnamemodify('~/.opam', ':p'))
   let g:syntastic_ocaml_checkers = ['merlin']
   let g:merlin_textobject_grow   = 'm'
   let g:merlin_textobject_shrink = 'M'
+  let g:merlin_split_method = 'never'
 endif
 
 let g:syntastic_always_populate_loc_list = 1
@@ -173,7 +176,7 @@ augroup vimrc
   autocmd FileType c,cpp setlocal commentstring=//\ %s
   autocmd FileType c,cpp nnoremap <buffer> <C-]> :YcmCompleter GoTo<CR>
   autocmd FileType ocaml nnoremap <buffer> <C-]> :MerlinLocate<CR>
-  autocmd FileType ocaml autocmd! BufWritePre <buffer> silent! undojoin | Neoformat
+  autocmd FileType ocaml,cpp autocmd! BufWritePre <buffer> silent! undojoin | Neoformat
   autocmd FileType meson setl cms=#%s
   autocmd FileType sml setl cms=(*%s*)
   autocmd FileType go setl tabstop=4
