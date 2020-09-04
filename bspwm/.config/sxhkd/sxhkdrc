@@ -1,9 +1,9 @@
 # General
 XF86Audio{Raise,Lower}Volume
-	pactl set-sink-mute 0 false ; pactl set-sink-volume 0 {+5%, -5%}
+	pactl set-sink-mute @DEFAULT_SINK@ false ; pactl set-sink-volume @DEFAULT_SINK@ {+5%, -5%}
 
 XF86AudioMute
-	pactl set-sink-mute 0 toggle
+	pactl set-sink-mute @DEFAULT_SINK@ toggle
 
 XF86MonBrightness{Up,Down}
 	brillo -equ 1500 {-A,-U} 5%
