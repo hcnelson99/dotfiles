@@ -18,7 +18,7 @@ super + shift + Return
 
 # browser
 super + c
-	google-chrome-stable
+	firefox
 
 # pass
 super + {_, shift +} p
@@ -118,7 +118,7 @@ super + {_,shift + }{1-9,0}
 	bspc {desktop -f,node -d} {1-9,10}
 
 # delete focused desktop
-super + x
+super + Shift + x
 	bspc desktop focused -r
 
 #

@@ -32,4 +32,5 @@ MiscSearchDialogOpacity=100
 MiscShowUnsafePasteDialog=FALSE
 FontName=PragmataPro Mono 12
 ScrollingBar=TERMINAL_SCROLLBAR_NONE
+ScrollingUnlimited=TRUE
 
