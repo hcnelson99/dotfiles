@@ -10,7 +10,7 @@ XF86MonBrightness{Up,Down}
 
 # terminal emulator
 super + Return
-	xfce4-terminal
+	alacritty
 
 super + shift + Return
 	id=$(cat /tmp/scratchid);\
