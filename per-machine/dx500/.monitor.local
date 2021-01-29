@@ -1,0 +1,2 @@
+export MONITOR="DisplayPort-0"
+xrandr --output DisplayPort-0 --primary --mode 2560x1440 --rate 165 --output DisplayPort-1 --mode 2560x1440 --rate 74.60 --left-of DisplayPort-0

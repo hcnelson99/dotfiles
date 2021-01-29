@@ -1,5 +1,7 @@
 #!/bin/sh
 
+[ -f ~/.monitor.local ] && . ~/.monitor.local
+
 sxhkd &
 compton -b
 xsetroot -cursor_name left_ptr
