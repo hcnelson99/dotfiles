@@ -63,6 +63,8 @@ if executable('opam') && isdirectory(fnamemodify('~/.opam', ':p'))
   let g:merlin_split_method = 'never'
 endif
 
+call altr#define('%/%.ml', '%/%.mli',  '%/%_intf.ml', '%/%.mly', '%/%.mll')
+
 let g:syntastic_always_populate_loc_list = 1
 
 if executable('rg')
