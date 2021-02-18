@@ -22,10 +22,6 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'b4winckler/vim-angry'
 Plug 'jpalardy/vim-slime'
 
-Plug 'will133/vim-dirdiff'
-
-Plug 'lifepillar/vim-solarized8'
-
 Plug 'stfl/meson.vim', { 'for': 'meson' }
 Plug 'guns/vim-sexp', { 'for': ['lisp', 'clojure', 'scheme'] }
 Plug 'tpope/vim-sexp-mappings-for-regular-people', { 'for': ['lisp', 'clojure', 'scheme'] }
@@ -40,6 +36,8 @@ Plug 'udalov/kotlin-vim'
 Plug 'fidian/hexmode'
 Plug 'dhruvasagar/vim-table-mode'
 Plug 'vim-syntastic/syntastic'
+Plug 'tikhomirov/vim-glsl'
+Plug 'jez/vim-ispc'
 
 Plug 'sbdchd/neoformat'
 Plug 'kana/vim-altr'
