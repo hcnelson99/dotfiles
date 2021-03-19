@@ -21,8 +21,8 @@ super + c
 	firefox
 
 # pass
-super + {_, shift +} p
-	rofi-pass {_, --last-used}
+super + p
+	rofi -modi 1pass:rofi-1pass -show 1pass
 
 # pavucontrol
 super + a

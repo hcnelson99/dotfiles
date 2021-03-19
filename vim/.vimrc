@@ -42,6 +42,8 @@ Plug 'jez/vim-ispc'
 Plug 'sbdchd/neoformat'
 Plug 'kana/vim-altr'
 
+Plug 'fxn/vim-monochrome'
+
 Plug 'tweekmonster/startuptime.vim'
 
 Plug 'hcnelson99/wyvern.vim'
