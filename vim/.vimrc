@@ -33,6 +33,7 @@ Plug 'ziglang/zig.vim'
 Plug 'zah/nim.vim'
 Plug 'fatih/vim-go'
 Plug 'udalov/kotlin-vim'
+Plug 'rust-lang/rust.vim'
 Plug 'fidian/hexmode'
 Plug 'dhruvasagar/vim-table-mode'
 Plug 'vim-syntastic/syntastic'
@@ -52,10 +53,14 @@ call plug#end()
 filetype plugin indent on
 syntax on
 
+let g:rustfmt_autosave = 1
+
+let g:syntastic_d_compiler_options="-version=SDL_TTF -J=./fonts/"
+
 let g:slime_target = "kitty"
 
 if executable('opam') && isdirectory(fnamemodify('~/.opam', ':p'))
-  let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
+  let g:opamshare = substitute(system('opam var share'),'\n$','','''')
   execute "set rtp+=" . g:opamshare . "/merlin/vim"
   let g:syntastic_ocaml_checkers = ['merlin']
   let g:merlin_textobject_grow   = 'm'
@@ -123,8 +128,8 @@ xnoremap <Space>du :diffupdate<CR>
 set diffopt+=vertical
 
 nnoremap <Space>e :e!<CR>
-nnoremap <Space>f :<C-u>execute 'file '.fnameescape(resolve(expand('%:p')))<bar>
-    \ call fugitive#detect(fnameescape(expand('%:p:h')))<CR>:w!<CR>
+" nnoremap <Space>f :<C-u>execute 'file '.fnameescape(resolve(expand('%:p')))<bar>
+"     \ call fugitive#detect(fnameescape(expand('%:p:h')))<CR>:w!<CR>
 
 nnoremap <Space>gc :Gcommit<CR>
 nnoremap <Space>gd :Gdiff<CR>
@@ -133,14 +138,17 @@ nnoremap <Space>gr :Gread<CR>
 nnoremap <Space>gs :Gstatus<CR>
 nnoremap <Space>gw :Gwrite<CR>
 
-nnoremap <Space>h :split<CR>
+nmap - <Plug>VinegarUp
+nnoremap <Space>s :vsplit<CR>
 nnoremap <Space>i :call altr#forward()<CR>
 set listchars=eol:$,tab:>-,trail:~,space:␣
 nnoremap <Space>l :set list!<CR>
 nnoremap <Space>m :make<CR>
 nnoremap <Space>q :q<CR>
+nnoremap <Space>fed :e ~/.vimrc<CR>
+nnoremap <Space><Tab> <C-^>
 nnoremap <Space>r :source ~/.vimrc<CR>
-nnoremap <Space>s :vsplit<CR>
+nnoremap <Space>v :split<CR>
 nnoremap <Space>S :setlocal spell! spelllang=en_us<CR>
 nnoremap <Space>t :MerlinTypeOf<CR>
 " nnoremap <Space>t /\v\s+$<CR>
@@ -178,7 +186,7 @@ augroup vimrc
   autocmd FileType c,cpp setlocal commentstring=//\ %s
   autocmd FileType c,cpp nnoremap <buffer> <C-]> :YcmCompleter GoTo<CR>
   autocmd FileType ocaml nnoremap <buffer> <C-]> :MerlinLocate<CR>
-  autocmd FileType ocaml,cpp autocmd! BufWritePre <buffer> silent! undojoin | Neoformat
+  autocmd FileType ocaml,cpp,d autocmd! BufWritePre <buffer> silent! undojoin | Neoformat
   autocmd FileType meson setl cms=#%s
   autocmd FileType sml setl cms=(*%s*)
   autocmd FileType go setl tabstop=4
