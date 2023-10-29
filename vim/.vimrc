@@ -26,6 +26,7 @@ Plug 'stfl/meson.vim', { 'for': 'meson' }
 Plug 'guns/vim-sexp', { 'for': ['lisp', 'clojure', 'scheme'] }
 Plug 'tpope/vim-sexp-mappings-for-regular-people', { 'for': ['lisp', 'clojure', 'scheme'] }
 Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
+Plug 'venantius/vim-cljfmt', { 'for': 'clojure' }
 Plug 'alvan/vim-closetag'
 Plug 'jez/vim-better-sml'
 Plug 'leafgarland/typescript-vim'
@@ -37,8 +38,16 @@ Plug 'rust-lang/rust.vim'
 Plug 'fidian/hexmode'
 Plug 'dhruvasagar/vim-table-mode'
 Plug 'vim-syntastic/syntastic'
+Plug 'dense-analysis/ale'
 Plug 'tikhomirov/vim-glsl'
 Plug 'jez/vim-ispc'
+Plug 'purescript-contrib/purescript-vim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'frigoeu/psc-ide-vim'
+
+Plug 'othree/html5.vim'
+Plug 'pangloss/vim-javascript'
+Plug 'evanleck/vim-svelte', {'branch': 'main'}
 
 Plug 'sbdchd/neoformat'
 Plug 'kana/vim-altr'
@@ -52,6 +61,8 @@ Plug 'hcnelson99/wyvern.vim'
 call plug#end()
 filetype plugin indent on
 syntax on
+
+let g:ale_linters = {'clojure': ['clj-kondo']}
 
 let g:rustfmt_autosave = 1
 
@@ -72,6 +83,9 @@ call altr#define('%/%.ml', '%/%.mli',  '%/%_intf.ml', '%/%.mly', '%/%.mll')
 
 let g:syntastic_always_populate_loc_list = 1
 
+let g:syntastic_clojure_checkers = ['eastwood']
+command ShadowConnect :CljEval (shadow/repl :app)
+
 if executable('rg')
   let g:ackprg = 'rg --vimgrep --no-heading'
 endif
@@ -86,7 +100,21 @@ inoremap jk <esc>
 nnoremap <expr> j v:count ? (v:count > 5 ? "m'" . v:count : '') . 'j' : 'gj'
 nnoremap <expr> k v:count ? (v:count > 5 ? "m'" . v:count : '') . 'k' : 'gk'
 noremap Y y$
-nnoremap <expr> <CR> &buftype ==# 'quickfix' ? "\<CR>" : ':nohls<CR>'
+
+inoremap <silent><expr> <TAB>
+      \ coc#pum#visible() ? coc#pum#next(1) :
+      \ CheckBackspace() ? "\<Tab>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+
+" Make <CR> to accept selected completion item or notify coc.nvim to format
+" <C-g>u breaks current undo, please make your own choice
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+
+" nnoremap <expr> <CR> &buftype ==# 'quickfix' ? "\<CR>" : ':nohls<CR>'
+
 nnoremap ` '
 nnoremap ' `
 
@@ -131,11 +159,11 @@ nnoremap <Space>e :e!<CR>
 " nnoremap <Space>f :<C-u>execute 'file '.fnameescape(resolve(expand('%:p')))<bar>
 "     \ call fugitive#detect(fnameescape(expand('%:p:h')))<CR>:w!<CR>
 
-nnoremap <Space>gc :Gcommit<CR>
-nnoremap <Space>gd :Gdiff<CR>
-nnoremap <Space>gp :Gpush<CR>
+nnoremap <Space>gc :Git commit -am .<CR>
+nnoremap <Space>gd :Git diff<CR>
+nnoremap <Space>gp :Git push<CR>
 nnoremap <Space>gr :Gread<CR>
-nnoremap <Space>gs :Gstatus<CR>
+nnoremap <Space>gs :Git<CR>
 nnoremap <Space>gw :Gwrite<CR>
 
 nmap - <Plug>VinegarUp
@@ -150,7 +178,9 @@ nnoremap <Space><Tab> <C-^>
 nnoremap <Space>r :source ~/.vimrc<CR>
 nnoremap <Space>v :split<CR>
 nnoremap <Space>S :setlocal spell! spelllang=en_us<CR>
-nnoremap <Space>t :MerlinTypeOf<CR>
+
+
+nnoremap <Space>t :call CocActionAsync('doHover')<CR>
 " nnoremap <Space>t /\v\s+$<CR>
 nnoremap <Space>T :set expandtab tabstop=8 shiftwidth=8 softtabstop=8<CR>
 nnoremap <Space>u g~iw
@@ -174,6 +204,11 @@ if has("termguicolors")
 endif
 colorscheme base16-materia
 " colorscheme solarized8
+
+set go-=l
+set go-=L
+set go-=r
+set go-=R
 
 augroup vimrc
   autocmd!
@@ -208,7 +243,7 @@ set nowritebackup
 set noswapfile
 
 
-set clipboard^=unnamedplus
+set clipboard^=unnamed,unnamedplus
 set backspace=indent,eol,start
 
 set complete-=i
