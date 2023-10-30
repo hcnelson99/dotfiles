@@ -117,5 +117,5 @@ autotex() {
     echo $1 | entr -c pdflatex -halt-on-error $1
 }
 
-# OPAM configuration
-. /home/henry/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+# opam configuration
+[[ ! -r /home/henry/.opam/opam-init/init.zsh ]] || source /home/henry/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
