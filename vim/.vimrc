@@ -70,6 +70,7 @@ let g:syntastic_d_compiler_options="-version=SDL_TTF -J=./fonts/"
 
 let g:slime_target = "kitty"
 
+
 if executable('opam') && isdirectory(fnamemodify('~/.opam', ':p'))
   let g:opamshare = substitute(system('opam var share'),'\n$','','''')
   execute "set rtp+=" . g:opamshare . "/merlin/vim"
@@ -96,7 +97,7 @@ let g:ycm_always_populate_location_list = 1
 let g:nim_highlight_space_errors = 0
 let g:go_highlight_trailing_whitespace_error = 0
 
-inoremap jk <esc>
+" inoremap jk <esc>
 nnoremap <expr> j v:count ? (v:count > 5 ? "m'" . v:count : '') . 'j' : 'gj'
 nnoremap <expr> k v:count ? (v:count > 5 ? "m'" . v:count : '') . 'k' : 'gk'
 noremap Y y$
@@ -210,6 +211,9 @@ set go-=l
 set go-=L
 set go-=r
 set go-=R
+set go-=m
+set go-=T
+set guifont=PragmataPro\ Mono\ 16
 
 augroup vimrc
   autocmd!
