@@ -42,7 +42,7 @@ Plug 'dense-analysis/ale'
 Plug 'tikhomirov/vim-glsl'
 Plug 'jez/vim-ispc'
 Plug 'purescript-contrib/purescript-vim'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Plug 'frigoeu/psc-ide-vim'
 
 Plug 'othree/html5.vim'
@@ -101,19 +101,19 @@ nnoremap <expr> j v:count ? (v:count > 5 ? "m'" . v:count : '') . 'j' : 'gj'
 nnoremap <expr> k v:count ? (v:count > 5 ? "m'" . v:count : '') . 'k' : 'gk'
 noremap Y y$
 
-inoremap <silent><expr> <TAB>
-      \ coc#pum#visible() ? coc#pum#next(1) :
-      \ CheckBackspace() ? "\<Tab>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+" inoremap <silent><expr> <TAB>
+"       \ coc#pum#visible() ? coc#pum#next(1) :
+"       \ CheckBackspace() ? "\<Tab>" :
+"       \ coc#refresh()
+" inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
 
 " Make <CR> to accept selected completion item or notify coc.nvim to format
 " <C-g>u breaks current undo, please make your own choice
-inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
-                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+" inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
+"                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 
-" nnoremap <expr> <CR> &buftype ==# 'quickfix' ? "\<CR>" : ':nohls<CR>'
+nnoremap <expr> <CR> &buftype ==# 'quickfix' ? "\<CR>" : ':nohls<CR>'
 
 nnoremap ` '
 nnoremap ' `
@@ -180,7 +180,8 @@ nnoremap <Space>v :split<CR>
 nnoremap <Space>S :setlocal spell! spelllang=en_us<CR>
 
 
-nnoremap <Space>t :call CocActionAsync('doHover')<CR>
+nnoremap <Space>t :MerlinTypeOf<CR>
+" nnoremap <Space>t :call CocActionAsync('doHover')<CR>
 " nnoremap <Space>t /\v\s+$<CR>
 nnoremap <Space>T :set expandtab tabstop=8 shiftwidth=8 softtabstop=8<CR>
 nnoremap <Space>u g~iw
