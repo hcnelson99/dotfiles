@@ -1,6 +1,5 @@
 HISTSIZE=999999999
 SAVEHIST=$HISTSIZE
-bindkey -v
 
 bindkey -M viins 'jk' vi-cmd-mode
 bindkey -M vicmd "j" vi-down-line-or-history

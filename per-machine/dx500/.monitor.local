@@ -1,6 +1,6 @@
 # export MONITOR="DisplayPort-1"
 # xrandr --output DisplayPort-0 --mode 2560x1440 --rate 74.60 --rotate normal --output DisplayPort-1 --primary --mode 2560x1440 --rate 165 --rotate normal --right-of DisplayPort-0
-export MONITOR="DP-3"
+export MONITOR="DP-4"
 xrandr --output $MONITOR --primary --mode 2560x1440 --rate 165 --rotate normal
 # export MONITOR="DP-1"
 # xrandr --output $MONITOR --primary --mode 2560x1440 --rate 60 --rotate normal
