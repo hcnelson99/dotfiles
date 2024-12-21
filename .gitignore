@@ -8,3 +8,4 @@ xfce/.config/xfce4/xfconf/xfce-perchannel-xml/thunar.xml
 vim/.vim/.netrwhist
 vim/.vim/plugged
 vim/.vim/undodir
+.DS_Store
