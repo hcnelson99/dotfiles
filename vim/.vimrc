@@ -71,6 +71,7 @@ let g:syntastic_d_compiler_options="-version=SDL_TTF -J=./fonts/"
 
 let g:slime_target = "kitty"
 
+
 if executable('opam') && isdirectory(fnamemodify('~/.opam', ':p'))
   let g:opamshare = substitute(system('opam var share'),'\n$','','''')
   execute "set rtp+=" . g:opamshare . "/merlin/vim"
@@ -97,7 +98,7 @@ let g:ycm_always_populate_location_list = 1
 let g:nim_highlight_space_errors = 0
 let g:go_highlight_trailing_whitespace_error = 0
 
-inoremap jk <esc>
+" inoremap jk <esc>
 nnoremap <expr> j v:count ? (v:count > 5 ? "m'" . v:count : '') . 'j' : 'gj'
 nnoremap <expr> k v:count ? (v:count > 5 ? "m'" . v:count : '') . 'k' : 'gk'
 noremap Y y$
@@ -106,7 +107,6 @@ noremap Y y$
 "       \ coc#pum#visible() ? coc#pum#next(1) :
 "       \ CheckBackspace() ? "\<Tab>" :
 "       \ coc#refresh()
-
 " inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
 
 " Make <CR> to accept selected completion item or notify coc.nvim to format
@@ -187,7 +187,8 @@ nnoremap <Space>v :split<CR>
 nnoremap <Space>S :setlocal spell! spelllang=en_us<CR>
 
 
-nnoremap <Space>t :call CocActionAsync('doHover')<CR>
+nnoremap <Space>t :MerlinTypeOf<CR>
+" nnoremap <Space>t :call CocActionAsync('doHover')<CR>
 " nnoremap <Space>t /\v\s+$<CR>
 nnoremap <Space>T :set expandtab tabstop=8 shiftwidth=8 softtabstop=8<CR>
 nnoremap <Space>u g~iw
@@ -216,6 +217,9 @@ set go-=l
 set go-=L
 set go-=r
 set go-=R
+set go-=m
+set go-=T
+set guifont=PragmataPro\ Mono\ 16
 
 augroup vimrc
   autocmd!

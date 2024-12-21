@@ -1,6 +1,5 @@
 HISTSIZE=999999999
 SAVEHIST=$HISTSIZE
-bindkey -v
 
 bindkey -M viins 'jk' vi-cmd-mode
 bindkey -M vicmd "j" vi-down-line-or-history
@@ -117,5 +116,5 @@ autotex() {
     echo $1 | entr -c pdflatex -halt-on-error $1
 }
 
-# OPAM configuration
-. /home/henry/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+# opam configuration
+[[ ! -r /home/henry/.opam/opam-init/init.zsh ]] || source /home/henry/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
