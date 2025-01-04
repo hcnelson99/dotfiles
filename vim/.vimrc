@@ -37,13 +37,14 @@ Plug 'udalov/kotlin-vim'
 Plug 'rust-lang/rust.vim'
 Plug 'fidian/hexmode'
 Plug 'dhruvasagar/vim-table-mode'
-Plug 'vim-syntastic/syntastic'
-Plug 'dense-analysis/ale'
+" Plug 'vim-syntastic/syntastic'
+" Plug 'dense-analysis/ale'
 Plug 'tikhomirov/vim-glsl'
 Plug 'jez/vim-ispc'
 Plug 'purescript-contrib/purescript-vim'
 " Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Plug 'frigoeu/psc-ide-vim'
+Plug 'Tetralux/odin.vim'
 
 Plug 'othree/html5.vim'
 Plug 'pangloss/vim-javascript'
@@ -130,11 +131,15 @@ noremap <C-h> <C-w>h
 noremap <C-j> <C-w>j
 noremap <C-k> <C-w>k
 noremap <C-l> <C-w>l
+noremap <C-Tab> g<Tab>
 if exists(":tnoremap")
   tnoremap <C-h> <C-w>h
   tnoremap <C-j> <C-w>j
   tnoremap <C-k> <C-w>k
   tnoremap <C-l> <C-w>l
+  tnoremap <Esc> <C-w>N
+  tnoremap <C-w>N
+  tnoremap <C-Tab> <C-w>Ng<Tab>
 endif
 
 " vim-fireplace eval entire file (like cpr for tests)
@@ -173,6 +178,7 @@ nnoremap <Space>i :call altr#forward()<CR>
 set listchars=eol:$,tab:>-,trail:~,space:␣
 nnoremap <Space>l :set list!<CR>
 nnoremap <Space>m :make<CR>
+nnoremap <Space>n :!./shooter<CR>
 nnoremap <Space>q :q<CR>
 nnoremap <Space>fed :e ~/.vimrc<CR>
 nnoremap <Space><Tab> <C-^>
@@ -280,3 +286,10 @@ set laststatus=2
 
 set nospell
 set wrap linebreak
+set autowrite
+
+" workaround vim not understanding compound highlight syntax
+let g:c_no_bracket_error=1
+
+" for odin
+" set errorformat=%E%f(%l:%c)\ %m,%C[^\n],%C%p^
