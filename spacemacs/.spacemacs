@@ -562,8 +562,9 @@ This function is called at the very end of Spacemacs startup, after layer
 configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
-  (setq-default evil-escape-key-sequence "jk")
   (setq mac-command-modifier 'control)
+  (setq cider-save-file-on-load t)
+
   ;; (add-hook 'clojure-mode-hook
   ;;           (lambda ()
   ;;             (add-hook 'before-save-hook #'cider-format-buffer nil 'local)))
