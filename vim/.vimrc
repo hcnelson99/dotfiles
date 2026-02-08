@@ -45,10 +45,10 @@ Plug 'purescript-contrib/purescript-vim'
 " Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Plug 'frigoeu/psc-ide-vim'
 Plug 'Tetralux/odin.vim'
-
 Plug 'othree/html5.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'evanleck/vim-svelte', {'branch': 'main'}
+Plug 'hcnelson99/jai.vim'
 
 Plug 'sbdchd/neoformat'
 Plug 'kana/vim-altr'
