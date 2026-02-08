@@ -138,7 +138,6 @@ if exists(":tnoremap")
   tnoremap <C-k> <C-w>k
   tnoremap <C-l> <C-w>l
   tnoremap <Esc> <C-w>N
-  tnoremap <C-w>N
   tnoremap <C-Tab> <C-w>Ng<Tab>
 endif
 
