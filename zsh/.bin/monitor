@@ -5,13 +5,11 @@ main=${MAIN_MONITOR:-eDP-1-1}
 second=${ADDITIONAL_MONITOR:-DP-3}
 
 dual_monitor() {
-  if [ "$(bspc query -M | wc -l)" -eq "2" ]; then
+  if [ "$(xrandr --listmonitors | tail -n +2 | wc -l)" -eq "2" ]; then
     echo "There are already two monitors"
     exit 1
   fi
-  focused=$(bspc query -d focused -D --names)
   xrandr --output "$second" "$1" "$main" --auto
-  MONITOR="$second" polybar -r bar &
 
   feh --bg-fill ~/.background.png
 }
@@ -25,8 +23,6 @@ case $1 in
   ;;
   off)
     xrandr --output "$second" --off
-    killall -9 polybar
-    polybar -r bar &
   ;;
   *)
     echo "$(basename "$0") left|right|off"

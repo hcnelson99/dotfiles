@@ -18,8 +18,8 @@ sudo cp ~/dotfiles/mirrorupgrade.hook /etc/pacman.d/hooks
 
 # set makeflags
 
-PKGS="vim ranger xsel stow tmux zsh pass ripgrep tokei fzf xfce-panel xfce4-terminal xfce4-battery-plugin rofi arandr adapta-gtk-theme xorg-server xorg-xinit xorg-xmodmap networkmanager networkmanager-openvpn network-manager-applet pulseaudio ctags firefox"
-AUR="sct brillo unclutter-xfixes-git betterlockscreen rofi-pass numix-circle-icon-theme-git ttf-roboto-mono fonts-meta-extended-lt"
+PKGS="i3-wm i3status picom feh kitty xorg-xsetroot xdo pavucontrol libpulse gnome-screenshot vim ranger xsel stow tmux zsh pass ripgrep tokei fzf xfce-panel xfce4-terminal xfce4-battery-plugin rofi arandr adapta-gtk-theme xorg-server xorg-xinit xorg-xmodmap networkmanager networkmanager-openvpn network-manager-applet pulseaudio ctags firefox"
+AUR="sct brillo unclutter-xfixes-git betterlockscreen rofi-pass numix-circle-icon-theme-git"
 
 aur sync $AUR
 
@@ -34,16 +34,14 @@ git clone https://github.com/tarjoilija/zgen.git ~/.zgen
 stow zsh
 sudo chsh "$USER" -s "$(which zsh)"
 
-sudo ln -s /etc/fonts/conf.avail/11-lcdfilter-default.conf /etc/fonts/conf.d
-sudo ln -s /etc/fonts/conf.avail/10-sub-pixel-rgb.conf /etc/fonts/conf.d
-sudo ln -s /etc/fonts/conf.avail/30-infinality-aliases.conf /etc/fonts/conf.d
+# font rendering (subpixel rgb, lcdfilter, hintslight) is set in X/.config/fontconfig/fonts.conf
 
 stow X
+stow i3
 feh --bg-fill ~/.background.png
 betterlockscreen -u ~/.background.png
 stow git
-stow tmux
-stow xfce4
+stow xfce
 stow zathura
 
 # to get brillo to work, gpasswd -a henry video and restart
