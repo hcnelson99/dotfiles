@@ -197,7 +197,7 @@ nnoremap <Space>8 /\%>80v.\+<CR>
 
 command StripWhitespace %s/\v\s+$//
 
-set background=light
+set background=dark
 if has("termguicolors")
   set t_8f=[38;2;%lu;%lu;%lum
   set t_8b=[48;2;%lu;%lu;%lum
