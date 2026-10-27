@@ -1,0 +1,32 @@
+general {
+    colors = true
+    color_good = "#dfdfdf"
+    color_degraded = "#ffb52a"
+    color_bad = "#bd2c40"
+    interval = 5
+}
+
+order += "volume master"
+order += "battery all"
+order += "tztime local"
+
+volume master {
+    format = "♪ %volume"
+    format_muted = "sound muted"
+    device = "pulse"
+}
+
+battery all {
+    format = "%status %percentage"
+    format_down = ""
+    status_chr = "+"
+    status_bat = ""
+    status_full = ""
+    last_full_capacity = true
+    threshold_type = "percentage"
+    low_threshold = 10
+}
+
+tztime local {
+    format = "%F %I:%M %p"
+}

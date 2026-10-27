@@ -1,10 +1,6 @@
 HISTSIZE=999999999
 SAVEHIST=$HISTSIZE
 
-bindkey -M viins 'jk' vi-cmd-mode
-bindkey -M vicmd "j" vi-down-line-or-history
-bindkey -M vicmd "k" vi-up-line-or-history
-
 # Case-sensitive completion (oh-my-zsh)
 CASE_SENSITIVE="true"
 
@@ -19,7 +15,6 @@ if ! zgen saved; then
     zgen oh-my-zsh
     zgen oh-my-zsh plugins/compleat
     zgen oh-my-zsh plugins/command-not-found
-    zgen oh-my-zsh plugins/vi-mode
     zgen oh-my-zsh plugins/pass
     zgen load zsh-users/zsh-syntax-highlighting
 

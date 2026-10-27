@@ -8,5 +8,7 @@ fi
 setxkbmap -option ctrl:nocaps
 xmodmap ~/.Xmodmap
 
+[ -f ~/.monitor.local ] && . ~/.monitor.local
+
 unclutter &
-exec bspwm
+exec i3

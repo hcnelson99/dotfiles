@@ -73,8 +73,10 @@ let g:slime_target = "kitty"
 
 
 if executable('opam') && isdirectory(fnamemodify('~/.opam', ':p'))
-  let g:opamshare = substitute(system('opam var share'),'\n$','','''')
-  execute "set rtp+=" . g:opamshare . "/merlin/vim"
+  let g:opamshare = substitute(system('opam var share 2>/dev/null </dev/null'),'\n$','','''')
+  if !v:shell_error && isdirectory(g:opamshare . '/merlin/vim')
+    execute "set rtp+=" . fnameescape(g:opamshare . "/merlin/vim")
+  endif
   let g:syntastic_ocaml_checkers = ['merlin']
   let g:merlin_textobject_grow   = 'm'
   let g:merlin_textobject_shrink = 'M'
