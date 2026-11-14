@@ -212,6 +212,7 @@ if has("termguicolors")
   set termguicolors
 endif
 colorscheme base16-materia
+" colorscheme blue
 " colorscheme solarized8
 
 set go-=l
